@@ -1,0 +1,32 @@
+{
+  "version": "zkc:registry:predicate-entry:v1",
+  "predicateId": "zkc-aggregation",
+  "entryVersion": "2.0.0",
+  "title": "Proof aggregation predicate (v2 presentation profiles)",
+  "author": {
+    "name": "ZKC reference implementation",
+    "url": "https://github.com/pyramidal-io/ZKC"
+  },
+  "proofTypes": [
+    "zkc:proof:aggregate:v2"
+  ],
+  "circuit": {
+    "name": "zkc_aggregation_v2",
+    "scheme": "ultra_honk",
+    "sourcePath": "noir/zkc_aggregation_v2/src/main.nr",
+    "sourceSha256": "2907267129e5b3f317949bd3f294e2a88df9acda873c6bae803f7aa8738773d8",
+    "acirHash": "sha256:761e8e3a7da559fdd6e0cdfc2f54dc9b0fc2962538b95f453e2ad627d4d9b619",
+    "vkHash": "0x2910a6ae1f91c6297a9e742c9903073d90287371575f077e50e011c6732be8d8",
+    "vkSha256": "sha256:6f8be5b083aacdaab006287c7e673fde5a045a19b474ec5ad79857a538489a2b"
+  },
+  "publicInputEncoder": "schemas/public-inputs/zkc_aggregation_v2.json",
+  "review": {
+    "status": "draft",
+    "evidence": [],
+    "reviewedAt": null
+  },
+  "activation": {
+    "activatedAt": null,
+    "supersedes": "zkc-aggregation@1.0.0"
+  }
+}

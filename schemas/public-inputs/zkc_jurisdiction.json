@@ -1,0 +1,106 @@
+{
+  "$schema": "https://zkc.dev/schemas/public-input-encoder-v1.schema.json",
+  "version": "zkc:public-inputs:v1",
+  "circuit": "zkc_jurisdiction",
+  "proofTypes": ["zkc:proof:jurisdiction:v1"],
+  "proofSystem": "ultra_honk",
+  "curve": "BN254",
+  "encoding": {
+    "fieldElement": "BN254 scalar field element, serialized as a 32-byte big-endian value",
+    "order": "Declaration order of `pub` parameters in noir/zkc_jurisdiction/src/main.nr main(); arrays are flattened element-wise",
+    "booleans": "false = 0, true = 1",
+    "integers": "Unsigned integers are zero-extended into a single field element",
+    "byteArrays": "[u8; N] occupies N field elements, one byte per element, in array order"
+  },
+  "totalFieldElements": 73,
+  "publicInputs": [
+    {
+      "index": 0,
+      "offset": 0,
+      "name": "holder_commitment",
+      "abiType": "Field",
+      "fieldElements": 1,
+      "description": "KDC holder commitment: H(\"zkc/binding\", credentialBindingKey)"
+    },
+    {
+      "index": 1,
+      "offset": 1,
+      "name": "claim_binding",
+      "abiType": "Field",
+      "fieldElements": 1,
+      "description": "Claim binding over (jurisdictionSetRoot, membershipType, requiredClaimType, proofContext, timestamp)"
+    },
+    {
+      "index": 2,
+      "offset": 2,
+      "name": "proof_context",
+      "abiType": "Field",
+      "fieldElements": 1,
+      "description": "Deployment/profile-defined replay context hash; MUST be non-zero"
+    },
+    {
+      "index": 3,
+      "offset": 3,
+      "name": "jurisdiction_set_root",
+      "abiType": "Field",
+      "fieldElements": 1,
+      "description": "Poseidon2 Merkle root of the verifier's jurisdiction set (allowed set for inclusion, blocked set for exclusion)"
+    },
+    {
+      "index": 4,
+      "offset": 4,
+      "name": "membership_type",
+      "abiType": "u8",
+      "fieldElements": 1,
+      "description": "0 = inclusion (member of allowed set), 1 = exclusion (sorted-neighbor non-membership in blocked set)"
+    },
+    {
+      "index": 5,
+      "offset": 5,
+      "name": "accumulator_root",
+      "abiType": "Field",
+      "fieldElements": 1,
+      "description": "Issuer-published Poseidon2 Merkle non-revocation accumulator root"
+    },
+    {
+      "index": 6,
+      "offset": 6,
+      "name": "accumulator_epoch",
+      "abiType": "u64",
+      "fieldElements": 1,
+      "description": "Epoch of the accumulator root used by the witness"
+    },
+    {
+      "index": 7,
+      "offset": 7,
+      "name": "timestamp",
+      "abiType": "u64",
+      "fieldElements": 1,
+      "description": "Proof freshness timestamp; must lie inside the credential validity period"
+    },
+    {
+      "index": 8,
+      "offset": 8,
+      "name": "current_epoch",
+      "abiType": "u64",
+      "fieldElements": 1,
+      "description": "Verifier-supplied current accumulator epoch; lag above MAX_EPOCH_LAG (10) rejects"
+    },
+    {
+      "index": 9,
+      "offset": 9,
+      "name": "issuer_public_key_x",
+      "abiType": "[u8; 32]",
+      "fieldElements": 32,
+      "description": "Trusted issuer secp256k1 public key x-coordinate, big-endian bytes"
+    },
+    {
+      "index": 10,
+      "offset": 41,
+      "name": "issuer_public_key_y",
+      "abiType": "[u8; 32]",
+      "fieldElements": 32,
+      "description": "Trusted issuer secp256k1 public key y-coordinate, big-endian bytes"
+    }
+  ]
+}

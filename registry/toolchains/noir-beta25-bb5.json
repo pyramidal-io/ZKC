@@ -1,0 +1,10 @@
+{
+  "version": "zkc:toolchain-provenance:v1",
+  "id": "successor",
+  "nargo": "1.0.0-beta.25",
+  "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+  "noircSourceCommit": "75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+  "bb": "5.0.0",
+  "nargoRelease": "https://github.com/noir-lang/noir/releases/tag/v1.0.0-beta.25",
+  "bbRelease": "https://github.com/AztecProtocol/aztec-packages/releases/tag/v5.0.0"
+}

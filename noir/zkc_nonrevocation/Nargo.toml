@@ -1,0 +1,9 @@
+[package]
+name = "zkc_nonrevocation"
+type = "lib"
+authors = ["ZKC Protocol"]
+compiler_version = ">=1.0.0"
+description = "Accumulator-based non-revocation primitives for ZKC predicate circuits"
+
+[dependencies]
+zkc_lib = { path = "../zkc_lib" }

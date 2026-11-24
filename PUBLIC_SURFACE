@@ -1,0 +1,22 @@
+# PUBLIC_SURFACE — overlay destinations added to the pyramidal-io/ZKC snapshot.
+#
+# Every non-comment line names one exact public-only overlay file. Public CI
+# fails closed unless the tracked tree is exactly the disjoint union of this
+# manifest and PUBLIC_ALLOWLIST.
+.github/doc-link-exceptions.txt
+.github/scripts/check-public-surface.sh
+.github/workflows/ci.yml
+.gitleaks.toml
+CONTRIBUTING.md
+PUBLIC_SURFACE
+README.md
+SECURITY.md
+docs/public-snapshot-provenance.md
+noir/Nargo.toml
+noir/toolchains.json
+registry/reviews/zkc-jurisdiction-2.0.0.md
+registry/reviews/zkc-jurisdiction-3.0.0.md
+registry/reviews/zkc-jurisdiction-4.0.0.md
+registry/reviews/zkc-jurisdiction-5.0.0.md
+registry/reviews/zkc-remaining-predicates-3.0.0.md
+registry/reviews/zkc-remaining-predicates-4.0.0.md

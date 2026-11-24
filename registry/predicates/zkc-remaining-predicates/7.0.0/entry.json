@@ -1,0 +1,37 @@
+{
+  "version": "zkc:registry:predicate-entry:v1",
+  "predicateId": "zkc-remaining-predicates",
+  "entryVersion": "7.0.0",
+  "title": "Combined hardened linkable remaining predicates (v7)",
+  "author": {
+    "name": "ZKC reference implementation",
+    "url": "https://github.com/pyramidal-io/ZKC"
+  },
+  "proofTypes": [
+    "zkc:proof:accreditation:v7",
+    "zkc:proof:source:v7",
+    "zkc:proof:tax:v7",
+    "zkc:proof:sanctions:v7"
+  ],
+  "circuit": {
+    "name": "zkc_remaining_predicates_v7",
+    "scheme": "ultra_honk",
+    "sourcePath": "noir/zkc_remaining_predicates_v7/src/main.nr",
+    "sourceSha256": "1468f44d73a9d6d292bf87543d70a7840f2de2a3fc348cece9f0280c63d7ee5c",
+    "acirHash": "sha256:088f281392ba2c46c2e04ec53196db33d7081416cf3d450e6c18102d63926495",
+    "vkHash": "0x237dfbfb4f48eff691412cbf3dcfe48bafc92d62ab9e399d9d53cfb9e1552ccd",
+    "vkSha256": "sha256:ce85e4d62b8bf3e9b9b0b568b5b31223e47a1a446d147a3babbfb8cb30d87834"
+  },
+  "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v7.json",
+  "review": {
+    "status": "self_attested",
+    "evidence": [
+      "registry/reviews/zkc-remaining-predicates-7.0.0.md"
+    ],
+    "reviewedAt": null
+  },
+  "activation": {
+    "activatedAt": null,
+    "supersedes": "zkc-remaining-predicates@6.0.0"
+  }
+}

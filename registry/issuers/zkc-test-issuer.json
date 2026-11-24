@@ -1,0 +1,45 @@
+{
+  "version": "zkc:issuer-metadata:v1",
+  "issuerId": "zkc:issuer:zkc-test-issuer",
+  "displayName": "ZKC Well-Known Test Issuer (TEST-ONLY, key material is public)",
+  "signingKeys": [
+    {
+      "keyId": "zkc-test-issuer-v1",
+      "scheme": "ECDSA_SECP256K1",
+      "publicKey": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+      "notBefore": "2026-01-01T00:00:00Z",
+      "notAfter": "2030-01-01T00:00:00Z"
+    }
+  ],
+  "supportedSchemas": [
+    {
+      "schemaId": "zkc:cred:kyc:v1",
+      "credentialType": "zkc:cred:kyc:v1",
+      "proofType": "zkc:proof:kyc:v1"
+    },
+    {
+      "schemaId": "zkc:cred:jurisdiction:v1",
+      "credentialType": "zkc:cred:jurisdiction:v1",
+      "proofType": "zkc:proof:jurisdiction:v3"
+    }
+  ],
+  "adapter": {
+    "verifySubjectEndpoint": "https://issuer.test.zkc.dev/v1/verify_subject",
+    "bindHolderCommitmentEndpoint": "https://issuer.test.zkc.dev/v1/bind_holder_commitment",
+    "issueCredentialEndpoint": "https://issuer.test.zkc.dev/v1/issue_credential",
+    "publishRevocationHandleEndpoint": "https://issuer.test.zkc.dev/v1/publish_revocation_handle"
+  },
+  "revocation": {
+    "accumulatorId": "zkc-test-issuer-active-credentials",
+    "type": "POSEIDON2_MERKLE_ACTIVE_SET",
+    "currentRoot": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "currentEpoch": 0,
+    "maxEpochLag": 10,
+    "updateEndpoint": "https://issuer.test.zkc.dev/v1/revocation/updates"
+  },
+  "serviceLevels": {
+    "maxRevocationPropagationSeconds": 3600,
+    "expectedIssuanceLatencySeconds": 30,
+    "metadataCacheSeconds": 300
+  }
+}

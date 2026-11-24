@@ -1,0 +1,62 @@
+{
+  "version": "zkc-conformance:v1",
+  "profile": "presentation",
+  "description": "ZKC presentation-profile conformance vectors (design §8 matrix). Every vector is asserted through the REAL holder→verifier pipeline (holder generate → verifier verify → assert), never a hand-built envelope. Scoped vectors use an authenticated APR so the holder derives scope_id itself; cross-scope uses two distinct verifier APRs (A and B). TEST-ONLY key material throughout; the concrete pipeline lives in conformance/presentation_vectors.py.",
+  "vectors": [
+    {
+      "id": "presentation-anonymous-unlinkable",
+      "kind": "positive",
+      "asserts": "Two anonymous presentations of the same credential share NO holder-derived public value: presentation_pseudonym and scope_id are both the anonymous sentinel 0 in each, and no credential-derived public input repeats across the two envelopes (all other public inputs are session-scoped or ecosystem-wide). Both verify."
+    },
+    {
+      "id": "presentation-scoped-cross-scope",
+      "kind": "negative",
+      "asserts": "Same credential presented under two DISTINCT verifier scopes (authenticated APR A and APR B) yields DIFFERENT pseudonyms: the equality join on presentation_pseudonym fails, and no holder-derived public value repeats across the two scoped envelopes."
+    },
+    {
+      "id": "presentation-scoped-within-scope",
+      "kind": "positive",
+      "asserts": "Same credential, same scope (same verifier APR), two separate sessions yields the SAME pseudonym (repeat recognition within one scope), while the session-scoped inputs (claim_binding/proof_context/timestamp) differ."
+    },
+    {
+      "id": "presentation-scoped-rotation",
+      "kind": "positive",
+      "asserts": "Same scope policy under two different rotation epochs yields DIFFERENT scope_ids and therefore DIFFERENT pseudonyms; rotation lives in scope_id construction, not the pseudonym derivation."
+    },
+    {
+      "id": "presentation-profile-replay",
+      "kind": "negative",
+      "asserts": "A scoped proof entry spliced under an anonymous presentationBinding (profile⇔shape inconsistency) is rejected with PROFILE_MISMATCH."
+    },
+    {
+      "id": "presentation-scope-mismatch",
+      "kind": "negative",
+      "asserts": "A scoped proof derived from verifier A's authenticated identity, presented to authenticated verifier B, recomputes to a different scope_id and is rejected with SCOPE_MISMATCH."
+    },
+    {
+      "id": "presentation-profile-not-accepted",
+      "kind": "negative",
+      "asserts": "A v2 envelope whose profile is not in the verifier's accepted_profiles (a scoped envelope to a verifier accepting only {anonymous}) is rejected with PROFILE_NOT_ACCEPTED. v1/linkable envelopes are NOT gated by default."
+    },
+    {
+      "id": "presentation-determinism-invariant",
+      "kind": "invariant",
+      "asserts": "Across two anonymous presentations of the same credential in different sessions, the ONLY equal public-input values are ecosystem-wide/issuer inputs (accumulator_root, accumulator_epoch, current_epoch, issuer_public_key_x, issuer_public_key_y) plus the anonymous sentinels (presentation_pseudonym==0, scope_id==0); claim_binding DIFFERS because its preimage retains proof_context and timestamp, which differ across sessions."
+    },
+    {
+      "id": "presentation-anonymous-composite-pooling",
+      "kind": "negative",
+      "asserts": "A conjunctive request (KYC AND accreditation) answered by splicing Alice's anonymous KYC proof with Bob's anonymous accreditation proof -- neither holder could answer alone -- is rejected with UNBOUND_COMPOSITE on verify() and verify_authenticated(): an anonymous presentation binds its proofs to no single holder."
+    },
+    {
+      "id": "presentation-session-scoped-composite",
+      "kind": "positive",
+      "asserts": "One holder answers both conjuncts under the scoped profile with scopePolicy \"session\": every proof carries the same in-circuit pseudonym, and the envelope verifies under the authenticated APR. Splicing two holders' proofs under the same session scope is rejected with PROFILE_MISMATCH (their pseudonyms differ)."
+    },
+    {
+      "id": "presentation-session-scope-unlinkable",
+      "kind": "positive",
+      "asserts": "Two sessions of the same holder with the same verifier under scopePolicy \"session\" derive different scopeIds and different pseudonyms (the scope is unique to each APR's context value), so the same-holder binding within a session adds no cross-session linkability; both verify."
+    }
+  ]
+}

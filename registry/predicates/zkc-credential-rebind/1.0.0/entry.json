@@ -1,0 +1,39 @@
+{
+  "version": "zkc:registry:predicate-entry:v1",
+  "predicateId": "zkc-credential-rebind",
+  "entryVersion": "1.0.0",
+  "title": "Credential rebinding predicate",
+  "author": {
+    "name": "ZKC reference implementation",
+    "url": "https://github.com/pyramidal-io/ZKC"
+  },
+  "proofTypes": [
+    "zkc:proof:credential_rebind:v1"
+  ],
+  "circuit": {
+    "name": "zkc_credential_rebind",
+    "scheme": "ultra_honk",
+    "sourcePath": "noir/zkc_credential_rebind/src/main.nr",
+    "sourceSha256": "4e0413e7b5683a14865d0d567e166f7ad0d2918e54fae709b49617079e91f9d4",
+    "acirHash": "sha256:1350bd355d5a80a450a5b8dbf392a16965e64159ccc92ff0dd9766106dfd44c0",
+    "vkHash": "0x0d654a844d1830aa8c994ef1f4931c4bd2d6877d2f630115724e899019f937b7",
+    "vkSha256": "sha256:ec83a95b5aa8f470c4f8b9e159119c4cd56c9f8bf577d82cd1c644a1c08b15b8"
+  },
+  "publicInputEncoder": "schemas/public-inputs/zkc_credential_rebind.json",
+  "review": {
+    "status": "deprecated",
+    "evidence": [
+      "registry/reviews/zkc-credential-rebind-1.0.0.md",
+      "registry/reviews/zkc-credential-rebind-v1-v4-deprecation.md"
+    ],
+    "reviewedAt": null
+  },
+  "activation": {
+    "activatedAt": "2026-06-11T00:00:00Z",
+    "supersedes": null
+  },
+  "deprecation": {
+    "reason": "The statement authenticates no credential: its holder commitment, credential id, issuer/schema hashes and validity bounds are unconstrained prover witnesses and no issuer signature or accumulator membership is verified. Holders never generate it and verifiers reject it (UNAUTHENTICATED_CREDENTIAL). Use the issuer-authenticated zkc:proof:credential_rebind:v3 successor.",
+    "deprecatedAt": "2026-09-06T00:00:00Z"
+  }
+}

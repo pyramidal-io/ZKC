@@ -1,0 +1,4 @@
+# Resolved target of the canonical specification's intentional link to the
+# excluded historical-specification archive. No other broken-link exception is
+# part of the reviewed public surface.
+docs/archive

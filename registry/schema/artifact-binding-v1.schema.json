@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zkc.dev/registry/schema/artifact-binding-v1.schema.json",
+  "title": "ZKC Predicate Artifact Binding v1",
+  "description": "Immutable association between one predicate source identity, one pinned toolchain/build profile, and one ACIR/verification-key pair. No binding is preferred or canonical.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "predicateId", "entryVersion", "sourceId", "bindingId", "circuit", "scheme", "toolchain", "buildProfile", "artifactManifestKey", "artifacts", "acirHash", "vkHash", "vkSha256", "review", "activation"],
+  "properties": {
+    "version": {"const": "zkc:registry:artifact-binding:v1"},
+    "predicateId": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+    "entryVersion": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "sourceId": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "bindingId": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "circuit": {"type": "string", "pattern": "^zkc_[a-z0-9_]+$"},
+    "scheme": {"const": "ultra_honk"},
+    "toolchain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "nargo", "noirc", "bb", "provenance"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+        "nargo": {"type": "string", "minLength": 1},
+        "noirc": {"type": "string", "minLength": 1},
+        "bb": {"type": "string", "minLength": 1},
+        "provenance": {"$ref": "#/$defs/filePin"}
+      }
+    },
+    "buildProfile": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+    "artifactManifestKey": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._/@-]*$"},
+    "artifacts": {"type": "object", "additionalProperties": false, "required": ["acir", "vk"], "properties": {"acir": {"type": "string", "minLength": 1}, "vk": {"type": "string", "minLength": 1}}},
+    "acirHash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "vkHash": {"type": "string", "pattern": "^0x[0-9a-f]{64}$"},
+    "vkSha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "review": {"$ref": "#/$defs/review"},
+    "activation": {"type": "object", "additionalProperties": false, "required": ["activatedAt", "supersedes"], "properties": {"activatedAt": {"type": ["string", "null"], "format": "date-time"}, "supersedes": {"type": ["string", "null"], "pattern": "^sha256:[0-9a-f]{64}$"}}},
+    "deprecation": {"$ref": "#/$defs/deprecation"}
+  },
+  "$defs": {
+    "filePin": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}}},
+    "review": {"type": "object", "additionalProperties": false, "required": ["status", "evidence", "reviewedAt"], "properties": {"status": {"enum": ["draft", "in_review", "self_attested", "reviewed", "deprecated"]}, "evidence": {"type": "array", "items": {"type": "string", "minLength": 1}}, "reviewedAt": {"type": ["string", "null"], "format": "date-time"}}},
+    "deprecation": {"type": "object", "additionalProperties": false, "required": ["reason", "deprecatedAt"], "properties": {"reason": {"type": "string", "minLength": 1}, "deprecatedAt": {"type": "string", "format": "date-time"}}}
+  }
+}

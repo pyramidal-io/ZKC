@@ -1,0 +1,165 @@
+{
+  "version": "zkc-test-vectors:v1",
+  "toolchain": {
+    "nargo": "1.0.0-beta.21",
+    "poseidon_dependency": {
+      "repo": "https://github.com/noir-lang/poseidon",
+      "tag": "v0.3.0",
+      "commit": "0880c371e88e583d39515fd3f877538657ac41eb"
+    }
+  },
+  "field_encoding": "0x-prefixed 32-byte big-endian BN254 scalar field element",
+  "domains": {
+    "zkc_credential": "0x3010b194aeae94550e7a48d065d9dc931108c2d15136704bf4ad78eae07f0e26",
+    "zkc_binding": "0x12b8b6de2c8fc6b63102155d15c31799845a1f360ab0df6266284bde48e3a93f",
+    "zkc_claim": "0x0b929496a58d5a41cba03a3302b92f5d7781ad2913285aec7a5431647c50c9d4"
+  },
+  "poseidon2_kats": {
+    "poseidon2_1_2": "0x038682aa1cb5ae4e0a3f13da432a95c77c5c111f6f030faf9cad641ce1ed7383",
+    "poseidon3_1_2_3": "0x23864adb160dddf590f1d3303683ebcb914f828e2635f6e85a32f0a1aecd3dd8",
+    "poseidon4_1_2_3_4": "0x130bf204a32cac1f0ace56c78b731aa3809f06df2731ebcf6b3464a15788b1b9"
+  },
+  "kdc_a6_seed_42": {
+    "master_seed": "0x000000000000000000000000000000000000000000000000000000000000002a",
+    "credential_binding_key": "0x2245b9bc69578eaf6d9975c8f8dab4e9d434080bb0f38fb602f11c5074220105",
+    "holder_commitment": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf"
+  },
+  "claim_binding_examples": {
+    "compute_claim_binding_2_1_31_777_12345": "0x08e653806388ce8f7484bbe88e58b05bed1f59b4f20ff1728a73ead636de2864",
+    "compute_claim_binding_4_1_2_0_false_777_12345": "0x2658922a90baec88a41740805ebf83e157d143e7c34ce27c97d459a01321e617",
+    "compute_claim_binding_4_1_2_0_true_777_12345": "0x0929a36b948240f87847bc2d150d7c86aa593e67750ba4d1447842b0aedde520"
+  },
+  "profile_digest_v2": {
+    "description": "Current v7/v8 profile credential digest. Both validity boundaries are issuer-authenticated; v1-v6 retain the historical digest separately.",
+    "holder_commitment": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+    "credential_id": "0x000000000000000000000000000000000000000000000000000000000000002a",
+    "predicate_type": 4,
+    "claim_0": "0x0000000000000000000000000000000000000000000000000000000000000096",
+    "claim_1": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "valid_from": 1000,
+    "valid_until": 2000000,
+    "digest": "0x05d25816247d59c3a8c94d5f875a9d6a1ba12a866cf42ae5d0db0e1f844f5bea"
+  },
+  "selective_disclosure_v1": {
+    "description": "Issuer-authoritative attribute-set credential and typed disclosure transcript. The transcript uses the AFP-KDC v1.0.3 current-registry zkc/claim domain followed by an explicit proof-type field; its field value and Poseidon2 profile remain immutable AFP-KDC v1.0.2 evidence.",
+    "registered_domain": "0x0b929496a58d5a41cba03a3302b92f5d7781ad2913285aec7a5431647c50c9d4",
+    "credential_type_field": "0x01b0dd23c6a0f5754a8d19e2e3d8c292388f0e201e5fc5516a65727d507154ec",
+    "transcript_type_field": "0x165a29b8f7c035a2c39ed869e761a3aea32763e512b4918b8b3856a7fe427a08",
+    "inputs": {
+      "holder_commitment": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+      "credential_id": "0x00000000000000000000000000000000000000000000000000000000000002c3",
+      "credential_attribute_count": 4,
+      "credential_attributes": [
+        0,
+        11,
+        22,
+        33,
+        0,
+        0,
+        0,
+        0
+      ],
+      "credential_expires_at": 2000000,
+      "disclosed_flags": [
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "disclosed_attributes": [
+        0,
+        0,
+        22,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "proof_context": "0x0000000000000000000000000000000000000000000000000000000000000309",
+      "timestamp": 12345
+    },
+    "credential_digest": "0x09b79189d09dfe779f5a3acb11a275cde4431197df5bd9d9b0214eac6cca5ac6",
+    "claim_binding": "0x2ccad330d85549090a62b55134e43ecf9e1027b9ed3e2fa7b96b302307787063",
+    "negative_cases": [
+      "self-chosen-unissued-value",
+      "altered-position",
+      "hidden-zero-substitution",
+      "wrong-issuer-accumulator-state",
+      "cross-context-replay"
+    ]
+  },
+  "credential_rebind_seed_42_to_99": {
+    "old_holder_commitment": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+    "new_credential_binding_key": "0x062c4390e12a851c21fcd86d13f3f823cdfe520007d641f107af2ccb31a74100",
+    "new_holder_commitment": "0x1cad89fa2a3fc0eae6c094c9949aa7342838cc220f500e993563a2c16ab7e938",
+    "claim_binding": "0x2a4c18b8312ee5e45735df6f4e8bb2e56805da612036f3b8f64ff34025e528c5"
+  },
+  "purpose_bound_context_v1": {
+    "description": "purposeTag + purpose-bound context preimage KATs (spec 2.2). Off-circuit (not in zkc_lib.nr); reproduced by the reference crypto and re-checked in validate_zkc_vectors.py.",
+    "domain_zkc_purpose": "0x2efb6bb9f75d0391d484733fada7a178b0f1b29a4e48b6e9672c0ebe3de16f17",
+    "domain_zkc_context": "0x215e018458623e55aad0c8f295d2a81f32969c3d5a73379f2c48c17741e19117",
+    "inputs": {
+      "profile": "zkc:context:purpose-bound:v1",
+      "verifierId": "verifier.example",
+      "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+      "canonicalPurpose": "zkc:purpose:access-gate",
+      "timestamp": 1700000000
+    },
+    "purpose_tag": "0x1d063f8c75a811ad8886aa1f8c6aa2859db7f445dc3314fd501e32ff511feb8c",
+    "context_value": "0x13cba36c487a97eee44dbae4d644c261af9c32168a79da9e378a53a05f25e470"
+  },
+  "presentation_profiles": {
+    "description": "presentation-profile derivation KATs (design 2/8). domains are pinned; DOMAIN_ZKC_PRESENTATION_SCOPE is proven in-circuit and cross-checked against noir/zkc_lib/src/lib.nr, while verifier_identity and scope_id are native-only and re-checked by recomputation in validate_zkc_vectors.py.",
+    "domains": {
+      "zkc_presentation_scope": "0x2f7a94a38bb647d343fc7abc74b6466fe1eb566d71c185cc9537b7e768c466ae",
+      "zkc_scope": "0x1c13e7e880b812ceb034a7c8fe48b3cd9a518882ef7609b603e8a0db1c2cf817",
+      "zkc_verifier_id": "0x10e11268c72c7b6cf64a0e9e71423f21e8bb294ec386eda6f3b3e3abdf0d0357"
+    },
+    "scoped_seed_42": {
+      "verifier_pubkey_sec1": "0x021111111111111111111111111111111111111111111111111111111111111111",
+      "verifier_identity": "0x01a4e7e3d2aac6963455647d4f8c92d980bbaf5c0e8795fc02cd49cb8e4bfc6a",
+      "scope_policy": "verifier",
+      "rotation_epoch": 0,
+      "scope_id": "0x2632aaf1e51423d6eab07aa448f245c91490f34a5b3e6744e47f584fab96c4d5",
+      "presentation_pseudonym": "0x22dfa15cbccd21643c573b1123e29ab0ba4a7463347e376a7fba2f5832f03ae2"
+    }
+  },
+  "credential_rebind_attestation_v1": {
+    "description": "Issuer-signed zkc:attestation:credential-rebind:v1 transcript (spec section 7.4, ADR 0004) and the successor claim bindings. digest = Poseidon2(Poseidon4(DOMAIN_ZKC_CLAIM, attestation_type_field, issuer_id_hash, schema_id_hash), Poseidon4(holder_commitment, credential_id, valid_from, valid_until)); the issuer signs the 32-byte big-endian digest with the well-known TEST-ONLY issuer key (tools/zkc_test_issuer.py).",
+    "inputs": {
+      "issuer_id": "did:zkc:test-issuer",
+      "schema_id": "zkc:cred:kyc:v1",
+      "master_seed": 42,
+      "new_master_seed": 99,
+      "credential_id": "0x000000000000000000000000000000000000000000000000000000000000002a",
+      "valid_from": 1000,
+      "valid_until": 2000000,
+      "proof_context": "0x0000000000000000000000000000000000000000000000000000000000000309",
+      "timestamp": 12345,
+      "scope_id": "0x0000000000000000000000000000000000000000000000000000000000000007"
+    },
+    "attestation_version": "zkc:attestation:credential-rebind:v1",
+    "attestation_type_field": "0x26917ee154a7287e2e9b947c5ad1324ebbaee4d38c1c3c734684c1ded13588ea",
+    "issuer_id_hash": "0x1ab792b1777260d562c10d81aa74a124c5438335065138da7e2a2e7a63b0a911",
+    "schema_id_hash": "0x2625058d446eada5e7efa789c1356af408e40278649d8504c2088c764e85d5e2",
+    "holder_commitment": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+    "new_holder_commitment": "0x1cad89fa2a3fc0eae6c094c9949aa7342838cc220f500e993563a2c16ab7e938",
+    "digest": "0x246ce8deb13dab22a5c07b087024aa58dd42732cd17003f17a003e94638639f7",
+    "issuer_public_key_x": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+    "issuer_public_key_y": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+    "issuer_signature": "0x6bb09bbd7326297971e24cc9c874f723090914e07d6738599083fce34bf6b9ec6185f609c5ae7c2726f7fb1442cbddd03c3fb226b6299687afbc69ad088ab3f7",
+    "linkable_proof_type": "zkc:proof:credential_rebind:v3",
+    "linkable_statement_domain": "0x14d9d998a4b387195d0525f53b070cda77f50c2f608aa29b83b48c760307424a",
+    "linkable_claim_binding": "0x2a4c18b8312ee5e45735df6f4e8bb2e56805da612036f3b8f64ff34025e528c5",
+    "scoped_proof_type": "zkc:proof:rebind:v4",
+    "scoped_statement_domain": "0x232f4619affdc2a4cf3f9ca0b83eb769204a396a6731b868324a5f1422829e0e",
+    "old_presentation_pseudonym": "0x02af556638a0909bdfbda62d1c6302c6d6d6a69a312cf4a97e2e431a9636d71e",
+    "new_presentation_pseudonym": "0x1e444759df97c15a4abd1039ed8f0a8c37ca650c7af5bc20f2911171958f469e",
+    "scoped_claim_binding": "0x2cc9e01540a215af8701690a65f9e48b92c0a28635f0ead06f34582bc7f4dc04"
+  }
+}

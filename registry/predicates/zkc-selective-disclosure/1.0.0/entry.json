@@ -1,0 +1,20 @@
+{
+  "version": "zkc:registry:predicate-entry:v1",
+  "predicateId": "zkc-selective-disclosure",
+  "entryVersion": "1.0.0",
+  "title": "Issuer-authoritative fixed-position selective disclosure",
+  "author": {"name": "ZKC reference implementation", "url": "https://github.com/pyramidal-io/ZKC"},
+  "proofTypes": ["zkc:proof:selective_disclosure:v1"],
+  "circuit": {
+    "name": "zkc_selective_disclosure_v1",
+    "scheme": "ultra_honk",
+    "sourcePath": "noir/zkc_selective_disclosure_v1/src/main.nr",
+    "sourceSha256": "6a22f2103b0e929f599b89ae72c8a41deef3d879960dcadc0874f637a352b36d",
+    "acirHash": "sha256:12a4a0b39d7623064ad758a780267b56f37fedb23e562ad332c89aa77340f024",
+    "vkHash": "0x0ede5e5d985150e922242b9933d5a14e62f93a571c96ab8e213b64ca394331de",
+    "vkSha256": "sha256:7ac08c24a96e4edadac472ecceff12d7b410f595eec6db23ef577aabfa1c239e"
+  },
+  "publicInputEncoder": "schemas/public-inputs/zkc_selective_disclosure_v1.json",
+  "review": {"status": "draft", "evidence": []},
+  "activation": {"activatedAt": null, "supersedes": null}
+}

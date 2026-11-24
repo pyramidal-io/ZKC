@@ -1,0 +1,31 @@
+{
+  "version": "zkc:registry:artifact-binding:v1",
+  "predicateId": "zkc-kyc",
+  "entryVersion": "4.0.0",
+  "sourceId": "sha256:599455bede9dac4b1ffbc99395888b5e93b8b70a5fce88484a64ee3e147b69a8",
+  "bindingId": "sha256:c70f1a6b29935f65b9ec21cdf654c170deaa4ac26f615f7bb8195625d9b0be49",
+  "circuit": "zkc_kyc_v2",
+  "scheme": "ultra_honk",
+  "toolchain": {
+    "id": "historical",
+    "nargo": "1.0.0-beta.21",
+    "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+    "bb": "5.0.0-nightly.20260324",
+    "provenance": {"path": "registry/toolchains/noir-beta21-bb5-nightly.json", "sha256": "sha256:7b232a013dccc9dd3e3b551aaf43d7eb14eccffaf9286c1aa103be5fcafbae15"}
+  },
+  "buildProfile": "release",
+  "artifactManifestKey": "zkc-kyc@4.0.0/historical",
+  "artifacts": {
+    "acir": "artifacts/bindings/zkc-kyc/4.0.0/historical/zkc_kyc_v2.json",
+    "vk": "artifacts/bindings/zkc-kyc/4.0.0/historical/vk"
+  },
+  "acirHash": "sha256:a098cc2d1734bfba57bd25246544756dd9d6e447bf68263b9485ba33561cb74e",
+  "vkHash": "0x04e8324ea9929304be72301eff8aa6eeccde52b3693f6a1e13a95f5f42fc9de7",
+  "vkSha256": "sha256:6bb00d605dfed440b45a3de9d8cef434dc79af02843c6aa2f3bde713b1508eae",
+  "review": {
+    "status": "self_attested",
+    "evidence": ["registry/reviews/zkc-kyc-4.0.0-v2-adoption.md"],
+    "reviewedAt": null
+  },
+  "activation": {"activatedAt": "2026-09-10T00:00:00Z", "supersedes": null}
+}

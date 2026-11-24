@@ -1,0 +1,10 @@
+{
+  "format": "zka:protocol-family:snapshot-lock:v1",
+  "epoch": "zka:protocol-family:2026-11-19.1",
+  "canonical_repository": "pyramidal-io/ZKA.dev",
+  "canonical_commit": "69bc82ac6685e91f23e386dfdacab78dd1e8cfbc",
+  "manifest_sha256": "sha256:aa5b0202fc972239dbae4cbaecacad66aa2a9db5a722f48da6c9ae7fd107a33b",
+  "schema_sha256": "sha256:f5f0b956bab54656e961efe84c498e256a2c2db89e38fc786afa5117c36d8e3b",
+  "vectors_sha256": "sha256:67fb6895510e9008fe1442bdb10f4250f1c2be63e2622e81b6e75069ff422a17",
+  "validator_sha256": "sha256:b66781b0cb95c138c80ff78fa8cdba189101f4fb0df4c133971592db4819469d"
+}

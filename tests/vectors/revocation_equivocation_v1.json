@@ -1,0 +1,362 @@
+{
+  "version": "zkc:revocation-equivocation-vectors:v1",
+  "description": "Deterministic public launch vectors for authenticated revocation, cold-start locality, durable continuity, and isolated split views.",
+  "issuerId": "zkc:issuer:sandbox",
+  "accumulatorId": "sandbox-active-credentials",
+  "keys": {
+    "primary": {
+      "keyId": "sandbox-2026-01",
+      "publicKey": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86"
+    },
+    "rotation": {
+      "keyId": "sandbox-2026-rotation",
+      "publicKey": "0xabb8495764358da734c5f4dd997ed8ca992471380636cca4370ec951e9213b5c9a69febf2f2d9573e91edd9caa0fd72fb7a5e43e6dd0865b4d68c544989f3798"
+    }
+  },
+  "announcements": {
+    "genesis": {
+      "key": "primary",
+      "announcement": {
+        "version": "zkc:epoch-announcement:v3",
+        "accumulatorId": "sandbox-active-credentials",
+        "root": "0x0b59baa35b9dc267744f0ccb4e3b0255c1fc512460d91130c6bc19fb2668568d",
+        "epoch": 0,
+        "announcedAt": 1770000000,
+        "maxEpochLag": 10,
+        "signingKeyId": "sandbox-2026-01",
+        "previousAnnouncementHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "signature": "0x9c043ddcece1b826b317035ae6d4b7f5a733af5ca077f0fada9aa2114c6a926c64502eebe46349cb86fd992b15487d4e21216ea10f9571ac99c339ab1d79f469"
+      },
+      "transcriptHex": "0x5a4b432d45504f43482d414e4e4f554e43454d454e54000300197a6b633a65706f63682d616e6e6f756e63656d656e743a7633001a73616e64626f782d6163746976652d63726564656e7469616c730b59baa35b9dc267744f0ccb4e3b0255c1fc512460d91130c6bc19fb2668568d00000000000000000000000069800e80000000000000000a000f73616e64626f782d323032362d30310000000000000000000000000000000000000000000000000000000000000000",
+      "signingDigest": "0x2fce96976387ffe79db12bb50c7188cb47dd9964478aa7d62583879f5056b02b",
+      "announcementHash": "0x04b554e2c6dc27d6c5ddaed03e149394ece8c084e31a0be9fed9d302d3d0482a"
+    },
+    "issuance": {
+      "key": "primary",
+      "announcement": {
+        "version": "zkc:epoch-announcement:v3",
+        "accumulatorId": "sandbox-active-credentials",
+        "root": "0x27d840e571c276670dffbff62952a41b9fae9f4a246eca41c83cdb8b8c33e303",
+        "epoch": 1,
+        "announcedAt": 1770000000,
+        "maxEpochLag": 10,
+        "signingKeyId": "sandbox-2026-01",
+        "previousAnnouncementHash": "0x04b554e2c6dc27d6c5ddaed03e149394ece8c084e31a0be9fed9d302d3d0482a",
+        "signature": "0x00937dad201cf9f99fe90948d0f5b05d5e0eeb9b20430a714dd4f3c7e4417c4c6f66e9ca4f88da01d57ce82c1aa1693bf340009ddf4dc671d12287f416705356"
+      },
+      "transcriptHex": "0x5a4b432d45504f43482d414e4e4f554e43454d454e54000300197a6b633a65706f63682d616e6e6f756e63656d656e743a7633001a73616e64626f782d6163746976652d63726564656e7469616c7327d840e571c276670dffbff62952a41b9fae9f4a246eca41c83cdb8b8c33e30300000000000000010000000069800e80000000000000000a000f73616e64626f782d323032362d303104b554e2c6dc27d6c5ddaed03e149394ece8c084e31a0be9fed9d302d3d0482a",
+      "signingDigest": "0x0f58769cce9ae6ca388001c3423df003a486decc9124987668731c2eeb61e354",
+      "announcementHash": "0xe988b25561fa8b3cbee1037e4dbeb632624dd972ef227333aac76b593f7cf2c0"
+    },
+    "revocation": {
+      "key": "primary",
+      "announcement": {
+        "version": "zkc:epoch-announcement:v3",
+        "accumulatorId": "sandbox-active-credentials",
+        "root": "0x0b59baa35b9dc267744f0ccb4e3b0255c1fc512460d91130c6bc19fb2668568d",
+        "epoch": 2,
+        "announcedAt": 1770000000,
+        "maxEpochLag": 10,
+        "signingKeyId": "sandbox-2026-01",
+        "previousAnnouncementHash": "0xe988b25561fa8b3cbee1037e4dbeb632624dd972ef227333aac76b593f7cf2c0",
+        "signature": "0xdde6564fa80663d58efd32e70da904994ecdc3cf4aadc01f93154f8bb39d20001c3f9ad0199457faad57fcc1d70323b0a5253a1f276d5eecf7b1d63a065a60ee"
+      },
+      "transcriptHex": "0x5a4b432d45504f43482d414e4e4f554e43454d454e54000300197a6b633a65706f63682d616e6e6f756e63656d656e743a7633001a73616e64626f782d6163746976652d63726564656e7469616c730b59baa35b9dc267744f0ccb4e3b0255c1fc512460d91130c6bc19fb2668568d00000000000000020000000069800e80000000000000000a000f73616e64626f782d323032362d3031e988b25561fa8b3cbee1037e4dbeb632624dd972ef227333aac76b593f7cf2c0",
+      "signingDigest": "0x2b96e02ddb7828a327d3068f6b8266225604970a8f3370f0c76d15d19117fe5c",
+      "announcementHash": "0xb1e920882e30f0a96b40b45c5df77128b7999390105b01387f0b8db4d4a4e8a2"
+    },
+    "postRevocationIssuance": {
+      "key": "primary",
+      "announcement": {
+        "version": "zkc:epoch-announcement:v3",
+        "accumulatorId": "sandbox-active-credentials",
+        "root": "0x1f9c51d7f945b369bd34286d8d5844a69bee71946975f84557a9a87d6cc0c853",
+        "epoch": 3,
+        "announcedAt": 1770000000,
+        "maxEpochLag": 10,
+        "signingKeyId": "sandbox-2026-01",
+        "previousAnnouncementHash": "0xb1e920882e30f0a96b40b45c5df77128b7999390105b01387f0b8db4d4a4e8a2",
+        "signature": "0x5d84676d514c617cab8b0e909e557b770bad0d83b6d594900077aaf05d4cfd341f2bd0bf67a9133efeb2fd81f47a5fe74ff0582adf32b497c6bf0dd019c02a3d"
+      },
+      "transcriptHex": "0x5a4b432d45504f43482d414e4e4f554e43454d454e54000300197a6b633a65706f63682d616e6e6f756e63656d656e743a7633001a73616e64626f782d6163746976652d63726564656e7469616c731f9c51d7f945b369bd34286d8d5844a69bee71946975f84557a9a87d6cc0c85300000000000000030000000069800e80000000000000000a000f73616e64626f782d323032362d3031b1e920882e30f0a96b40b45c5df77128b7999390105b01387f0b8db4d4a4e8a2",
+      "signingDigest": "0x24d13a3e4197d0ee5ab062de18bd2e0f29b7b65f8fd9a82bede5516090cea72f",
+      "announcementHash": "0x03600aff38ca2c8eabbe8805eb3af362c6a0181cdbd18bcdffdfaaaf3f571cb3"
+    },
+    "forkB": {
+      "key": "primary",
+      "announcement": {
+        "version": "zkc:epoch-announcement:v3",
+        "accumulatorId": "sandbox-active-credentials",
+        "root": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "epoch": 2,
+        "announcedAt": 1770000000,
+        "maxEpochLag": 10,
+        "signingKeyId": "sandbox-2026-01",
+        "previousAnnouncementHash": "0xe988b25561fa8b3cbee1037e4dbeb632624dd972ef227333aac76b593f7cf2c0",
+        "signature": "0x915f3ed72b2133fa455c87c63182bee0e0f581b639e4c2eb369e426ad70b8be74ae13b59ce5e50e8cfc6dbe91606cf50f9514a9660ea8505b57b5be02ef02a30"
+      },
+      "transcriptHex": "0x5a4b432d45504f43482d414e4e4f554e43454d454e54000300197a6b633a65706f63682d616e6e6f756e63656d656e743a7633001a73616e64626f782d6163746976652d63726564656e7469616c73000000000000000000000000000000000000000000000000000000000000000100000000000000020000000069800e80000000000000000a000f73616e64626f782d323032362d3031e988b25561fa8b3cbee1037e4dbeb632624dd972ef227333aac76b593f7cf2c0",
+      "signingDigest": "0x0c3d49f1b9705496e37e59a185fa8dc795fcfc51ddce31e5e15d0fe1b8ff6fec",
+      "announcementHash": "0x4a138f9c311a4370b69fe07ed0406d69d1c6c6ed7cd88a5bbc54f9937e29287d"
+    },
+    "forkBSuccessor": {
+      "key": "primary",
+      "announcement": {
+        "version": "zkc:epoch-announcement:v3",
+        "accumulatorId": "sandbox-active-credentials",
+        "root": "0x0000000000000000000000000000000000000000000000000000000000000002",
+        "epoch": 3,
+        "announcedAt": 1770000000,
+        "maxEpochLag": 10,
+        "signingKeyId": "sandbox-2026-01",
+        "previousAnnouncementHash": "0x4a138f9c311a4370b69fe07ed0406d69d1c6c6ed7cd88a5bbc54f9937e29287d",
+        "signature": "0xef3e0c9ba3d4dffebc18d29ee7fc3f36584b4de03d1c3229920d58ab3e6867d227c8bc453ed9c39fb88742786f67cef5c3ddc06e8b7de040eab239264b4ea28e"
+      },
+      "transcriptHex": "0x5a4b432d45504f43482d414e4e4f554e43454d454e54000300197a6b633a65706f63682d616e6e6f756e63656d656e743a7633001a73616e64626f782d6163746976652d63726564656e7469616c73000000000000000000000000000000000000000000000000000000000000000200000000000000030000000069800e80000000000000000a000f73616e64626f782d323032362d30314a138f9c311a4370b69fe07ed0406d69d1c6c6ed7cd88a5bbc54f9937e29287d",
+      "signingDigest": "0x1e9dc630410179d5ee50621ae134148b3dba5d2451d13f877e4ac2ac8176c2b2",
+      "announcementHash": "0xf2627a94b99cc395afac0d2dd1ed20dd4ce2bd929d62e9fa9424ef312260f536"
+    },
+    "authorizedRotation": {
+      "key": "rotation",
+      "announcement": {
+        "version": "zkc:epoch-announcement:v3",
+        "accumulatorId": "sandbox-active-credentials",
+        "root": "0x0000000000000000000000000000000000000000000000000000000000000003",
+        "epoch": 3,
+        "announcedAt": 1770000000,
+        "maxEpochLag": 10,
+        "signingKeyId": "sandbox-2026-rotation",
+        "previousAnnouncementHash": "0xb1e920882e30f0a96b40b45c5df77128b7999390105b01387f0b8db4d4a4e8a2",
+        "signature": "0x8bafc0b876136e10eebb00865016db9d83f24e8f3d00e55bce1a14646726a34e5472e5598b6dd1b0912c94c2f11bda2cbd931372d027546d316dae1fcb30db24"
+      },
+      "transcriptHex": "0x5a4b432d45504f43482d414e4e4f554e43454d454e54000300197a6b633a65706f63682d616e6e6f756e63656d656e743a7633001a73616e64626f782d6163746976652d63726564656e7469616c73000000000000000000000000000000000000000000000000000000000000000300000000000000030000000069800e80000000000000000a001573616e64626f782d323032362d726f746174696f6eb1e920882e30f0a96b40b45c5df77128b7999390105b01387f0b8db4d4a4e8a2",
+      "signingDigest": "0x16635e199eaf70d0af7e4704932cb22de75d0908d5c06de7ea39d5a49d9fa6f2",
+      "announcementHash": "0x199f70cf77dc108478c30cff9054a138e32038354957b104fa77acda42d51387"
+    }
+  },
+  "chains": {
+    "lifecycle": [
+      "genesis",
+      "issuance",
+      "revocation",
+      "postRevocationIssuance"
+    ],
+    "isolatedViewA": [
+      "genesis",
+      "issuance",
+      "revocation",
+      "postRevocationIssuance"
+    ],
+    "isolatedViewB": [
+      "genesis",
+      "issuance",
+      "forkB",
+      "forkBSuccessor"
+    ],
+    "authorizedRotation": [
+      "genesis",
+      "issuance",
+      "revocation",
+      "authorizedRotation"
+    ]
+  },
+  "metadata": {
+    "version": "zkc:issuer-metadata:v2",
+    "head": "revocation",
+    "signedEqualityFields": {
+      "accumulatorId": "accumulatorId",
+      "currentRoot": "root",
+      "currentEpoch": "epoch",
+      "maxEpochLag": "maxEpochLag"
+    }
+  },
+  "coldStart": {
+    "candidate": "issuance",
+    "acceptedAs": "local-checkpoint-only",
+    "globalConsistencyEstablished": false
+  },
+  "splitViewResidual": {
+    "viewA": "isolatedViewA",
+    "viewB": "isolatedViewB",
+    "individuallyConsistent": true,
+    "detectedOnlyAfterCheckpointComparison": true,
+    "expectedErrorCode": "CHAIN_FORKED"
+  },
+  "rotation": {
+    "candidate": "authorizedRotation",
+    "acceptedPinnedKeys": [
+      "sandbox-2026-01",
+      "sandbox-2026-rotation"
+    ],
+    "rejectedPinnedKeys": [
+      "sandbox-2026-01"
+    ]
+  },
+  "tamperCases": [
+    {
+      "field": "version",
+      "value": "zkc:epoch-announcement:v2"
+    },
+    {
+      "field": "accumulatorId",
+      "value": "attacker-selected-accumulator"
+    },
+    {
+      "field": "root",
+      "value": "0x0000000000000000000000000000000000000000000000000000000000000004"
+    },
+    {
+      "field": "epoch",
+      "value": 9
+    },
+    {
+      "field": "announcedAt",
+      "value": 1770000001
+    },
+    {
+      "field": "maxEpochLag",
+      "value": 9
+    },
+    {
+      "field": "signingKeyId",
+      "value": "sandbox-2026-rotation"
+    },
+    {
+      "field": "previousAnnouncementHash",
+      "value": "0x1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    {
+      "field": "signature",
+      "value": "0xdde6564fa80663d58efd32e70da904994ecdc3cf4aadc01f93154f8bb39d20001c3f9ad0199457faad57fcc1d70323b0a5253a1f276d5eecf7b1d63a065a60ef"
+    }
+  ],
+  "signatureMalleation": {
+    "base": "revocation",
+    "successor": "postRevocationIssuance",
+    "highS": {
+      "announcement": {
+        "version": "zkc:epoch-announcement:v3",
+        "accumulatorId": "sandbox-active-credentials",
+        "root": "0x0b59baa35b9dc267744f0ccb4e3b0255c1fc512460d91130c6bc19fb2668568d",
+        "epoch": 2,
+        "announcedAt": 1770000000,
+        "maxEpochLag": 10,
+        "signingKeyId": "sandbox-2026-01",
+        "previousAnnouncementHash": "0xe988b25561fa8b3cbee1037e4dbeb632624dd972ef227333aac76b593f7cf2c0",
+        "signature": "0xdde6564fa80663d58efd32e70da904994ecdc3cf4aadc01f93154f8bb39d2000e3c0652fe66ba80552a8033e28fcdc4e1589a2c787db414ec8208852c9dbe053"
+      },
+      "transcriptHex": "0x5a4b432d45504f43482d414e4e4f554e43454d454e54000300197a6b633a65706f63682d616e6e6f756e63656d656e743a7633001a73616e64626f782d6163746976652d63726564656e7469616c730b59baa35b9dc267744f0ccb4e3b0255c1fc512460d91130c6bc19fb2668568d00000000000000020000000069800e80000000000000000a000f73616e64626f782d323032362d3031e988b25561fa8b3cbee1037e4dbeb632624dd972ef227333aac76b593f7cf2c0",
+      "announcementHash": "0x2824e239f0943cc99055a2768d936abf7c022a2ef460133695c7a36717500174"
+    },
+    "resignedSameTranscript": {
+      "announcement": {
+        "version": "zkc:epoch-announcement:v3",
+        "accumulatorId": "sandbox-active-credentials",
+        "root": "0x0b59baa35b9dc267744f0ccb4e3b0255c1fc512460d91130c6bc19fb2668568d",
+        "epoch": 2,
+        "announcedAt": 1770000000,
+        "maxEpochLag": 10,
+        "signingKeyId": "sandbox-2026-01",
+        "previousAnnouncementHash": "0xe988b25561fa8b3cbee1037e4dbeb632624dd972ef227333aac76b593f7cf2c0",
+        "signature": "0xd0726f80017f07fac8a25de0b78e7d38f9665bab76c8c2d4ecbef72a904a42102ebab87ec5ca21bc4799eab00a5a94affeee4c7e1210fc76c9dea2f1fad86d21"
+      },
+      "transcriptHex": "0x5a4b432d45504f43482d414e4e4f554e43454d454e54000300197a6b633a65706f63682d616e6e6f756e63656d656e743a7633001a73616e64626f782d6163746976652d63726564656e7469616c730b59baa35b9dc267744f0ccb4e3b0255c1fc512460d91130c6bc19fb2668568d00000000000000020000000069800e80000000000000000a000f73616e64626f782d323032362d3031e988b25561fa8b3cbee1037e4dbeb632624dd972ef227333aac76b593f7cf2c0",
+      "announcementHash": "0xbeb068159198da0fbb228ab13d56a514a1b10a411c9fff9b21a443a8d0fc1755"
+    },
+    "expectedErrorCode": "ANNOUNCEMENT_AUTHENTICATION_FAILED",
+    "retainsEvidence": false
+  },
+  "liveness": {
+    "head": "postRevocationIssuance",
+    "revokedBy": "revocation",
+    "observedAt": 1770007200,
+    "refusalCheckedAt": 1770000060,
+    "valid": {
+      "key": "primary",
+      "statement": {
+        "version": "zkc:epoch-liveness:v1",
+        "accumulatorId": "sandbox-active-credentials",
+        "epoch": 3,
+        "headHash": "0x03600aff38ca2c8eabbe8805eb3af362c6a0181cdbd18bcdffdfaaaf3f571cb3",
+        "issuedAt": 1770007200,
+        "signingKeyId": "sandbox-2026-01",
+        "signature": "0xd9d77ee4368d94eb99144cd45f3ac4632e76e69c1eb257d1945a5548d29e87c156a4c055ec93bf06cadc5766971f1ff2a6b3aecd61e01c86a5624e07928b6fa3"
+      },
+      "transcriptHex": "0x5a4b432d45504f43482d4c4956454e455353000100157a6b633a65706f63682d6c6976656e6573733a7631001a73616e64626f782d6163746976652d63726564656e7469616c73000000000000000303600aff38ca2c8eabbe8805eb3af362c6a0181cdbd18bcdffdfaaaf3f571cb30000000069802aa0000f73616e64626f782d323032362d3031",
+      "signingDigest": "0x28d3b64f4ae7436b021cfb1851109e920011fd9ef85d3ed8ba92a5b8112603f0"
+    },
+    "otherHead": {
+      "key": "primary",
+      "statement": {
+        "version": "zkc:epoch-liveness:v1",
+        "accumulatorId": "sandbox-active-credentials",
+        "epoch": 2,
+        "headHash": "0xb1e920882e30f0a96b40b45c5df77128b7999390105b01387f0b8db4d4a4e8a2",
+        "issuedAt": 1770000060,
+        "signingKeyId": "sandbox-2026-01",
+        "signature": "0x6dcbd89d7718b3f1972509b1bc9d49ed503bede9ab1e4bc130e23316f76f7519018e7f3b2e3edd00a8899ac69f533b18d4025211a1e7ce95957b62d33911f433"
+      },
+      "transcriptHex": "0x5a4b432d45504f43482d4c4956454e455353000100157a6b633a65706f63682d6c6976656e6573733a7631001a73616e64626f782d6163746976652d63726564656e7469616c730000000000000002b1e920882e30f0a96b40b45c5df77128b7999390105b01387f0b8db4d4a4e8a20000000069800ebc000f73616e64626f782d323032362d3031",
+      "signingDigest": "0x0a7630d5303728f5944daa43932a3b91edce21825ed3440fad2c524cc27d467b"
+    },
+    "unpinnedSigner": {
+      "key": "rotation",
+      "statement": {
+        "version": "zkc:epoch-liveness:v1",
+        "accumulatorId": "sandbox-active-credentials",
+        "epoch": 3,
+        "headHash": "0x03600aff38ca2c8eabbe8805eb3af362c6a0181cdbd18bcdffdfaaaf3f571cb3",
+        "issuedAt": 1770000060,
+        "signingKeyId": "sandbox-2026-rotation",
+        "signature": "0x81b91beed34d078e052abf596f6f1d3f7b6e4dc0b595ee0600509f9168459c7472c44c9a493f7084a2ffdaf2501cd166c8aa274064c9f97af2f502122bf0afb4"
+      },
+      "transcriptHex": "0x5a4b432d45504f43482d4c4956454e455353000100157a6b633a65706f63682d6c6976656e6573733a7631001a73616e64626f782d6163746976652d63726564656e7469616c73000000000000000303600aff38ca2c8eabbe8805eb3af362c6a0181cdbd18bcdffdfaaaf3f571cb30000000069800ebc001573616e64626f782d323032362d726f746174696f6e",
+      "signingDigest": "0x18deb82c5155b119eb40be4a1f4863d71740d693c3006e8ee71053183b3ad621"
+    },
+    "tamperCases": [
+      {
+        "field": "version",
+        "value": "zkc:epoch-liveness:v2"
+      },
+      {
+        "field": "accumulatorId",
+        "value": "attacker-selected-accumulator"
+      },
+      {
+        "field": "epoch",
+        "value": 4
+      },
+      {
+        "field": "headHash",
+        "value": "0xb1e920882e30f0a96b40b45c5df77128b7999390105b01387f0b8db4d4a4e8a2"
+      },
+      {
+        "field": "issuedAt",
+        "value": 1770007201
+      },
+      {
+        "field": "signingKeyId",
+        "value": "sandbox-2026-rotation"
+      },
+      {
+        "field": "signature",
+        "value": "0xd9d77ee4368d94eb99144cd45f3ac4632e76e69c1eb257d1945a5548d29e87c156a4c055ec93bf06cadc5766971f1ff2a6b3aecd61e01c86a5624e07928b6fa2"
+      }
+    ],
+    "policy": {
+      "maxAnnouncementAgeSeconds": 3600,
+      "maxClockSkewSeconds": 300,
+      "worstCaseRevocationLatencySeconds": 3900
+    },
+    "expected": {
+      "staleWithoutLiveness": true,
+      "servedEpochs": [
+        3
+      ],
+      "otherHeadErrorCode": "LIVENESS_HEAD_MISMATCH",
+      "unpinnedSignerErrorCode": "ANNOUNCEMENT_AUTHENTICATION_FAILED",
+      "changesCheckpoint": false,
+      "retainsEvidence": false
+    }
+  }
+}

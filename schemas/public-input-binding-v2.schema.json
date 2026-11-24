@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zkc.dev/schemas/public-input-binding-v2.schema.json",
+  "title": "ZKC Public Input Binding Classification v2",
+  "description": "Per-field request-binding classification for a ZKC circuit's public inputs. This additive v2 contract preserves the v1 bound/derived/free vocabulary and permits a free scalar Field to declare `pinnedBy: param:<camelName>` as an optional exact request equality filter. When the parameter is present the verifier MUST compare it to the public input; when absent the input remains free. A pin MUST name exactly the entry's canonical camelName and is never an attestation claim.",
+  "type": "object",
+  "required": ["version", "circuit", "encoder", "bindings"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": { "const": "zkc:public-input-bindings:v2" },
+    "circuit": { "type": "string", "pattern": "^zkc_[a-z0-9_]+$" },
+    "encoder": { "type": "string", "pattern": "^schemas/public-inputs/zkc_[a-z0-9_]+\\.json$" },
+    "predicateTypes": { "type": "object" },
+    "bindings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "camelName", "class"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+          "camelName": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
+          "class": { "type": "string", "pattern": "^(bound|derived|free)$" },
+          "source": { "type": "string" },
+          "check": { "type": "string", "pattern": "^(equals|member_of|policy_range)$" },
+          "group": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+          "from": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string" }
+          },
+          "pinnedBy": {
+            "type": "string",
+            "pattern": "^param:[a-z][a-zA-Z0-9]*$"
+          },
+          "justification": { "type": "string" },
+          "note": { "type": "string" }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "class": { "const": "bound" } } },
+            "then": {
+              "required": ["source"],
+              "not": { "anyOf": [{ "required": ["from"] }, { "required": ["pinnedBy"] }, { "required": ["justification"] }] }
+            }
+          },
+          {
+            "if": { "properties": { "class": { "const": "derived" } } },
+            "then": {
+              "required": ["from", "note"],
+              "not": {
+                "anyOf": [
+                  { "required": ["source"] },
+                  { "required": ["justification"] },
+                  { "required": ["check"] },
+                  { "required": ["group"] },
+                  { "required": ["pinnedBy"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": { "properties": { "class": { "const": "free" } } },
+            "then": {
+              "required": ["justification"],
+              "not": {
+                "anyOf": [
+                  { "required": ["source"] },
+                  { "required": ["from"] },
+                  { "required": ["check"] },
+                  { "required": ["group"] }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

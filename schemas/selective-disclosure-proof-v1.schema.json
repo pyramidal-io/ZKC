@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zkc.dev/schemas/selective-disclosure-proof-v1.schema.json",
+  "title": "ZKC issuer-authoritative selective-disclosure proof entry v1",
+  "description": "Type-specific proof entry carried in a zkc:proof:v2 presentation envelope. Consumers verify it through ZKC and do not reimplement issuer signature or accumulator logic.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["proofType", "proof", "publicInputs", "principalConsent"],
+  "properties": {
+    "proofType": {"const": "zkc:proof:selective_disclosure:v1"},
+    "proof": {"type": "string", "minLength": 1},
+    "principalConsent": {"const": true},
+    "publicInputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "presentation_pseudonym",
+        "scope_id",
+        "claim_binding",
+        "proof_context",
+        "accumulator_root",
+        "accumulator_epoch",
+        "timestamp",
+        "current_epoch",
+        "issuer_public_key_x",
+        "issuer_public_key_y",
+        "credential_attribute_count",
+        "disclosure_count",
+        "disclosed_flags",
+        "disclosed_attributes"
+      ],
+      "properties": {
+        "presentation_pseudonym": {"$ref": "#/$defs/field"},
+        "scope_id": {"$ref": "#/$defs/field"},
+        "claim_binding": {"$ref": "#/$defs/field"},
+        "proof_context": {"$ref": "#/$defs/nonzeroField"},
+        "accumulator_root": {"$ref": "#/$defs/field"},
+        "accumulator_epoch": {"type": "integer", "minimum": 0, "maximum": 18446744073709551615},
+        "timestamp": {"type": "integer", "minimum": 1, "maximum": 18446744073709551615},
+        "current_epoch": {"type": "integer", "minimum": 0, "maximum": 18446744073709551615},
+        "issuer_public_key_x": {"$ref": "#/$defs/field"},
+        "issuer_public_key_y": {"$ref": "#/$defs/field"},
+        "credential_attribute_count": {"type": "integer", "minimum": 1, "maximum": 8},
+        "disclosure_count": {"type": "integer", "minimum": 1, "maximum": 8},
+        "disclosed_flags": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {"type": "boolean"}
+        },
+        "disclosed_attributes": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {"$ref": "#/$defs/field"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "field": {"type": "string", "pattern": "^0x[0-9a-f]{64}$"},
+    "nonzeroField": {
+      "type": "string",
+      "pattern": "^0x(?!0{64}$)[0-9a-f]{64}$"
+    }
+  }
+}

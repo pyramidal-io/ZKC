@@ -1,0 +1,92 @@
+{
+  "$schema": "https://zkc.dev/schemas/public-input-binding-v1.schema.json",
+  "version": "zkc:public-input-bindings:v1",
+  "circuit": "zkc_jurisdiction_v5",
+  "encoder": "schemas/public-inputs/zkc_jurisdiction_v5.json",
+  "bindings": [
+    {
+      "name": "presentation_pseudonym",
+      "camelName": "presentationPseudonym",
+      "class": "bound",
+      "source": "envelope:presentationBinding.pseudonym \u2014 MUST equal the envelope presentation binding pseudonym; an anonymous-profile envelope omits that key and the expected value is the sentinel 0."
+    },
+    {
+      "name": "scope_id",
+      "camelName": "scopeId",
+      "class": "bound",
+      "source": "envelope:presentationBinding.scopeId \u2014 MUST equal the envelope binding scope; under the scoped profile the verifier MUST additionally recompute the scope from its APR-authenticated identity and declared scopePolicy; an anonymous-profile envelope omits that key and the expected value is the sentinel 0."
+    },
+    {
+      "name": "claim_binding",
+      "camelName": "claimBinding",
+      "class": "derived",
+      "from": [
+        "public:jurisdiction_set_root",
+        "public:membership_type",
+        "param:requiredClaimType",
+        "context:value",
+        "context:timestamp"
+      ],
+      "note": "compute_claim_binding_3(jurisdiction_set_root, membership_type, requiredClaimType, proof_context, timestamp); recomputed from the request-bound values, so it does not substitute for the direct set-root and membership-type comparisons."
+    },
+    {
+      "name": "proof_context",
+      "camelName": "proofContext",
+      "class": "bound",
+      "source": "context:value \u2014 MUST equal the authenticated request context hash for this presentation."
+    },
+    {
+      "name": "jurisdiction_set_root",
+      "camelName": "jurisdictionSetRoot",
+      "class": "bound",
+      "source": "param:jurisdictionSetRoot \u2014 for exclusion, MUST equal the root independently derived from the signed APR jurisdictionCanonicalSet; for inclusion, derive when the array is present, otherwise retain direct root binding. The resulting value MUST be compared directly with this public input."
+    },
+    {
+      "name": "membership_type",
+      "camelName": "membershipType",
+      "class": "bound",
+      "source": "param:membershipType \u2014 MUST equal the membership mode the request asked for (0 = inclusion, 1 = exclusion)."
+    },
+    {
+      "name": "accumulator_root",
+      "camelName": "accumulatorRoot",
+      "class": "bound",
+      "source": "policy:accumulatorState.roots[accumulatorEpoch] \u2014 MUST be the issuer-published non-revocation root the verifier's accumulator state records for the claimed epoch."
+    },
+    {
+      "name": "accumulator_epoch",
+      "camelName": "accumulatorEpoch",
+      "class": "bound",
+      "source": "policy:accumulatorState \u2014 MUST NOT lag the verifier's current epoch view by more than the policy epoch-lag bound, and MUST NOT be ahead of that view.",
+      "check": "policy_range"
+    },
+    {
+      "name": "timestamp",
+      "camelName": "timestamp",
+      "class": "bound",
+      "source": "context:timestamp \u2014 MUST equal the authenticated request context timestamp."
+    },
+    {
+      "name": "current_epoch",
+      "camelName": "currentEpoch",
+      "class": "bound",
+      "source": "policy:accumulatorState.currentEpoch \u2014 MUST equal the verifier's own current accumulator epoch view for the proof's issuer."
+    },
+    {
+      "name": "issuer_public_key_x",
+      "camelName": "issuerPublicKeyX",
+      "class": "bound",
+      "source": "policy:issuerAllowlist \u2014 the (x, y) key MUST be an exact member of the verifier trust policy's issuer allowlist, and the matched issuer MUST be trusted for this proof type.",
+      "check": "member_of",
+      "group": "issuer_public_key"
+    },
+    {
+      "name": "issuer_public_key_y",
+      "camelName": "issuerPublicKeyY",
+      "class": "bound",
+      "source": "policy:issuerAllowlist \u2014 checked together with issuer_public_key_x as one exact allowlist key.",
+      "check": "member_of",
+      "group": "issuer_public_key"
+    }
+  ]
+}

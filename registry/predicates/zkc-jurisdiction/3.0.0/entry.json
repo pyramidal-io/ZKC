@@ -1,0 +1,34 @@
+{
+  "version": "zkc:registry:predicate-entry:v1",
+  "predicateId": "zkc-jurisdiction",
+  "entryVersion": "3.0.0",
+  "title": "Jurisdiction membership predicate (adjacency-safe linkable profile)",
+  "author": {
+    "name": "ZKC reference implementation",
+    "url": "https://github.com/pyramidal-io/ZKC"
+  },
+  "proofTypes": [
+    "zkc:proof:jurisdiction:v3"
+  ],
+  "circuit": {
+    "name": "zkc_jurisdiction_v3",
+    "scheme": "ultra_honk",
+    "sourcePath": "noir/zkc_jurisdiction_v3/src/main.nr",
+    "sourceSha256": "120fec8012c65f0eb27bec1bff8b59e5fa60279388140d7c190ef4a72697cc35",
+    "acirHash": "sha256:da430ad909d5eb00b72068a98abed9491f42d527cb2f89696b5162d416610351",
+    "vkHash": "0x0939ec9f81ec599a8ef45d66954d420ed7aaccf8641c1bed6de5a48c4611a749",
+    "vkSha256": "sha256:2e69689b02dbb992a93ea68ba476ab6de929e94e55bb462a805d537721f1da47"
+  },
+  "publicInputEncoder": "schemas/public-inputs/zkc_jurisdiction_v3.json",
+  "review": {
+    "status": "self_attested",
+    "evidence": [
+      "registry/reviews/zkc-jurisdiction-3.0.0.md"
+    ],
+    "reviewedAt": null
+  },
+  "activation": {
+    "activatedAt": "2026-08-27T23:36:28Z",
+    "supersedes": "zkc-jurisdiction@2.0.0"
+  }
+}

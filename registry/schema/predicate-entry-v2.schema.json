@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zkc.dev/registry/schema/predicate-entry-v2.schema.json",
+  "title": "ZKC Predicate Source Entry v2",
+  "description": "Immutable source-and-public-input-contract identity. Artifact bindings are independent child records; this entry defines no preferred binding.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "predicateId", "entryVersion", "title", "author", "proofTypes", "sourceId", "source", "publicInputContract", "review", "supersedes", "adoptsV1"],
+  "properties": {
+    "version": {"const": "zkc:registry:predicate-entry:v2"},
+    "predicateId": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+    "entryVersion": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "title": {"type": "string", "minLength": 1},
+    "author": {"$ref": "#/$defs/author"},
+    "proofTypes": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^zkc:proof:[a-z0-9._-]+:v[0-9]+$"}},
+    "sourceId": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["circuit", "packageRoot", "files"],
+      "properties": {
+        "circuit": {"type": "string", "pattern": "^zkc_[a-z0-9_]+$"},
+        "packageRoot": {"type": "string", "pattern": "^noir/[a-z0-9_]+$"},
+        "files": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/filePin"}}
+      }
+    },
+    "publicInputContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["encoder", "bindingSidecar", "bindingSchema"],
+      "properties": {
+        "encoder": {"$ref": "#/$defs/filePin"},
+        "bindingSidecar": {"$ref": "#/$defs/filePin"},
+        "bindingSchema": {"$ref": "#/$defs/filePin"}
+      }
+    },
+    "review": {"$ref": "#/$defs/review"},
+    "supersedes": {"type": ["string", "null"], "pattern": "^[a-z0-9][a-z0-9._-]*@[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "adoptsV1": {"type": ["string", "null"], "pattern": "^[a-z0-9][a-z0-9._-]*@[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "deprecation": {"$ref": "#/$defs/deprecation"}
+  },
+  "$defs": {
+    "author": {"type": "object", "additionalProperties": false, "required": ["name"], "properties": {"name": {"type": "string", "minLength": 1}, "url": {"type": "string", "minLength": 1}}},
+    "filePin": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}}},
+    "review": {"type": "object", "additionalProperties": false, "required": ["status", "evidence", "reviewedAt"], "properties": {"status": {"enum": ["draft", "in_review", "self_attested", "reviewed", "deprecated"]}, "evidence": {"type": "array", "items": {"type": "string", "minLength": 1}}, "reviewedAt": {"type": ["string", "null"], "format": "date-time"}}},
+    "deprecation": {"type": "object", "additionalProperties": false, "required": ["reason", "deprecatedAt"], "properties": {"reason": {"type": "string", "minLength": 1}, "deprecatedAt": {"type": "string", "format": "date-time"}}}
+  }
+}

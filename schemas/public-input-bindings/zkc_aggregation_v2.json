@@ -1,0 +1,66 @@
+{
+  "$schema": "https://zkc.dev/schemas/public-input-binding-v1.schema.json",
+  "version": "zkc:public-input-bindings:v1",
+  "circuit": "zkc_aggregation_v2",
+  "encoder": "schemas/public-inputs/zkc_aggregation_v2.json",
+  "bindings": [
+    {
+      "name": "aggregation_commitment",
+      "camelName": "aggregationCommitment",
+      "class": "derived",
+      "from": [
+        "context:value",
+        "public:presentation_pseudonym",
+        "public:input_proof_commitments",
+        "public:num_proofs",
+        "envelope:proofs",
+        "policy:registryCircuitForProofType"
+      ],
+      "note": "aggregate_commitments keyed on the presentation pseudonym instead of the v1 holder commitment; the verifier MUST recompute it from the envelope's component proofs and the registry-pinned circuit identities."
+    },
+    {
+      "name": "aggregated_claim_binding",
+      "camelName": "aggregatedClaimBinding",
+      "class": "derived",
+      "from": [
+        "public:aggregation_commitment",
+        "context:value"
+      ],
+      "note": "poseidon2(aggregation_commitment, context); the verifier MUST recompute it and reject on mismatch."
+    },
+    {
+      "name": "presentation_pseudonym",
+      "camelName": "presentationPseudonym",
+      "class": "bound",
+      "source": "envelope:presentationBinding.pseudonym \u2014 MUST equal the scoped envelope binding pseudonym and be non-zero: same-holder aggregation is a continuity claim, so anonymous proofs are not aggregable. Each component proof's own first public input MUST also equal it."
+    },
+    {
+      "name": "scope_id",
+      "camelName": "scopeId",
+      "class": "bound",
+      "source": "envelope:presentationBinding.scopeId \u2014 MUST equal the envelope binding scope and be non-zero: aggregation requires the scoped presentation profile."
+    },
+    {
+      "name": "context",
+      "camelName": "context",
+      "class": "bound",
+      "source": "context:value \u2014 MUST equal the authenticated request context hash for this presentation."
+    },
+    {
+      "name": "num_proofs",
+      "camelName": "numProofs",
+      "class": "bound",
+      "source": "envelope:proofs \u2014 MUST equal the number of component proofs the envelope aggregates (1..8); slots at or beyond it MUST carry zero commitments."
+    },
+    {
+      "name": "input_proof_commitments",
+      "camelName": "inputProofCommitments",
+      "class": "derived",
+      "from": [
+        "envelope:proofs",
+        "policy:registryCircuitForProofType"
+      ],
+      "note": "Each active slot MUST equal the commitment recomputed over that component proof's verification-key stand-in (derived from the registry-pinned circuit for the slot's proof type, not from the envelope), proof, public inputs, and proof type, under the deployment-defined packing (reference: python/zkc_holder/aggregation.py); inactive slots MUST be 0."
+    }
+  ]
+}

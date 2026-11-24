@@ -1,0 +1,21 @@
+{
+  "$schema": "https://zkc.dev/schemas/public-input-binding-v1.schema.json",
+  "version": "zkc:public-input-bindings:v1",
+  "circuit": "zkc_remaining_predicates_v8",
+  "encoder": "schemas/public-inputs/zkc_remaining_predicates_v8.json",
+  "predicateTypes": {"zkc:proof:accreditation:v8": 1, "zkc:proof:source:v8": 2, "zkc:proof:tax:v8": 3, "zkc:proof:sanctions:v8": 4},
+  "bindings": [
+    {"name":"presentation_pseudonym","camelName":"presentationPseudonym","class":"bound","source":"envelope:presentationBinding.pseudonym — MUST equal the envelope presentation binding pseudonym; an anonymous-profile envelope omits that key and the expected value is the sentinel 0."},
+    {"name":"scope_id","camelName":"scopeId","class":"bound","source":"envelope:presentationBinding.scopeId — MUST equal the envelope binding scope; under the scoped profile the verifier MUST additionally recompute the scope from its APR-authenticated identity and declared scopePolicy; an anonymous-profile envelope omits that key and the expected value is the sentinel 0."},
+    {"name":"claim_binding","camelName":"claimBinding","class":"derived","from":["public:predicate_type","param:required0","param:required1","param:flagRequired","context:value","context:timestamp"],"note":"compute_claim_binding_4(predicate_type, required_0, required_1, flag_required, proof_context, timestamp). flagRequired is an exact JSON boolean and defaults to false only when omitted. For non-accreditation meanings it MUST remain false. The preimage does NOT include set_root — recomputing this field never checks the set root."},
+    {"name":"proof_context","camelName":"proofContext","class":"bound","source":"context:value — MUST equal the authenticated request context hash for this presentation."},
+    {"name":"set_root","camelName":"setRoot","class":"bound","source":"param:setRoot — predicate-specific: MUST be 0 for accreditation; MUST bind directly for source-of-funds and tax-residency; for sanctions, MUST equal the root independently derived from the signed APR canonicalSet. The resulting value MUST be compared directly with this public input.","note":"NOT covered by the claim-binding preimage (predicate_type, required_0, required_1, flag_required, proof_context, timestamp). A compare routine built from that preimage instead of the pub list misses this field entirely, letting the prover choose its own membership set. It MUST be compared directly."},
+    {"name":"predicate_type","camelName":"predicateType","class":"bound","source":"map:predicateTypes[proofType] — MUST equal this document's predicateTypes entry for the proof entry's proofType. One verification key covers four predicate meanings; accepting a proof without pinning this selector lets a proof issued for one meaning satisfy a request for another."},
+    {"name":"accumulator_root","camelName":"accumulatorRoot","class":"bound","source":"policy:accumulatorState.roots[accumulatorEpoch] — MUST be the issuer-published non-revocation root the verifier's accumulator state records for the claimed epoch."},
+    {"name":"accumulator_epoch","camelName":"accumulatorEpoch","class":"bound","source":"policy:accumulatorState — MUST NOT lag the verifier's current epoch view by more than the policy epoch-lag bound, and MUST NOT be ahead of that view.","check":"policy_range"},
+    {"name":"timestamp","camelName":"timestamp","class":"bound","source":"context:timestamp — MUST equal the authenticated request context timestamp."},
+    {"name":"current_epoch","camelName":"currentEpoch","class":"bound","source":"policy:accumulatorState.currentEpoch — MUST equal the verifier's own current accumulator epoch view for the proof's issuer."},
+    {"name":"issuer_public_key_x","camelName":"issuerPublicKeyX","class":"bound","source":"policy:issuerAllowlist — the (x, y) key MUST be an exact member of the verifier trust policy's issuer allowlist, and the matched issuer MUST be trusted for this proof type.","check":"member_of","group":"issuer_public_key"},
+    {"name":"issuer_public_key_y","camelName":"issuerPublicKeyY","class":"bound","source":"policy:issuerAllowlist — checked together with issuer_public_key_x as one exact allowlist key.","check":"member_of","group":"issuer_public_key"}
+  ]
+}

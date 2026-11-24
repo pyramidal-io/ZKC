@@ -1,0 +1,9 @@
+[package]
+name = "zkc_aggregation"
+type = "bin"
+authors = ["ZKC Protocol"]
+compiler_version = ">=1.0.0"
+description = "ZKC proof aggregation circuit profile"
+
+[dependencies]
+zkc_lib = { path = "../zkc_lib" }

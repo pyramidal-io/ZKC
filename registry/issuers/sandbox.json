@@ -1,0 +1,40 @@
+{
+  "version": "zkc:issuer-metadata:v1",
+  "issuerId": "zkc:issuer:sandbox",
+  "displayName": "ZKC Sandbox Issuer",
+  "signingKeys": [
+    {
+      "keyId": "sandbox-2026-01",
+      "scheme": "ECDSA_SECP256K1",
+      "publicKey": "0x89512662b5902eb4663dbf428c62f45ce52cd31724c9792056b962d86c3e251a22551d772e86101f385714eb74ab27057a6392fe9e05b92d9877ecf3891fb372",
+      "notBefore": "2026-01-01T00:00:00Z",
+      "notAfter": "2027-01-01T00:00:00Z"
+    }
+  ],
+  "supportedSchemas": [
+    {
+      "schemaId": "zkc:cred:kyc:v1",
+      "credentialType": "zkc:cred:kyc:v1",
+      "proofType": "zkc:proof:kyc:v1"
+    }
+  ],
+  "adapter": {
+    "verifySubjectEndpoint": "https://issuer.sandbox.zkc.dev/v1/verify_subject",
+    "bindHolderCommitmentEndpoint": "https://issuer.sandbox.zkc.dev/v1/bind_holder_commitment",
+    "issueCredentialEndpoint": "https://issuer.sandbox.zkc.dev/v1/issue_credential",
+    "publishRevocationHandleEndpoint": "https://issuer.sandbox.zkc.dev/v1/publish_revocation_handle"
+  },
+  "revocation": {
+    "accumulatorId": "sandbox-active-credentials",
+    "type": "POSEIDON2_MERKLE_ACTIVE_SET",
+    "currentRoot": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+    "currentEpoch": 100,
+    "maxEpochLag": 10,
+    "updateEndpoint": "https://issuer.sandbox.zkc.dev/v1/revocation/updates"
+  },
+  "serviceLevels": {
+    "maxRevocationPropagationSeconds": 3600,
+    "expectedIssuanceLatencySeconds": 30,
+    "metadataCacheSeconds": 300
+  }
+}

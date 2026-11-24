@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zkc.dev/schemas/issuer-adapter.schema.json",
+  "title": "ZKC Issuer Adapter Messages",
+  "type": "object",
+  "definitions": {
+    "holderCommitment": {
+      "type": "string",
+      "pattern": "^0x[0-9a-f]{64}$"
+    },
+    "error": {
+      "type": "object",
+      "required": ["code", "message"],
+      "properties": {
+        "code": {
+          "enum": [
+            "UNSUPPORTED_SCHEMA",
+            "INVALID_HOLDER_CHALLENGE",
+            "UNTRUSTED_ISSUER_KEY",
+            "EXPIRED_ISSUER_KEY",
+            "REVOCATION_METADATA_UNAVAILABLE",
+            "STALE_ACCUMULATOR_WITNESS",
+            "PROVIDER_VERIFICATION_FAILED",
+            "RATE_LIMITED"
+          ]
+        },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

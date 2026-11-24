@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zkc.dev/schemas/public-input-encoder-v1.schema.json",
+  "title": "ZKC Public Input Encoder v1",
+  "description": "Machine-readable definition of the public input order for a ZKC Noir circuit. The order is the declaration order of `pub` parameters in the circuit's main() signature; arrays are flattened element-wise and every primitive (Field, uN, bool) occupies exactly one BN254 field element.",
+  "type": "object",
+  "required": ["version", "circuit", "proofSystem", "curve", "encoding", "totalFieldElements", "publicInputs"],
+  "properties": {
+    "version": { "const": "zkc:public-inputs:v1" },
+    "circuit": { "type": "string", "pattern": "^zkc_[a-z0-9_]+$" },
+    "proofTypes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": "^zkc:proof:[a-z0-9_]+:v[0-9]+$" }
+    },
+    "proofSystem": { "const": "ultra_honk" },
+    "curve": { "const": "BN254" },
+    "encoding": {
+      "type": "object",
+      "required": ["fieldElement", "order", "booleans", "integers", "byteArrays"],
+      "properties": {
+        "fieldElement": { "type": "string" },
+        "order": { "type": "string" },
+        "booleans": { "type": "string" },
+        "integers": { "type": "string" },
+        "byteArrays": { "type": "string" }
+      }
+    },
+    "totalFieldElements": { "type": "integer", "minimum": 1 },
+    "publicInputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["index", "offset", "name", "abiType", "fieldElements", "description"],
+        "properties": {
+          "index": { "type": "integer", "minimum": 0 },
+          "offset": { "type": "integer", "minimum": 0 },
+          "name": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+          "abiType": { "type": "string" },
+          "fieldElements": { "type": "integer", "minimum": 1 },
+          "description": { "type": "string" }
+        }
+      }
+    }
+  }
+}

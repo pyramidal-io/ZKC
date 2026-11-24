@@ -1,0 +1,78 @@
+{
+  "version": "zkc:holder-keys:v2",
+  "description": "TEST-ONLY known answers for holder receipt and audit-authorization keys (spec 5.6.1). Seed 42 is a public test seed; only public keys are pinned.",
+  "masterSeed": "0x000000000000000000000000000000000000000000000000000000000000002a",
+  "domains": {
+    "receipt": "zkc/receipt-key:v2",
+    "auditRoot": "zkc/audit-authorization-root:v2",
+    "auditKey": "zkc/audit-authorization-key:v2"
+  },
+  "cases": [
+    {
+      "kind": "linkable",
+      "verifierIdentity": "0x0000000000000000000000000000000000000000000000000000000000000001",
+      "publicKey": {
+        "x": "0xc428c234ec01531fc897f18ce7b74b5f78b0abfe144bbbd792db555532f8150d",
+        "y": "0x89627de17dfeb1be7c8492ebe1f0f3af445e1b1f5f08c3f6764c435738970370"
+      }
+    },
+    {
+      "kind": "linkable",
+      "verifierIdentity": "0x0000000000000000000000000000000000000000000000000000000000001234",
+      "publicKey": {
+        "x": "0x6238d01ec1daecead12571f9c0f9014c0fc764976e79cb63ad357d7f23997a54",
+        "y": "0x7ab9e0fc3fd12bfbacac18b3ce93fc436056966c5bc3156c0cf2ecf397d19ed5"
+      }
+    },
+    {
+      "kind": "scoped",
+      "scopeId": "0x0000000000000000000000000000000000000000000000000000000000000001",
+      "publicKey": {
+        "x": "0x907764ae51e19c47581cae3b536733a87dd37fc809d1d41df0393b760a054fdc",
+        "y": "0x93000e91362de48ed920ce50d6ca22705825284ae2247e2723fe73441acbdf90"
+      }
+    },
+    {
+      "kind": "scoped",
+      "scopeId": "0x0000000000000000000000000000000000000000000000000000000000abcdef",
+      "publicKey": {
+        "x": "0x0593a97817e16492a76955a0d03157258f72a3e2c978cd538a31e94b766c2fab",
+        "y": "0x0ccf79116ccfe6d6a2465e3abc090ca81c4a1f72737a48e23c41f31b3474627c"
+      }
+    },
+    {
+      "kind": "fresh",
+      "nonce": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "receiptDigest": "0x0000000000000000000000000000000000000000000000000000000000000001",
+      "publicKey": {
+        "x": "0xcdd9bc39201c38ef161427aa11180df0f0f03ccc8337d7cc5633241609092965",
+        "y": "0x860d607e0e6d0d7791211c06cbcdd8bc7ad0e4d32f03db2391c4c26cde048caa"
+      }
+    },
+    {
+      "kind": "fresh",
+      "nonce": "0x000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "receiptDigest": "0x0000000000000000000000000000000000000000000000000123456789abcdef",
+      "publicKey": {
+        "x": "0xf5c63454ab586596e20a7d414876c3d6e8939c5816fda9da667d2b5733e86adc",
+        "y": "0xfbcd7e6b440ea26b59994472aefbb81a10e8e3099a7b2860f14d3d2dce5435c7"
+      }
+    },
+    {
+      "kind": "audit-authorization",
+      "auditorKeyId": "did:zkc:auditor:acme-audit#key-1",
+      "publicKey": {
+        "x": "0x9aea128696c035cd93f5baddc16f29e9951e241b5d482118481a768201de860d",
+        "y": "0x1ed7761343e6c0ddf90c101295bb14610d2421f715ee5fe2b66b4d2ba43b4538"
+      }
+    },
+    {
+      "kind": "audit-authorization",
+      "auditorKeyId": "did:zkc:auditor:é#1",
+      "publicKey": {
+        "x": "0xfe30032b3bb40f3f077e977832f9af18514d686c4a164dea3b5bfe49da14a65b",
+        "y": "0x15294a10cb0b0577249916d00c62277b63bb96e3a050756446d6d7da836193be"
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://zkc.dev/schemas/public-input-binding-v1.schema.json",
+  "version": "zkc:public-input-bindings:v1",
+  "circuit": "zkc_kyc",
+  "encoder": "schemas/public-inputs/zkc_kyc.json",
+  "bindings": [
+    {
+      "name": "holder_commitment",
+      "camelName": "holderCommitment",
+      "class": "bound",
+      "source": "envelope:holderBinding.commitment \u2014 MUST equal the envelope holder binding shared by every proof in the presentation."
+    },
+    {
+      "name": "claim_binding",
+      "camelName": "claimBinding",
+      "class": "derived",
+      "from": [
+        "param:requiredLevel",
+        "param:requiredAttributes",
+        "context:value",
+        "context:timestamp"
+      ],
+      "note": "compute_claim_binding_2(requiredLevel, attribute_flags_hash(requiredAttributes), proof_context, timestamp); the verifier MUST recompute it from the request parameters and reject on mismatch."
+    },
+    {
+      "name": "proof_context",
+      "camelName": "proofContext",
+      "class": "bound",
+      "source": "context:value \u2014 MUST equal the authenticated request context hash for this presentation."
+    },
+    {
+      "name": "accumulator_root",
+      "camelName": "accumulatorRoot",
+      "class": "bound",
+      "source": "policy:accumulatorState.roots[accumulatorEpoch] \u2014 MUST be the issuer-published non-revocation root the verifier's accumulator state records for the claimed epoch."
+    },
+    {
+      "name": "accumulator_epoch",
+      "camelName": "accumulatorEpoch",
+      "class": "bound",
+      "source": "policy:accumulatorState \u2014 MUST NOT lag the verifier's current epoch view by more than the policy epoch-lag bound, and MUST NOT be ahead of that view.",
+      "check": "policy_range"
+    },
+    {
+      "name": "timestamp",
+      "camelName": "timestamp",
+      "class": "bound",
+      "source": "context:timestamp \u2014 MUST equal the authenticated request context timestamp."
+    },
+    {
+      "name": "current_epoch",
+      "camelName": "currentEpoch",
+      "class": "bound",
+      "source": "policy:accumulatorState.currentEpoch \u2014 MUST equal the verifier's own current accumulator epoch view for the proof's issuer."
+    },
+    {
+      "name": "issuer_public_key_x",
+      "camelName": "issuerPublicKeyX",
+      "class": "bound",
+      "source": "policy:issuerAllowlist \u2014 the (x, y) key MUST be an exact member of the verifier trust policy's issuer allowlist, and the matched issuer MUST be trusted for this proof type.",
+      "check": "member_of",
+      "group": "issuer_public_key"
+    },
+    {
+      "name": "issuer_public_key_y",
+      "camelName": "issuerPublicKeyY",
+      "class": "bound",
+      "source": "policy:issuerAllowlist \u2014 checked together with issuer_public_key_x as one exact allowlist key.",
+      "check": "member_of",
+      "group": "issuer_public_key"
+    }
+  ]
+}

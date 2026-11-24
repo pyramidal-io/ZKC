@@ -1,0 +1,11 @@
+[package]
+name = "zkc_kyc_v2"
+type = "bin"
+authors = ["ZKC Protocol"]
+compiler_version = ">=1.0.0"
+description = "ZKC-Core KYC predicate circuit (v2 presentation profiles)"
+
+[dependencies]
+zkc_lib = { path = "../zkc_lib" }
+zkc_issuer_sig = { path = "../zkc_issuer_sig" }
+zkc_nonrevocation = { path = "../zkc_nonrevocation" }

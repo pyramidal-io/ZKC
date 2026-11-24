@@ -1,0 +1,34 @@
+{
+  "version": "zkc:registry:predicate-entry:v1",
+  "predicateId": "zkc-aggregation",
+  "entryVersion": "1.0.0",
+  "title": "Proof aggregation predicate",
+  "author": {
+    "name": "ZKC reference implementation",
+    "url": "https://github.com/pyramidal-io/ZKC"
+  },
+  "proofTypes": [
+    "zkc:proof:aggregation:v1"
+  ],
+  "circuit": {
+    "name": "zkc_aggregation",
+    "scheme": "ultra_honk",
+    "sourcePath": "noir/zkc_aggregation/src/main.nr",
+    "sourceSha256": "3fe83940862b976d311e488c147d20324ff4e5d0db8a264a0f56b7e1c0107938",
+    "acirHash": "sha256:cbbd6dce6c0b7599b6eae6f2012812b47f354924b61d68275a8238719c89456e",
+    "vkHash": "0x14e8744ca3957bfa816e8e1e493efda89fbd4c59bb903b21b75e4cb12b87c79a",
+    "vkSha256": "sha256:c9e6e7bc8a71d39ea42c636fe75181373bb40b3505332ae6112ce6a31466efcf"
+  },
+  "publicInputEncoder": "schemas/public-inputs/zkc_aggregation.json",
+  "review": {
+    "status": "self_attested",
+    "evidence": [
+      "registry/reviews/zkc-aggregation-1.0.0.md"
+    ],
+    "reviewedAt": null
+  },
+  "activation": {
+    "activatedAt": "2026-06-11T00:00:00Z",
+    "supersedes": null
+  }
+}

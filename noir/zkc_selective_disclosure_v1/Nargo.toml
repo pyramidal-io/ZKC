@@ -1,0 +1,11 @@
+[package]
+name = "zkc_selective_disclosure_v1"
+type = "bin"
+authors = ["ZKC Protocol"]
+compiler_version = ">=1.0.0"
+description = "Issuer-authoritative selective disclosure with anonymous/scoped presentations"
+
+[dependencies]
+zkc_lib = { path = "../zkc_lib" }
+zkc_issuer_sig = { path = "../zkc_issuer_sig" }
+zkc_nonrevocation = { path = "../zkc_nonrevocation" }

@@ -1,0 +1,107 @@
+{
+  "$schema": "https://zkc.dev/schemas/public-input-binding-v1.schema.json",
+  "version": "zkc:public-input-bindings:v1",
+  "circuit": "zkc_selective_disclosure_v1",
+  "encoder": "schemas/public-inputs/zkc_selective_disclosure_v1.json",
+  "bindings": [
+    {
+      "name": "presentation_pseudonym",
+      "camelName": "presentationPseudonym",
+      "class": "bound",
+      "source": "envelope:presentationBinding.pseudonym \u2014 MUST equal the envelope presentation binding pseudonym; an anonymous-profile envelope omits that key and the expected value is the sentinel 0."
+    },
+    {
+      "name": "scope_id",
+      "camelName": "scopeId",
+      "class": "bound",
+      "source": "envelope:presentationBinding.scopeId \u2014 MUST equal the envelope binding scope; under the scoped profile the verifier MUST additionally recompute the scope from its APR-authenticated identity and declared scopePolicy; an anonymous-profile envelope omits that key and the expected value is the sentinel 0."
+    },
+    {
+      "name": "claim_binding",
+      "camelName": "claimBinding",
+      "class": "derived",
+      "from": [
+        "public:credential_attribute_count",
+        "public:disclosed_flags",
+        "public:disclosed_attributes",
+        "context:value",
+        "context:timestamp"
+      ],
+      "note": "compute_selective_disclosure_binding: a typed transcript folding flags and values as position-labelled pairs, so a disclosed zero differs from a hidden slot and moving a value changes the transcript."
+    },
+    {
+      "name": "proof_context",
+      "camelName": "proofContext",
+      "class": "bound",
+      "source": "context:value \u2014 MUST equal the authenticated request context hash for this presentation."
+    },
+    {
+      "name": "accumulator_root",
+      "camelName": "accumulatorRoot",
+      "class": "bound",
+      "source": "policy:accumulatorState.roots[accumulatorEpoch] \u2014 selective disclosure additionally REQUIRES the root to come from authenticated metadata-v2 ingestion; an unauthenticated root MUST be rejected."
+    },
+    {
+      "name": "accumulator_epoch",
+      "camelName": "accumulatorEpoch",
+      "class": "bound",
+      "source": "policy:accumulatorState \u2014 MUST NOT lag the verifier's current epoch view by more than the policy epoch-lag bound, and MUST NOT be ahead of that view.",
+      "check": "policy_range"
+    },
+    {
+      "name": "timestamp",
+      "camelName": "timestamp",
+      "class": "bound",
+      "source": "context:timestamp \u2014 MUST equal the authenticated request context timestamp."
+    },
+    {
+      "name": "current_epoch",
+      "camelName": "currentEpoch",
+      "class": "bound",
+      "source": "policy:accumulatorState.currentEpoch \u2014 MUST equal the verifier's own current accumulator epoch view for the proof's issuer."
+    },
+    {
+      "name": "issuer_public_key_x",
+      "camelName": "issuerPublicKeyX",
+      "class": "bound",
+      "source": "policy:issuerAllowlist \u2014 the (x, y) key MUST be an exact member of the verifier trust policy's issuer allowlist, and the matched issuer MUST be trusted for this proof type.",
+      "check": "member_of",
+      "group": "issuer_public_key"
+    },
+    {
+      "name": "issuer_public_key_y",
+      "camelName": "issuerPublicKeyY",
+      "class": "bound",
+      "source": "policy:issuerAllowlist \u2014 checked together with issuer_public_key_x as one exact allowlist key.",
+      "check": "member_of",
+      "group": "issuer_public_key"
+    },
+    {
+      "name": "credential_attribute_count",
+      "camelName": "credentialAttributeCount",
+      "class": "free",
+      "justification": "A property of the credential, not of the request: the issuer signature verified in-circuit covers the credential digest, whose preimage includes this count, so the prover cannot claim a count the issuer never attested. The verifier MUST still range-check it (1..8) and reject any disclosure mask selecting a padding position at or beyond it."
+    },
+    {
+      "name": "disclosure_count",
+      "camelName": "disclosureCount",
+      "class": "derived",
+      "from": [
+        "public:disclosed_flags"
+      ],
+      "note": "MUST equal the population count of disclosed_flags and be at least 1."
+    },
+    {
+      "name": "disclosed_flags",
+      "camelName": "disclosedFlags",
+      "class": "bound",
+      "source": "param:disclosedPositions \u2014 the mask MUST equal exactly the positions the authenticated request asked to be disclosed; a proof disclosing more, fewer, or different positions MUST be rejected."
+    },
+    {
+      "name": "disclosed_attributes",
+      "camelName": "disclosedAttributes",
+      "class": "free",
+      "justification": "These are the proof's output \u2014 the attribute values the verifier is learning \u2014 so no request-side expectation exists by design. Authenticity is enforced in-circuit: disclosed slots MUST equal the issuer-signed credential attributes, hidden slots are forced to 0, and the values are committed by the typed disclosure transcript (claim_binding)."
+    }
+  ]
+}

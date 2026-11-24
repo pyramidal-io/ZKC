@@ -1,0 +1,12 @@
+[package]
+name = "zkc_credential_rebind_auth"
+type = "bin"
+authors = ["ZKC Protocol"]
+compiler_version = ">=1.0.0"
+description = "ZKC issuer-authenticated credential rebind circuit (linkable profile, zkc:proof:credential_rebind:v3)"
+
+[dependencies]
+zkc_lib = { path = "../zkc_lib" }
+zkc_issuer_sig = { path = "../zkc_issuer_sig" }
+zkc_nonrevocation = { path = "../zkc_nonrevocation" }
+zkc_rebind_auth = { path = "../zkc_rebind_auth" }

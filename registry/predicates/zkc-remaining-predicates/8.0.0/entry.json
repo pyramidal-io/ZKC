@@ -1,0 +1,37 @@
+{
+  "version": "zkc:registry:predicate-entry:v1",
+  "predicateId": "zkc-remaining-predicates",
+  "entryVersion": "8.0.0",
+  "title": "Combined hardened anonymous/scoped remaining predicates (v8)",
+  "author": {
+    "name": "ZKC reference implementation",
+    "url": "https://github.com/pyramidal-io/ZKC"
+  },
+  "proofTypes": [
+    "zkc:proof:accreditation:v8",
+    "zkc:proof:source:v8",
+    "zkc:proof:tax:v8",
+    "zkc:proof:sanctions:v8"
+  ],
+  "circuit": {
+    "name": "zkc_remaining_predicates_v8",
+    "scheme": "ultra_honk",
+    "sourcePath": "noir/zkc_remaining_predicates_v8/src/main.nr",
+    "sourceSha256": "d2fe5d3e58a8bf8b5f9de6a0ef91682e3145df6beeafe38c7da3373e334886b5",
+    "acirHash": "sha256:3dbc254c972fb0eee9b747794dfb0cf89be9e9e2d239344c4c7517784669ae48",
+    "vkHash": "0x058702fdbeb13fd95fedf7615e197e022fef9562ac4a894ba4792b8791c89db2",
+    "vkSha256": "sha256:c282d444ffcfa4a94ff61e486cb6a72aa52382d1bf999f0bf42410a3fa3a17ec"
+  },
+  "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v8.json",
+  "review": {
+    "status": "self_attested",
+    "evidence": [
+      "registry/reviews/zkc-remaining-predicates-8.0.0.md"
+    ],
+    "reviewedAt": null
+  },
+  "activation": {
+    "activatedAt": null,
+    "supersedes": "zkc-remaining-predicates@7.0.0"
+  }
+}

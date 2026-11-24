@@ -1,0 +1,32 @@
+{
+  "version": "zkc:rebind-containment-bytes:v1",
+  "description": "SHA-256 of every historical credential-rebind artifact the security containment must leave byte-identical: the four deprecated circuit sources, their public-input encoders, their binding sidecars, and their committed ACIR/verification keys, plus the source pins the registry entries carry. These are digests of PUBLIC committed files, not secrets. Recomputed by tests/python/test_rebind_containment.py; the registry's own history gate (registry/check_immutability.py) is the independent check.",
+  "files": {
+    "noir/zkc_credential_rebind/src/main.nr": "4e0413e7b5683a14865d0d567e166f7ad0d2918e54fae709b49617079e91f9d4",
+    "noir/zkc_credential_rebind_v2/src/main.nr": "45602e646d93bafdc4d2f0dc16159e87ffc5c62477cc741a122d7700e6734800",
+    "noir/zkc_credential_rebind_binding_v2/src/main.nr": "736195b059e200467e668a88c74d64e89afabadd637813d24af47a795f841162",
+    "noir/zkc_credential_rebind_v2_binding_v2/src/main.nr": "3deeaa9738793773bc341ce36b698c1a1d767635468735df1e7530fef85bce64",
+    "schemas/public-inputs/zkc_credential_rebind.json": "9c97d540e216bd3347cbe5e72db9e58a26d86fdabcd52a9f861d186a74341fd1",
+    "schemas/public-inputs/zkc_credential_rebind_v2.json": "49b37999988b16f67277364dc3e4590b6a3713f9e52adbe001a6c9a62a2b9de3",
+    "schemas/public-inputs/zkc_credential_rebind_binding_v2.json": "57700c243f0fe46593562c0690c1cce2581e059b0712fc43a4e450ee9f409fe6",
+    "schemas/public-inputs/zkc_credential_rebind_v2_binding_v2.json": "be3e9c40430aef586971843a6074678d844b44f96f15097fb6dbfc6e39dd1050",
+    "schemas/public-input-bindings/zkc_credential_rebind.json": "92c11bb320b10aa67a002e0df902bb2e6a13dd4693ba156c66046f3acf85ffa2",
+    "schemas/public-input-bindings/zkc_credential_rebind_v2.json": "4b90fb39151476e9248cdabcd16de6e354ab9dc0b279e7f12febea823250237e",
+    "schemas/public-input-bindings/zkc_credential_rebind_binding_v2.json": "d4cdada8e748653fc9e41587629109195abd8c750425955c20e852a757300545",
+    "schemas/public-input-bindings/zkc_credential_rebind_v2_binding_v2.json": "1fb40e420bf2c827c2fd43744f461fc0bf9899d1f289ea597817c35425bde01c",
+    "artifacts/zkc_credential_rebind/zkc_credential_rebind.json": "f8629686cf8973b4859340d71a51ee4372e5fcc884244af6a505f6578630d4a6",
+    "artifacts/zkc_credential_rebind/vk": "ec83a95b5aa8f470c4f8b9e159119c4cd56c9f8bf577d82cd1c644a1c08b15b8",
+    "artifacts/zkc_credential_rebind_v2/zkc_credential_rebind_v2.json": "3d02e356a5962e6156e0555da2f72144047add1065fd6f3cc08becddb927f9cc",
+    "artifacts/zkc_credential_rebind_v2/vk": "1b9399148ee1920e044a8b7c431af79913549c552643a05ca93feedd2e070198",
+    "artifacts/zkc_credential_rebind_binding_v2/zkc_credential_rebind_binding_v2.json": "6aae3ecf23e310ece78caaf0a67d161514a03ac94a3e8d5f199e87f42abe154e",
+    "artifacts/zkc_credential_rebind_binding_v2/vk": "7f3fa0217ecfb6137764be609b749da83b452873a4e5a66a7bdda82da5d698ba",
+    "artifacts/zkc_credential_rebind_v2_binding_v2/zkc_credential_rebind_v2_binding_v2.json": "4c056c2690b94a16a91d0ad61aeb28a392d152bbfbfabb6a707d0bc15b73a1cf",
+    "artifacts/zkc_credential_rebind_v2_binding_v2/vk": "61994b645a4e15db3a9ed3f57468026aae006645e98723a6e8247231c2b1cd05"
+  },
+  "registryEntrySourcePins": {
+    "1.0.0": "4e0413e7b5683a14865d0d567e166f7ad0d2918e54fae709b49617079e91f9d4",
+    "2.0.0": "45602e646d93bafdc4d2f0dc16159e87ffc5c62477cc741a122d7700e6734800",
+    "3.0.0": "736195b059e200467e668a88c74d64e89afabadd637813d24af47a795f841162",
+    "4.0.0": "3deeaa9738793773bc341ce36b698c1a1d767635468735df1e7530fef85bce64"
+  }
+}

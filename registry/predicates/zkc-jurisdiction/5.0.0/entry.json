@@ -1,0 +1,34 @@
+{
+  "version": "zkc:registry:predicate-entry:v1",
+  "predicateId": "zkc-jurisdiction",
+  "entryVersion": "5.0.0",
+  "title": "Jurisdiction membership predicate (beta.25 artifact successor)",
+  "author": {
+    "name": "ZKC reference implementation",
+    "url": "https://github.com/pyramidal-io/ZKC"
+  },
+  "proofTypes": [
+    "zkc:proof:jurisdiction:v5"
+  ],
+  "circuit": {
+    "name": "zkc_jurisdiction_v5",
+    "scheme": "ultra_honk",
+    "sourcePath": "noir/zkc_jurisdiction_v5/src/main.nr",
+    "sourceSha256": "f7456713af5bd85a5e55f68b58cf16f6dd3124607e063b4b2f41f9f2728593c9",
+    "acirHash": "sha256:413711d8d25ad1b6e15c84a7a5cf78664b8cecdad0082430e359783cb4b09ac0",
+    "vkHash": "0x126d221fd004050c651287e47b88cd37f6cdf591e87a89836d33f3d2956f2508",
+    "vkSha256": "sha256:ba98ab004bb8941a00c4e67b532453dd28e18a3a29d74f7ee49c5819250aab73"
+  },
+  "publicInputEncoder": "schemas/public-inputs/zkc_jurisdiction_v5.json",
+  "review": {
+    "status": "draft",
+    "evidence": [
+      "registry/reviews/zkc-jurisdiction-5.0.0.md"
+    ],
+    "reviewedAt": null
+  },
+  "activation": {
+    "activatedAt": null,
+    "supersedes": "zkc-jurisdiction@4.0.0"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "version": "zkc:registry:predicate-entry:v2",
+  "predicateId": "zkc-kyc",
+  "entryVersion": "4.0.0",
+  "title": "KYC presentation predicate source identity with multi-toolchain bindings",
+  "author": {
+    "name": "ZKC reference implementation",
+    "url": "https://github.com/pyramidal-io/ZKC"
+  },
+  "proofTypes": [
+    "zkc:proof:kyc:v2"
+  ],
+  "sourceId": "sha256:599455bede9dac4b1ffbc99395888b5e93b8b70a5fce88484a64ee3e147b69a8",
+  "source": {
+    "circuit": "zkc_kyc_v2",
+    "packageRoot": "noir/zkc_kyc_v2",
+    "files": [
+      {"path": "noir/zkc_issuer_sig/Nargo.toml", "sha256": "sha256:cbb5a2bb89ba4629b4c88a2c3d3bc67536fb73e131a1eb02e0882f58564edbc0"},
+      {"path": "noir/zkc_issuer_sig/src/lib.nr", "sha256": "sha256:076a41ed3a4dd51414affb980697246ec6ca60724e57eef40c57d176153dd54d"},
+      {"path": "noir/zkc_kyc_v2/Nargo.toml", "sha256": "sha256:2ebfc00e27a46fa76daa3e1f11538d188532650b33d01db0b0f547939a37d6bf"},
+      {"path": "noir/zkc_kyc_v2/src/main.nr", "sha256": "sha256:a5ea58b921fe367ceb2fddb561cd2599381ded00385de2d7a4eda16de0c93b19"},
+      {"path": "noir/zkc_lib/Nargo.toml", "sha256": "sha256:fb3215d44330cecb63156b4c5bc5bcde6303393a4e92ab16d39d87f92d82edf2"},
+      {"path": "noir/zkc_lib/src/lib.nr", "sha256": "sha256:4427a529e2ce54ce83597e77538661b8407735a4940fdd4c6d4c17cb65f99809"},
+      {"path": "noir/zkc_nonrevocation/Nargo.toml", "sha256": "sha256:6c1307a3563ab51cd445509624568a098a010485fc459a4556350f4277613df4"},
+      {"path": "noir/zkc_nonrevocation/src/lib.nr", "sha256": "sha256:a40ead9cf920ac257c8c039b9f03107352ae9472ee8ed6d09dcb701b32155af7"}
+    ]
+  },
+  "publicInputContract": {
+    "encoder": {"path": "schemas/public-inputs/zkc_kyc_v2.json", "sha256": "sha256:a1a483df6294596315102083036f01d36e936a919a431603188c253c180f71b8"},
+    "bindingSidecar": {"path": "schemas/public-input-bindings/zkc_kyc_v2.json", "sha256": "sha256:2f111ad6fabf84de29634d1358e0454dbc18c264e99843084b324258ee49d8f8"},
+    "bindingSchema": {"path": "schemas/public-input-binding-v1.schema.json", "sha256": "sha256:fbb3560eb8c966042888c7d213ecfb2be4d37704ab3e946f2ef5b0f1a54a00ac"}
+  },
+  "review": {
+    "status": "self_attested",
+    "evidence": ["registry/reviews/zkc-kyc-4.0.0-v2-adoption.md"],
+    "reviewedAt": null
+  },
+  "supersedes": "zkc-kyc@3.0.0",
+  "adoptsV1": "zkc-kyc@2.0.0"
+}

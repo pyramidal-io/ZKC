@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zkc.dev/registry/schema/verifier-policy.schema.json",
+  "title": "ZKC Published Verifier Trust Policy v1",
+  "description": "A verifier's PUBLISHED trust policy, for discovery only. Trust decisions remain verifier-local: the policy is authored and enforced by the verifier itself, and it may trust issuers that appear in no registry (trust is by key, never by registry membership — Freedom Safeguard 1).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "verifierId",
+    "displayName",
+    "acceptedProofTypes",
+    "requiredReviewStatuses",
+    "trustedIssuers",
+    "acceptsOutOfRegistryIssuers",
+    "requiredContextProfile",
+    "maxEpochLag",
+    "updatedAt"
+  ],
+  "properties": {
+    "version": { "const": "zkc:registry:verifier-policy:v1" },
+    "verifierId": { "type": "string", "pattern": "^[a-z0-9:._-]+$" },
+    "displayName": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "acceptedProofTypes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": "^zkc:proof:[a-z0-9._-]+:v[0-9]+$" },
+      "description": "Proof types this verifier accepts. NON-EXCLUSIVE and verifier-chosen; may include types defined outside this repository."
+    },
+    "requiredReviewStatuses": {
+      "type": "array",
+      "items": { "enum": ["draft", "in_review", "self_attested", "reviewed", "deprecated"] },
+      "description": "Predicate-registry review statuses this verifier requires (verifier-local). Empty means the verifier imposes no review-status requirement. The list is matched exactly: a policy listing only 'reviewed' rejects a 'self_attested' entry, because self-attestation is not independent review. A verifier with real exposure SHOULD require 'reviewed'."
+    },
+    "trustedIssuers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["issuerId", "publicKeyX", "publicKeyY", "proofTypes"],
+        "properties": {
+          "issuerId": { "type": "string", "minLength": 1 },
+          "publicKeyX": { "type": "string", "pattern": "^0x[0-9a-f]{64}$" },
+          "publicKeyY": { "type": "string", "pattern": "^0x[0-9a-f]{64}$" },
+          "attributeLayoutId": { "type": "string", "pattern": "^0x(?!0{64}$)[0-9a-f]{64}$" },
+          "proofTypes": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 }
+          }
+        },
+        "if": {
+          "properties": {
+            "proofTypes": { "contains": { "enum": ["zkc:proof:selective_disclosure:v1", "zkc:proof:selective_disclosure:v2"] } }
+          }
+        },
+        "then": { "required": ["attributeLayoutId"] }
+      },
+      "description": "Key-exact issuer allowlist. Entries reference issuers BY KEY, not by registry membership: issuers outside registry/issuers/ are first-class here. An empty list trusts nobody (fail closed)."
+    },
+    "acceptsOutOfRegistryIssuers": {
+      "type": "boolean",
+      "description": "Documentation flag: whether this verifier's allowlist (now or in the future) includes issuers not published in registry/issuers/. Informational only — trust is always decided by the key-exact allowlist above."
+    },
+    "requiredContextProfile": {
+      "type": "string",
+      "description": "Required proof-context profile, or empty for no requirement."
+    },
+    "maxEpochLag": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10,
+      "description": "Maximum accepted accumulator epoch lag (may only tighten the protocol bound)."
+    },
+    "proofRequirements": {
+      "type": "object",
+      "propertyNames": { "pattern": "^zkc:proof:[a-z0-9._-]+:v[0-9]+$" },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "requiredLevel": { "type": "integer", "minimum": 1 },
+          "requiredAttributes": {
+            "type": "array",
+            "items": { "type": "boolean" }
+          }
+        }
+      },
+      "description": "OPTIONAL published per-predicate minimums for minimal-disclosure planning. When present this is the COMPLETE statement of the verifier's need: each listed proof type (which must also appear in acceptedProofTypes) maps to the minimum parameters the verifier requires, and holders treat requests beyond these minimums as overbroad. Discovery only — enforcement stays verifier-local."
+    },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  }
+}

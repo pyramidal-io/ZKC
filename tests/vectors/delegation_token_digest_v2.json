@@ -1,0 +1,118 @@
+{
+  "version": "zkc:delegation-token-digest:v2",
+  "description": "TEST-ONLY known answers for the v2 delegation token digest (spec 5.4). Seeds and principal keys are public test values. transcript is the exact SHA-256 preimage; digest = SHA-256(transcript), the message the holder delegation key signs.",
+  "domain": "7a6b632f64656c65676174696f6e2d746f6b656e3a763200",
+  "framing": "F(v) = u32be(len(v)) || v; transcript = domain || F(px) || F(py) || u32be(n) || F(t_1) .. F(t_n) || F(u256be(contextValue)) || F(utf8(verifierId)) || F(u64be(expiresAt)) || F(u32be(maxUses)) || F(u256be(holderCommitment)) || F(u64be(issuedAt)) || F(u256be(nonce)) || F(requestDigest)",
+  "identifierPolicy": {
+    "forbiddenGeneralCategories": [
+      "Cc",
+      "Cf",
+      "Cn",
+      "Co",
+      "Cs",
+      "Zl",
+      "Zp"
+    ],
+    "rejected": [
+      "",
+      "zkc:proof:kyc:v1\u0000zkc:proof:sanctions:v8",
+      "a\tb",
+      "a\u007fb",
+      "a\u0085b",
+      "a\u00adb",
+      "a\u200bb",
+      "a\u200db",
+      "a\u202eb",
+      "a\u2066b",
+      "a\ufeffb",
+      "a\u2028b",
+      "a\u2029b",
+      "a\ue000b",
+      "a\udb40\udc01b"
+    ],
+    "accepted": [
+      "zkc:proof:kyc:v1",
+      "verifier.example",
+      "did:web:caf\u00e9.example",
+      "did:example:\u6e2c\u8a66",
+      "a b"
+    ]
+  },
+  "cases": [
+    {
+      "name": "apr-integer-freshness-inspection",
+      "description": "Inspection-only token (empty request commitment) minted by tests/python/test_apr_integer_freshness.py.",
+      "masterSeed": "0x000000000000000000000000000000000000000000000000000000000000002a",
+      "principalKey": {
+        "x": "a64db41e2968c849c2a5615ba0d6e816734a6d3e6ea6ecd6f3acb7d59daa9102",
+        "y": "e7af12d6e07238e7d5f5f6e9d6a529833a30f7385075fd74029db8009a5ace9a"
+      },
+      "scope": {
+        "proofTypes": [
+          "zkc:proof:kyc:v1"
+        ],
+        "contextValue": "0x000000000000000000000000000000000000000000000000000000000000007b",
+        "verifierId": "verifier.example",
+        "expiresAt": 1700003600,
+        "maxUses": 2
+      },
+      "holderCommitment": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+      "issuedAt": 1700000000,
+      "nonce": "0x0000000000000000000000000000000000000000000000000000000000000007",
+      "requestDigest": "",
+      "transcript": "7a6b632f64656c65676174696f6e2d746f6b656e3a76320000000020a64db41e2968c849c2a5615ba0d6e816734a6d3e6ea6ecd6f3acb7d59daa910200000020e7af12d6e07238e7d5f5f6e9d6a529833a30f7385075fd74029db8009a5ace9a00000001000000107a6b633a70726f6f663a6b79633a763100000020000000000000000000000000000000000000000000000000000000000000007b0000001076657269666965722e6578616d706c6500000008000000006553ff1000000004000000020000002024dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf00000008000000006553f10000000020000000000000000000000000000000000000000000000000000000000000000700000000",
+      "digest": "baeed20729f01f62c4186a14bd7782a8b4e3ec454a2fc582415f7b09870511d7"
+    },
+    {
+      "name": "holder-gate-inspection",
+      "description": "Inspection-only token minted by tests/python/test_delegation_holder_gate.py; the holder gate refuses it (no reviewed request commitment).",
+      "masterSeed": "0x0000000000000000000000000000000000000000000000000000000000001092",
+      "principalKey": {
+        "x": "a34a5a6b87e13fdc8332fb12c42bdbfa04b8bec3d18b4c279d474741cc024d55",
+        "y": "e0020e3e440fbab1983b4510b4e151320264fd4c47dfac4859cb7f020ca37fc8"
+      },
+      "scope": {
+        "proofTypes": [
+          "zkc:proof:jurisdiction:v3"
+        ],
+        "contextValue": "0x2c33c9d0399f52837eaf3c3dac65d8d638b6070a6fb3aa2bba67d6d45f76b6a2",
+        "verifierId": "verifier.example",
+        "expiresAt": 1703600,
+        "maxUses": 1
+      },
+      "holderCommitment": "0x10a03731b7dfb54613f6f913cc7d35d71d2424c1709a14cf42234d7724176685",
+      "issuedAt": 1700000,
+      "nonce": "0x0000000000000000000000000000000000000000000000000000000000000001",
+      "requestDigest": "",
+      "transcript": "7a6b632f64656c65676174696f6e2d746f6b656e3a76320000000020a34a5a6b87e13fdc8332fb12c42bdbfa04b8bec3d18b4c279d474741cc024d5500000020e0020e3e440fbab1983b4510b4e151320264fd4c47dfac4859cb7f020ca37fc800000001000000197a6b633a70726f6f663a6a7572697364696374696f6e3a7633000000202c33c9d0399f52837eaf3c3dac65d8d638b6070a6fb3aa2bba67d6d45f76b6a20000001076657269666965722e6578616d706c6500000008000000000019feb000000004000000010000002010a03731b7dfb54613f6f913cc7d35d71d2424c1709a14cf42234d772417668500000008000000000019f0a000000020000000000000000000000000000000000000000000000000000000000000000100000000",
+      "digest": "e5d898cd419411b81d68f6f2e787031bea450c9062c6ff1dd97d5c3464cef809"
+    },
+    {
+      "name": "request-bound-multi-type",
+      "description": "Three proof types supplied out of order with one duplicate (digest order is distinct UTF-8 byte order), a non-ASCII verifier id, and a 32-byte request commitment.",
+      "masterSeed": "0x0000000000000000000000000000000000000000000000000000000000001092",
+      "principalKey": {
+        "x": "a34a5a6b87e13fdc8332fb12c42bdbfa04b8bec3d18b4c279d474741cc024d55",
+        "y": "e0020e3e440fbab1983b4510b4e151320264fd4c47dfac4859cb7f020ca37fc8"
+      },
+      "scope": {
+        "proofTypes": [
+          "zkc:proof:sanctions:v8",
+          "zkc:proof:kyc:v1",
+          "zkc:proof:accreditation:v9",
+          "zkc:proof:kyc:v1"
+        ],
+        "contextValue": "0x2c33c9d0399f52837eaf3c3dac65d8d638b6070a6fb3aa2bba67d6d45f76b6a2",
+        "verifierId": "did:web:caf\u00e9.example",
+        "expiresAt": 1707200,
+        "maxUses": 3
+      },
+      "holderCommitment": "0x10a03731b7dfb54613f6f913cc7d35d71d2424c1709a14cf42234d7724176685",
+      "issuedAt": 1700000,
+      "nonce": "0x0000000000000000000000000000000000000000000000000000000000001234",
+      "requestDigest": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "transcript": "7a6b632f64656c65676174696f6e2d746f6b656e3a76320000000020a34a5a6b87e13fdc8332fb12c42bdbfa04b8bec3d18b4c279d474741cc024d5500000020e0020e3e440fbab1983b4510b4e151320264fd4c47dfac4859cb7f020ca37fc8000000030000001a7a6b633a70726f6f663a61636372656469746174696f6e3a7639000000107a6b633a70726f6f663a6b79633a7631000000167a6b633a70726f6f663a73616e6374696f6e733a7638000000202c33c9d0399f52837eaf3c3dac65d8d638b6070a6fb3aa2bba67d6d45f76b6a2000000156469643a7765623a636166c3a92e6578616d706c650000000800000000001a0cc000000004000000030000002010a03731b7dfb54613f6f913cc7d35d71d2424c1709a14cf42234d772417668500000008000000000019f0a000000020000000000000000000000000000000000000000000000000000000000000123400000020000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "digest": "510e577eb7bdda1436dee9ee3d68861b8e7d189f3de83f913b37015cc63293fa"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "version": "zkc:registry:predicate-entry:v1",
+  "predicateId": "zkc-credential-rebind",
+  "entryVersion": "5.0.0",
+  "title": "Credential rebinding predicate (issuer-authenticated, linkable profile)",
+  "author": {
+    "name": "ZKC reference implementation",
+    "url": "https://github.com/pyramidal-io/ZKC"
+  },
+  "proofTypes": [
+    "zkc:proof:credential_rebind:v3"
+  ],
+  "circuit": {
+    "name": "zkc_credential_rebind_auth",
+    "scheme": "ultra_honk",
+    "sourcePath": "noir/zkc_credential_rebind_auth/src/main.nr",
+    "sourceSha256": "2ab4decbca22c30ec6f45d7e99431e8adf582844667b0b1b627e4bfbf0da30fd",
+    "acirHash": "sha256:1768e23170e6b396a7f3ad8d22ac88f4315867a023b3d5f348d63c8d8bbdfc7b",
+    "vkHash": "0x1a93c0b28ef1bfbb03b8ffb289ce7d7b53378136aeac74bc6caeaaa92ef5c628",
+    "vkSha256": "sha256:1d4a6695ff37edc040dc27b344266dd637510b486e732d324ab9138668e1c02a"
+  },
+  "publicInputEncoder": "schemas/public-inputs/zkc_credential_rebind_auth.json",
+  "review": {
+    "status": "self_attested",
+    "evidence": [
+      "registry/reviews/zkc-credential-rebind-5.0.0.md"
+    ],
+    "reviewedAt": null
+  },
+  "activation": {
+    "activatedAt": null,
+    "supersedes": "zkc-credential-rebind@4.0.0"
+  }
+}

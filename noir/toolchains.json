@@ -1,0 +1,48 @@
+{
+  "version": "zkc:noir-toolchains:v1",
+  "toolchains": {
+    "historical": {
+      "nargo": "1.0.0-beta.21",
+      "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+      "bb": "5.0.0-nightly.20260324"
+    },
+    "successor": {
+      "nargo": "1.0.0-beta.25",
+      "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+      "bb": "5.0.0"
+    }
+  },
+  "packages": {
+    "zkc_kyc": "historical",
+    "zkc_kyc_v2": [
+      "historical",
+      "successor"
+    ],
+    "zkc_jurisdiction": "historical",
+    "zkc_jurisdiction_v2": "historical",
+    "zkc_jurisdiction_v3": "historical",
+    "zkc_jurisdiction_v4": "historical",
+    "zkc_jurisdiction_v5": "successor",
+    "zkc_credential_rebind": "historical",
+    "zkc_credential_rebind_v2": "historical",
+    "zkc_remaining_predicates": "historical",
+    "zkc_remaining_predicates_v2": "historical",
+    "zkc_remaining_predicates_v3": "historical",
+    "zkc_remaining_predicates_v4": "historical",
+    "zkc_remaining_predicates_v5": "historical",
+    "zkc_remaining_predicates_v6": "historical",
+    "zkc_remaining_predicates_v7": "historical",
+    "zkc_remaining_predicates_v8": "historical",
+    "zkc_aggregation": "historical",
+    "zkc_aggregation_v2": "historical",
+    "zkc_selective_disclosure_v1": "historical",
+    "zkc_credential_rebind_binding_v2": "historical",
+    "zkc_credential_rebind_v2_binding_v2": "historical",
+    "zkc_credential_rebind_auth": "historical",
+    "zkc_credential_rebind_auth_v2": "historical",
+    "zkc_kyc_v3": "successor"
+  },
+  "probePackages": {
+    "successor": "zkc_kyc"
+  }
+}

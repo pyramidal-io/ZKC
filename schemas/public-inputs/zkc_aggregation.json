@@ -1,0 +1,66 @@
+{
+  "$schema": "https://zkc.dev/schemas/public-input-encoder-v1.schema.json",
+  "version": "zkc:public-inputs:v1",
+  "circuit": "zkc_aggregation",
+  "proofTypes": ["zkc:proof:aggregation:v1"],
+  "proofSystem": "ultra_honk",
+  "curve": "BN254",
+  "encoding": {
+    "fieldElement": "BN254 scalar field element, serialized as a 32-byte big-endian value",
+    "order": "Declaration order of `pub` parameters in noir/zkc_aggregation/src/main.nr main(); arrays are flattened element-wise",
+    "booleans": "false = 0, true = 1",
+    "integers": "Unsigned integers are zero-extended into a single field element",
+    "byteArrays": "[u8; N] occupies N field elements, one byte per element, in array order"
+  },
+  "totalFieldElements": 13,
+  "publicInputs": [
+    {
+      "index": 0,
+      "offset": 0,
+      "name": "aggregation_commitment",
+      "abiType": "Field",
+      "fieldElements": 1,
+      "description": "Poseidon2 commitment over (context, holderCommitment, per-slot proof commitments and types) with the ZKC aggregation domain"
+    },
+    {
+      "index": 1,
+      "offset": 1,
+      "name": "aggregated_claim_binding",
+      "abiType": "Field",
+      "fieldElements": 1,
+      "description": "H(aggregationCommitment, context); binds the aggregate to the proof context"
+    },
+    {
+      "index": 2,
+      "offset": 2,
+      "name": "holder_commitment",
+      "abiType": "Field",
+      "fieldElements": 1,
+      "description": "Shared holder commitment; every active component proof must carry it. MUST be non-zero"
+    },
+    {
+      "index": 3,
+      "offset": 3,
+      "name": "context",
+      "abiType": "Field",
+      "fieldElements": 1,
+      "description": "Deployment/profile-defined replay context hash; MUST be non-zero"
+    },
+    {
+      "index": 4,
+      "offset": 4,
+      "name": "num_proofs",
+      "abiType": "u32",
+      "fieldElements": 1,
+      "description": "Number of active component proofs (1..=8)"
+    },
+    {
+      "index": 5,
+      "offset": 5,
+      "name": "input_proof_commitments",
+      "abiType": "[Field; 8]",
+      "fieldElements": 8,
+      "description": "Per-slot component proof commitments (Poseidon2 over vk, proof bytes, public inputs, proof type); inactive slots MUST be zero"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zkc.dev/schemas/public-input-binding-v1.schema.json",
+  "title": "ZKC Public Input Binding Classification v1",
+  "description": "Per-field request-binding classification for a ZKC circuit's public inputs. A sidecar to the immutable public-input encoder document (schemas/public-inputs/<circuit>.json): the encoder freezes the wire shape, this document declares the verifier-side contract for each field. Every public input is classified as 'bound' (the verifier MUST validate it against a value it knows independently of the prover — the leading reference in `source` names where that expected value comes from, and the optional `check` names the comparison kind: 'equals' (the default), 'member_of' an authenticated set, or 'policy_range' against a policy bound; `group` marks fields validated together, such as an (x, y) key pair), 'derived' (the verifier MUST recompute it from the references in `from` and reject on mismatch; the mandatory `note` states the exact recomputation, including any interior hashing of the referenced values — a derived recomputation proves reproducibility, and contributes request binding only through its param:/context:/bound references), or 'free' (the prover chooses it; `justification` records in writing why that is sound). A `param:` reference on a bound field's source, or in a derived field's `from` list, is REQUIRED in the authenticated request: a request lacking it MUST be rejected rather than defaulted, unless the entry's text declares an explicit expectation for that case. Reference vocabulary: 'context:<field>' = authenticated request context, 'param:<camelName>' = authenticated request parameter for this proof type, 'envelope:<path>' = authenticated envelope element (an element the active profile omits resolves to the sentinel the entry's text names), 'policy:<path>' = verifier trust policy or verifier-local authenticated state (including the registry-pinned circuit identity), 'map:predicateTypes[proofType]' = this document's proof-type -> predicate_type map, 'public:<name>' = another public input of the same circuit. Entries are keyed by `name` — consumers MUST bind by name, never by offset (v1/v2 encoders order fields differently). NAME LAYERS: a proof entry's `publicInputs` object is keyed by the snake_case `name` itself; `camelName` is the spelling of the corresponding request parameter and aggregation-envelope keys, MUST equal the mechanical snake_case -> camelCase conversion of `name`, and MUST NOT be used to read a proof entry's `publicInputs`.",
+  "type": "object",
+  "required": ["version", "circuit", "encoder", "bindings"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": { "const": "zkc:public-input-bindings:v1" },
+    "circuit": { "type": "string", "pattern": "^zkc_[a-z0-9_]+$" },
+    "encoder": { "type": "string", "pattern": "^schemas/public-inputs/zkc_[a-z0-9_]+\\.json$" },
+    "predicateTypes": { "type": "object" },
+    "bindings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "camelName", "class"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+          "camelName": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
+          "class": { "type": "string", "pattern": "^(bound|derived|free)$" },
+          "source": { "type": "string" },
+          "check": { "type": "string", "pattern": "^(equals|member_of|policy_range)$" },
+          "group": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+          "from": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string" }
+          },
+          "justification": { "type": "string" },
+          "note": { "type": "string" }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "class": { "const": "bound" } } },
+            "then": {
+              "required": ["source"],
+              "not": { "anyOf": [{ "required": ["from"] }, { "required": ["justification"] }] }
+            }
+          },
+          {
+            "if": { "properties": { "class": { "const": "derived" } } },
+            "then": {
+              "required": ["from", "note"],
+              "not": {
+                "anyOf": [
+                  { "required": ["source"] },
+                  { "required": ["justification"] },
+                  { "required": ["check"] },
+                  { "required": ["group"] }
+                ]
+              }
+            }
+          },
+          {
+            "if": { "properties": { "class": { "const": "free" } } },
+            "then": {
+              "required": ["justification"],
+              "not": {
+                "anyOf": [
+                  { "required": ["source"] },
+                  { "required": ["from"] },
+                  { "required": ["check"] },
+                  { "required": ["group"] }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

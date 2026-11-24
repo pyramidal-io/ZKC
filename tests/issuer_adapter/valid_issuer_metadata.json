@@ -1,0 +1,60 @@
+{
+  "version": "zkc:issuer-metadata:v2",
+  "issuerId": "zkc:issuer:sandbox",
+  "displayName": "ZKC Sandbox Issuer",
+  "signingKeys": [
+    {
+      "keyId": "sandbox-2026-01",
+      "scheme": "ECDSA_SECP256K1",
+      "publicKey": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+      "notBefore": "2026-01-01T00:00:00Z",
+      "notAfter": "2027-01-01T00:00:00Z"
+    }
+  ],
+  "supportedSchemas": [
+    {
+      "schemaId": "zkc:cred:kyc:v1",
+      "credentialType": "zkc:cred:kyc:v1",
+      "proofType": "zkc:proof:kyc:v1"
+    }
+  ],
+  "adapter": {
+    "verifySubjectEndpoint": "https://issuer.sandbox.zkc.dev/v1/verify_subject",
+    "bindHolderCommitmentEndpoint": "https://issuer.sandbox.zkc.dev/v1/bind_holder_commitment",
+    "issueCredentialEndpoint": "https://issuer.sandbox.zkc.dev/v1/issue_credential",
+    "publishRevocationHandleEndpoint": "https://issuer.sandbox.zkc.dev/v1/publish_revocation_handle"
+  },
+  "revocation": {
+    "accumulatorId": "sandbox-active-credentials",
+    "type": "POSEIDON2_MERKLE_ACTIVE_SET",
+    "currentRoot": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+    "currentEpoch": 100,
+    "maxEpochLag": 10,
+    "updateEndpoint": "https://issuer.sandbox.zkc.dev/v1/revocation/updates",
+    "currentAnnouncement": {
+      "version": "zkc:epoch-announcement:v3",
+      "accumulatorId": "sandbox-active-credentials",
+      "root": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+      "epoch": 100,
+      "announcedAt": 1770000000,
+      "maxEpochLag": 10,
+      "signingKeyId": "sandbox-2026-01",
+      "previousAnnouncementHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "signature": "0xf5293d06116c1534ea45ab49696a120a7b2c79149f3dfbcb320ce89b831e38a01f0ece663e5631bf6e930e5195699ff27bc195dea7732819448c8df34821b602"
+    },
+    "currentLiveness": {
+      "version": "zkc:epoch-liveness:v1",
+      "accumulatorId": "sandbox-active-credentials",
+      "epoch": 100,
+      "headHash": "0xda6ee820872d58aa97d21ae7ff983db3ae5f63f1a652ed67cc237e43d206ae80",
+      "issuedAt": 1770003600,
+      "signingKeyId": "sandbox-2026-01",
+      "signature": "0x5eef76c84d960f6554edcf6bc19e59ccfe0d39b6e4afd0535ae764cabb162af86653b0b13b9de6ac20cc795dfb7852581c1102dc070841be7810124d8e3611d1"
+    }
+  },
+  "serviceLevels": {
+    "maxRevocationPropagationSeconds": 3600,
+    "expectedIssuanceLatencySeconds": 30,
+    "metadataCacheSeconds": 300
+  }
+}

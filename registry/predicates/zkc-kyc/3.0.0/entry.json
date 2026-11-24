@@ -1,0 +1,34 @@
+{
+  "version": "zkc:registry:predicate-entry:v1",
+  "predicateId": "zkc-kyc",
+  "entryVersion": "3.0.0",
+  "title": "KYC level and verified-attribute predicate (beta.25 artifact successor)",
+  "author": {
+    "name": "ZKC reference implementation",
+    "url": "https://github.com/pyramidal-io/ZKC"
+  },
+  "proofTypes": [
+    "zkc:proof:kyc:v3"
+  ],
+  "circuit": {
+    "name": "zkc_kyc_v3",
+    "scheme": "ultra_honk",
+    "sourcePath": "noir/zkc_kyc_v3/src/main.nr",
+    "sourceSha256": "a5ea58b921fe367ceb2fddb561cd2599381ded00385de2d7a4eda16de0c93b19",
+    "acirHash": "sha256:153932ccbcfb1531dcfa4b54647a9530db457144980437ad0e6cff112a9c94a9",
+    "vkHash": "0x2c573f22f850d18ca2971ff6477dfc9e39a1eba6e3a7baad330e11f8e2a9229d",
+    "vkSha256": "sha256:59f8f568497ee4c7848894331724edbb7e47b85f28ff479655ab5fcd42d37bba"
+  },
+  "publicInputEncoder": "schemas/public-inputs/zkc_kyc_v3.json",
+  "review": {
+    "status": "draft",
+    "evidence": [
+      "registry/reviews/zkc-kyc-3.0.0.md"
+    ],
+    "reviewedAt": null
+  },
+  "activation": {
+    "activatedAt": null,
+    "supersedes": "zkc-kyc@2.0.0"
+  }
+}

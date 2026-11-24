@@ -1,0 +1,6 @@
+[package]
+name = "zkc_issuer_sig"
+type = "lib"
+authors = ["ZKC Protocol"]
+compiler_version = ">=1.0.0"
+description = "Issuer signature verification primitives for ZKC credential circuits"

@@ -1,0 +1,2537 @@
+{
+  "version": "zkc-conformance:v1",
+  "profile": "core",
+  "description": "ZKC-Core conformance vectors. TEST-ONLY key material throughout; regenerate with conformance/generate_vectors.py.",
+  "masterSeed": "0x000000000000000000000000000000000000000000000000000000000000002a",
+  "issuers": {
+    "test": {
+      "issuerId": "did:zkc:test-issuer",
+      "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+      "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+      "proofTypes": [
+        "zkc:proof:kyc:v1",
+        "zkc:proof:jurisdiction:v3",
+        "zkc:proof:accreditation:v7",
+        "zkc:proof:source:v7",
+        "zkc:proof:tax:v7",
+        "zkc:proof:sanctions:v7"
+      ]
+    },
+    "other": {
+      "issuerId": "did:zkc:other-issuer",
+      "publicKeyX": "0xa6f1a6b263012b96867a4ef6abc7be65c3dd87f918d938e3122d976e4f0ba6ef",
+      "publicKeyY": "0x30fd473c9d1ab5aaa716829135f94751d70a525c564e7b518c4778fa13cfca0f",
+      "proofTypes": [
+        "zkc:proof:kyc:v1"
+      ]
+    }
+  },
+  "credentials": {
+    "valid_kyc": {
+      "credentialType": "zkc:kyc:v1",
+      "proofType": "zkc:proof:kyc:v1",
+      "issuerId": "did:zkc:test-issuer",
+      "holderCommitment": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+      "credentialId": "0x000000000000000000000000000000000000000000000000000000000000002a",
+      "claims": {
+        "level": 2,
+        "verifiedAttributes": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ]
+      },
+      "expiresAt": 2000000000,
+      "signature": "0x21de4539ded7c1d27eff3513aef57299628754c025f1533bf599e0f27a6c1a72798dc2148651f7efabfab8c8f61188709758d38cdb44d15954475546424814a3",
+      "witness": {
+        "pathIndex": 0,
+        "siblings": [
+          "0x000000000000000000000000000000000000000000000000000000000000002b",
+          "0x18804f4c91ff0096b40104ef31fac4c3b1de573b1bb1dbef74e6cdd5a35236dd",
+          "0x132de8f8d7df520ed44efc4529c92fa3ba9faab263c0b7e88e5754108dacde64",
+          "0x21f9172d72fdcdafc312eee05cf5092980dda821da5b760a9fb8dbdf607c8a20",
+          "0x2373ea368857ec7af97e7b470d705848e2bf93ed7bef142a490f2119bcf82d8e",
+          "0x120157cfaaa49ce3da30f8b47879114977c24b266d58b0ac18b325d878aafddf",
+          "0x01c28fe1059ae0237b72334700697bdf465e03df03986fe05200cadeda66bd76",
+          "0x2d78ed82f93b61ba718b17c2dfe5b52375b4d37cbbed6f1fc98b47614b0cf21b",
+          "0x067243231eddf4222f3911defbba7705aff06ed45960b27f6f91319196ef97e1",
+          "0x1849b85f3c693693e732dfc4577217acc18295193bede09ce8b97ad910310972",
+          "0x2a775ea761d20435b31fa2c33ff07663e24542ffb9e7b293dfce3042eb104686",
+          "0x0f320b0703439a8114f81593de99cd0b8f3b9bf854601abb5b2ea0e8a3dda4a7",
+          "0x0d07f6e7a8a0e9199d6d92801fff867002ff5b4808962f9da2ba5ce1bdd26a73",
+          "0x1c4954081e324939350febc2b918a293ebcdaead01be95ec02fcbe8d2c1635d1",
+          "0x0197f2171ef99c2d053ee1fb5ff5ab288d56b9b41b4716c9214a4d97facc4c4a",
+          "0x2b9cdd484c5ba1e4d6efcc3f18734b5ac4c4a0b9102e2aeb48521a661d3feee9",
+          "0x14f44d672eb357739e42463497f9fdac46623af863eea4d947ca00a497dcdeb3",
+          "0x071d7627ae3b2eabda8a810227bf04206370ac78dbf6c372380182dbd3711fe3",
+          "0x2fdc08d9fe075ac58cb8c00f98697861a13b3ab6f9d41a4e768f75e477475bf5",
+          "0x20165fe405652104dceaeeca92950aa5adc571b8cafe192878cba58ff1be49c5",
+          "0x1c8c3ca0b3a3d75850fcd4dc7bf1e3445cd0cfff3ca510630fd90b47e8a24755",
+          "0x1f0c1a8fb16b0d2ac9a146d7ae20d8d179695a92a79ed66fc45d9da4532459b3",
+          "0x038146ec5a2573e1c30d2fb32c66c8440f426fbd108082df41c7bebd1d521c30",
+          "0x17d3d12b17fe762de4b835b2180b012e808816a7f2ff69ecb9d65188235d8fd4",
+          "0x0e1a6b7d63a6e5a9e54e8f391dd4e9d49cdfedcbc87f02cd34d4641d2eb30491",
+          "0x09244eec34977ff795fc41036996ce974136377f521ac8eb9e04642d204783d2",
+          "0x1646d6f544ec36df9dc41f778a7ef1690a53c730b501471b6acd202194a7e8e9",
+          "0x064769603ba3f6c41f664d266ecb9a3a0f6567cd3e48b40f34d4894ee4c361b3",
+          "0x1595bb3cd19f84619dc2e368175a88d8627a7439eda9397202cdb1167531fd3f",
+          "0x2a529be462b81ca30265b558763b1498289c9d88277ab14f0838cb1fce4b472c",
+          "0x0c08da612363088ad0bbc78abd233e8ace4c05a56fdabdd5e5e9b05e428bdaee",
+          "0x14748d0241710ef47f54b931ac5a58082b1d56b0f0c30d55fb71a6e8c9a6be14"
+        ],
+        "accumulatorRoot": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7",
+        "accumulatorEpoch": 1
+      }
+    },
+    "expired_kyc": {
+      "credentialType": "zkc:kyc:v1",
+      "proofType": "zkc:proof:kyc:v1",
+      "issuerId": "did:zkc:test-issuer",
+      "holderCommitment": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+      "credentialId": "0x000000000000000000000000000000000000000000000000000000000000002b",
+      "claims": {
+        "level": 2,
+        "verifiedAttributes": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ]
+      },
+      "expiresAt": 100,
+      "signature": "0xf58b33b99c016b3d3080b216144cc25640b507e7c9843c9ac531227852d0932879543772d7eb83e1d188ff9cd26bfa415584d5a1259e57022a93701b1f423edb",
+      "witness": {
+        "pathIndex": 1,
+        "siblings": [
+          "0x000000000000000000000000000000000000000000000000000000000000002a",
+          "0x18804f4c91ff0096b40104ef31fac4c3b1de573b1bb1dbef74e6cdd5a35236dd",
+          "0x132de8f8d7df520ed44efc4529c92fa3ba9faab263c0b7e88e5754108dacde64",
+          "0x21f9172d72fdcdafc312eee05cf5092980dda821da5b760a9fb8dbdf607c8a20",
+          "0x2373ea368857ec7af97e7b470d705848e2bf93ed7bef142a490f2119bcf82d8e",
+          "0x120157cfaaa49ce3da30f8b47879114977c24b266d58b0ac18b325d878aafddf",
+          "0x01c28fe1059ae0237b72334700697bdf465e03df03986fe05200cadeda66bd76",
+          "0x2d78ed82f93b61ba718b17c2dfe5b52375b4d37cbbed6f1fc98b47614b0cf21b",
+          "0x067243231eddf4222f3911defbba7705aff06ed45960b27f6f91319196ef97e1",
+          "0x1849b85f3c693693e732dfc4577217acc18295193bede09ce8b97ad910310972",
+          "0x2a775ea761d20435b31fa2c33ff07663e24542ffb9e7b293dfce3042eb104686",
+          "0x0f320b0703439a8114f81593de99cd0b8f3b9bf854601abb5b2ea0e8a3dda4a7",
+          "0x0d07f6e7a8a0e9199d6d92801fff867002ff5b4808962f9da2ba5ce1bdd26a73",
+          "0x1c4954081e324939350febc2b918a293ebcdaead01be95ec02fcbe8d2c1635d1",
+          "0x0197f2171ef99c2d053ee1fb5ff5ab288d56b9b41b4716c9214a4d97facc4c4a",
+          "0x2b9cdd484c5ba1e4d6efcc3f18734b5ac4c4a0b9102e2aeb48521a661d3feee9",
+          "0x14f44d672eb357739e42463497f9fdac46623af863eea4d947ca00a497dcdeb3",
+          "0x071d7627ae3b2eabda8a810227bf04206370ac78dbf6c372380182dbd3711fe3",
+          "0x2fdc08d9fe075ac58cb8c00f98697861a13b3ab6f9d41a4e768f75e477475bf5",
+          "0x20165fe405652104dceaeeca92950aa5adc571b8cafe192878cba58ff1be49c5",
+          "0x1c8c3ca0b3a3d75850fcd4dc7bf1e3445cd0cfff3ca510630fd90b47e8a24755",
+          "0x1f0c1a8fb16b0d2ac9a146d7ae20d8d179695a92a79ed66fc45d9da4532459b3",
+          "0x038146ec5a2573e1c30d2fb32c66c8440f426fbd108082df41c7bebd1d521c30",
+          "0x17d3d12b17fe762de4b835b2180b012e808816a7f2ff69ecb9d65188235d8fd4",
+          "0x0e1a6b7d63a6e5a9e54e8f391dd4e9d49cdfedcbc87f02cd34d4641d2eb30491",
+          "0x09244eec34977ff795fc41036996ce974136377f521ac8eb9e04642d204783d2",
+          "0x1646d6f544ec36df9dc41f778a7ef1690a53c730b501471b6acd202194a7e8e9",
+          "0x064769603ba3f6c41f664d266ecb9a3a0f6567cd3e48b40f34d4894ee4c361b3",
+          "0x1595bb3cd19f84619dc2e368175a88d8627a7439eda9397202cdb1167531fd3f",
+          "0x2a529be462b81ca30265b558763b1498289c9d88277ab14f0838cb1fce4b472c",
+          "0x0c08da612363088ad0bbc78abd233e8ace4c05a56fdabdd5e5e9b05e428bdaee",
+          "0x14748d0241710ef47f54b931ac5a58082b1d56b0f0c30d55fb71a6e8c9a6be14"
+        ],
+        "accumulatorRoot": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7",
+        "accumulatorEpoch": 1
+      }
+    },
+    "revoked_kyc_self_made_root": {
+      "credentialType": "zkc:kyc:v1",
+      "proofType": "zkc:proof:kyc:v1",
+      "issuerId": "did:zkc:test-issuer",
+      "holderCommitment": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+      "credentialId": "0x0000000000000000000000000000000000000000000000000000000000000032",
+      "claims": {
+        "level": 2,
+        "verifiedAttributes": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ]
+      },
+      "expiresAt": 2000000000,
+      "signature": "0x861610391d9feb76cd8ab0707bfc1747bb817284eb94ecd85e9c8122539d919a115df4fe26fcef1b670206009575e0943abd74796cfbf08ed5f1a429652b3649",
+      "witness": {
+        "pathIndex": 0,
+        "siblings": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0b63a53787021a4a962a452c2921b3663aff1ffd8d5510540f8e659e782956f1",
+          "0x0e34ac2c09f45a503d2908bcb12f1cbae5fa4065759c88d501c097506a8b2290",
+          "0x21f9172d72fdcdafc312eee05cf5092980dda821da5b760a9fb8dbdf607c8a20",
+          "0x2373ea368857ec7af97e7b470d705848e2bf93ed7bef142a490f2119bcf82d8e",
+          "0x120157cfaaa49ce3da30f8b47879114977c24b266d58b0ac18b325d878aafddf",
+          "0x01c28fe1059ae0237b72334700697bdf465e03df03986fe05200cadeda66bd76",
+          "0x2d78ed82f93b61ba718b17c2dfe5b52375b4d37cbbed6f1fc98b47614b0cf21b",
+          "0x067243231eddf4222f3911defbba7705aff06ed45960b27f6f91319196ef97e1",
+          "0x1849b85f3c693693e732dfc4577217acc18295193bede09ce8b97ad910310972",
+          "0x2a775ea761d20435b31fa2c33ff07663e24542ffb9e7b293dfce3042eb104686",
+          "0x0f320b0703439a8114f81593de99cd0b8f3b9bf854601abb5b2ea0e8a3dda4a7",
+          "0x0d07f6e7a8a0e9199d6d92801fff867002ff5b4808962f9da2ba5ce1bdd26a73",
+          "0x1c4954081e324939350febc2b918a293ebcdaead01be95ec02fcbe8d2c1635d1",
+          "0x0197f2171ef99c2d053ee1fb5ff5ab288d56b9b41b4716c9214a4d97facc4c4a",
+          "0x2b9cdd484c5ba1e4d6efcc3f18734b5ac4c4a0b9102e2aeb48521a661d3feee9",
+          "0x14f44d672eb357739e42463497f9fdac46623af863eea4d947ca00a497dcdeb3",
+          "0x071d7627ae3b2eabda8a810227bf04206370ac78dbf6c372380182dbd3711fe3",
+          "0x2fdc08d9fe075ac58cb8c00f98697861a13b3ab6f9d41a4e768f75e477475bf5",
+          "0x20165fe405652104dceaeeca92950aa5adc571b8cafe192878cba58ff1be49c5",
+          "0x1c8c3ca0b3a3d75850fcd4dc7bf1e3445cd0cfff3ca510630fd90b47e8a24755",
+          "0x1f0c1a8fb16b0d2ac9a146d7ae20d8d179695a92a79ed66fc45d9da4532459b3",
+          "0x038146ec5a2573e1c30d2fb32c66c8440f426fbd108082df41c7bebd1d521c30",
+          "0x17d3d12b17fe762de4b835b2180b012e808816a7f2ff69ecb9d65188235d8fd4",
+          "0x0e1a6b7d63a6e5a9e54e8f391dd4e9d49cdfedcbc87f02cd34d4641d2eb30491",
+          "0x09244eec34977ff795fc41036996ce974136377f521ac8eb9e04642d204783d2",
+          "0x1646d6f544ec36df9dc41f778a7ef1690a53c730b501471b6acd202194a7e8e9",
+          "0x064769603ba3f6c41f664d266ecb9a3a0f6567cd3e48b40f34d4894ee4c361b3",
+          "0x1595bb3cd19f84619dc2e368175a88d8627a7439eda9397202cdb1167531fd3f",
+          "0x2a529be462b81ca30265b558763b1498289c9d88277ab14f0838cb1fce4b472c",
+          "0x0c08da612363088ad0bbc78abd233e8ace4c05a56fdabdd5e5e9b05e428bdaee",
+          "0x14748d0241710ef47f54b931ac5a58082b1d56b0f0c30d55fb71a6e8c9a6be14"
+        ],
+        "accumulatorRoot": "0x21f3285401063a0b2d7b21bb77131cf7d2ee460bf102481acad89f188020a2e2",
+        "accumulatorEpoch": 1
+      }
+    },
+    "other_issuer_kyc": {
+      "credentialType": "zkc:kyc:v1",
+      "proofType": "zkc:proof:kyc:v1",
+      "issuerId": "did:zkc:other-issuer",
+      "holderCommitment": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+      "credentialId": "0x000000000000000000000000000000000000000000000000000000000000002c",
+      "claims": {
+        "level": 2,
+        "verifiedAttributes": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ]
+      },
+      "expiresAt": 2000000000,
+      "signature": "0xcb907c5014908975a6e7ff24351d10f68fa23605781407822ad7a081e7715b45122d362612ca5530b1a3edec116a79a1e407ad734e2a4ecec99a6bf9ac35fc96",
+      "witness": {
+        "pathIndex": 0,
+        "siblings": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0b63a53787021a4a962a452c2921b3663aff1ffd8d5510540f8e659e782956f1",
+          "0x0e34ac2c09f45a503d2908bcb12f1cbae5fa4065759c88d501c097506a8b2290",
+          "0x21f9172d72fdcdafc312eee05cf5092980dda821da5b760a9fb8dbdf607c8a20",
+          "0x2373ea368857ec7af97e7b470d705848e2bf93ed7bef142a490f2119bcf82d8e",
+          "0x120157cfaaa49ce3da30f8b47879114977c24b266d58b0ac18b325d878aafddf",
+          "0x01c28fe1059ae0237b72334700697bdf465e03df03986fe05200cadeda66bd76",
+          "0x2d78ed82f93b61ba718b17c2dfe5b52375b4d37cbbed6f1fc98b47614b0cf21b",
+          "0x067243231eddf4222f3911defbba7705aff06ed45960b27f6f91319196ef97e1",
+          "0x1849b85f3c693693e732dfc4577217acc18295193bede09ce8b97ad910310972",
+          "0x2a775ea761d20435b31fa2c33ff07663e24542ffb9e7b293dfce3042eb104686",
+          "0x0f320b0703439a8114f81593de99cd0b8f3b9bf854601abb5b2ea0e8a3dda4a7",
+          "0x0d07f6e7a8a0e9199d6d92801fff867002ff5b4808962f9da2ba5ce1bdd26a73",
+          "0x1c4954081e324939350febc2b918a293ebcdaead01be95ec02fcbe8d2c1635d1",
+          "0x0197f2171ef99c2d053ee1fb5ff5ab288d56b9b41b4716c9214a4d97facc4c4a",
+          "0x2b9cdd484c5ba1e4d6efcc3f18734b5ac4c4a0b9102e2aeb48521a661d3feee9",
+          "0x14f44d672eb357739e42463497f9fdac46623af863eea4d947ca00a497dcdeb3",
+          "0x071d7627ae3b2eabda8a810227bf04206370ac78dbf6c372380182dbd3711fe3",
+          "0x2fdc08d9fe075ac58cb8c00f98697861a13b3ab6f9d41a4e768f75e477475bf5",
+          "0x20165fe405652104dceaeeca92950aa5adc571b8cafe192878cba58ff1be49c5",
+          "0x1c8c3ca0b3a3d75850fcd4dc7bf1e3445cd0cfff3ca510630fd90b47e8a24755",
+          "0x1f0c1a8fb16b0d2ac9a146d7ae20d8d179695a92a79ed66fc45d9da4532459b3",
+          "0x038146ec5a2573e1c30d2fb32c66c8440f426fbd108082df41c7bebd1d521c30",
+          "0x17d3d12b17fe762de4b835b2180b012e808816a7f2ff69ecb9d65188235d8fd4",
+          "0x0e1a6b7d63a6e5a9e54e8f391dd4e9d49cdfedcbc87f02cd34d4641d2eb30491",
+          "0x09244eec34977ff795fc41036996ce974136377f521ac8eb9e04642d204783d2",
+          "0x1646d6f544ec36df9dc41f778a7ef1690a53c730b501471b6acd202194a7e8e9",
+          "0x064769603ba3f6c41f664d266ecb9a3a0f6567cd3e48b40f34d4894ee4c361b3",
+          "0x1595bb3cd19f84619dc2e368175a88d8627a7439eda9397202cdb1167531fd3f",
+          "0x2a529be462b81ca30265b558763b1498289c9d88277ab14f0838cb1fce4b472c",
+          "0x0c08da612363088ad0bbc78abd233e8ace4c05a56fdabdd5e5e9b05e428bdaee",
+          "0x14748d0241710ef47f54b931ac5a58082b1d56b0f0c30d55fb71a6e8c9a6be14"
+        ],
+        "accumulatorRoot": "0x28f2d6b168fb060a9d46482d5b3528863f658a94e19d22f183256c187605f71a",
+        "accumulatorEpoch": 1
+      }
+    },
+    "valid_jurisdiction": {
+      "credentialType": "zkc:cred:jurisdiction:v1",
+      "proofType": "zkc:proof:jurisdiction:v3",
+      "issuerId": "did:zkc:test-issuer",
+      "holderCommitment": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+      "credentialId": "0x000000000000000000000000000000000000000000000000000000000000002d",
+      "claims": {
+        "jurisdictionCode": 150,
+        "claimType": 1,
+        "verificationMethod": 1,
+        "validFrom": 1000,
+        "validUntil": 2000000000
+      },
+      "expiresAt": 2000000000,
+      "signature": "0xeaccc8d77fdeb68205d22da8c8bc0f38957a88f4ac266ff013c4a278d04f8f7e038ed522919895cc96cf320e520f614ca5e55be933afbc1f2a3f2fd33148c32b",
+      "witness": {
+        "pathIndex": 2,
+        "siblings": [
+          "0x000000000000000000000000000000000000000000000000000000000000002e",
+          "0x04af96ce7acd161a990c867f0cdf7f7a30ee1b2cf7c27b83bcc76ae4f9595fc8",
+          "0x132de8f8d7df520ed44efc4529c92fa3ba9faab263c0b7e88e5754108dacde64",
+          "0x21f9172d72fdcdafc312eee05cf5092980dda821da5b760a9fb8dbdf607c8a20",
+          "0x2373ea368857ec7af97e7b470d705848e2bf93ed7bef142a490f2119bcf82d8e",
+          "0x120157cfaaa49ce3da30f8b47879114977c24b266d58b0ac18b325d878aafddf",
+          "0x01c28fe1059ae0237b72334700697bdf465e03df03986fe05200cadeda66bd76",
+          "0x2d78ed82f93b61ba718b17c2dfe5b52375b4d37cbbed6f1fc98b47614b0cf21b",
+          "0x067243231eddf4222f3911defbba7705aff06ed45960b27f6f91319196ef97e1",
+          "0x1849b85f3c693693e732dfc4577217acc18295193bede09ce8b97ad910310972",
+          "0x2a775ea761d20435b31fa2c33ff07663e24542ffb9e7b293dfce3042eb104686",
+          "0x0f320b0703439a8114f81593de99cd0b8f3b9bf854601abb5b2ea0e8a3dda4a7",
+          "0x0d07f6e7a8a0e9199d6d92801fff867002ff5b4808962f9da2ba5ce1bdd26a73",
+          "0x1c4954081e324939350febc2b918a293ebcdaead01be95ec02fcbe8d2c1635d1",
+          "0x0197f2171ef99c2d053ee1fb5ff5ab288d56b9b41b4716c9214a4d97facc4c4a",
+          "0x2b9cdd484c5ba1e4d6efcc3f18734b5ac4c4a0b9102e2aeb48521a661d3feee9",
+          "0x14f44d672eb357739e42463497f9fdac46623af863eea4d947ca00a497dcdeb3",
+          "0x071d7627ae3b2eabda8a810227bf04206370ac78dbf6c372380182dbd3711fe3",
+          "0x2fdc08d9fe075ac58cb8c00f98697861a13b3ab6f9d41a4e768f75e477475bf5",
+          "0x20165fe405652104dceaeeca92950aa5adc571b8cafe192878cba58ff1be49c5",
+          "0x1c8c3ca0b3a3d75850fcd4dc7bf1e3445cd0cfff3ca510630fd90b47e8a24755",
+          "0x1f0c1a8fb16b0d2ac9a146d7ae20d8d179695a92a79ed66fc45d9da4532459b3",
+          "0x038146ec5a2573e1c30d2fb32c66c8440f426fbd108082df41c7bebd1d521c30",
+          "0x17d3d12b17fe762de4b835b2180b012e808816a7f2ff69ecb9d65188235d8fd4",
+          "0x0e1a6b7d63a6e5a9e54e8f391dd4e9d49cdfedcbc87f02cd34d4641d2eb30491",
+          "0x09244eec34977ff795fc41036996ce974136377f521ac8eb9e04642d204783d2",
+          "0x1646d6f544ec36df9dc41f778a7ef1690a53c730b501471b6acd202194a7e8e9",
+          "0x064769603ba3f6c41f664d266ecb9a3a0f6567cd3e48b40f34d4894ee4c361b3",
+          "0x1595bb3cd19f84619dc2e368175a88d8627a7439eda9397202cdb1167531fd3f",
+          "0x2a529be462b81ca30265b558763b1498289c9d88277ab14f0838cb1fce4b472c",
+          "0x0c08da612363088ad0bbc78abd233e8ace4c05a56fdabdd5e5e9b05e428bdaee",
+          "0x14748d0241710ef47f54b931ac5a58082b1d56b0f0c30d55fb71a6e8c9a6be14"
+        ],
+        "accumulatorRoot": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7",
+        "accumulatorEpoch": 1
+      }
+    },
+    "valid_accreditation": {
+      "credentialType": "zkc:cred:accreditation:v2",
+      "proofType": "zkc:proof:accreditation:v7",
+      "issuerId": "did:zkc:test-issuer",
+      "holderCommitment": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+      "credentialId": "0x000000000000000000000000000000000000000000000000000000000000002e",
+      "claims": {
+        "claim0": 3,
+        "claim1": 1,
+        "validFrom": 1000,
+        "validUntil": 2000000000
+      },
+      "expiresAt": 2000000000,
+      "signature": "0x1e528ff27a1d061b380d930ef1613936a47f509324786ca68f789200b955ec7c30f8af5b7f88a07aac4976a315ac94d1deb881879aabb310438d4393fc3ceaca",
+      "witness": {
+        "pathIndex": 3,
+        "siblings": [
+          "0x000000000000000000000000000000000000000000000000000000000000002d",
+          "0x04af96ce7acd161a990c867f0cdf7f7a30ee1b2cf7c27b83bcc76ae4f9595fc8",
+          "0x132de8f8d7df520ed44efc4529c92fa3ba9faab263c0b7e88e5754108dacde64",
+          "0x21f9172d72fdcdafc312eee05cf5092980dda821da5b760a9fb8dbdf607c8a20",
+          "0x2373ea368857ec7af97e7b470d705848e2bf93ed7bef142a490f2119bcf82d8e",
+          "0x120157cfaaa49ce3da30f8b47879114977c24b266d58b0ac18b325d878aafddf",
+          "0x01c28fe1059ae0237b72334700697bdf465e03df03986fe05200cadeda66bd76",
+          "0x2d78ed82f93b61ba718b17c2dfe5b52375b4d37cbbed6f1fc98b47614b0cf21b",
+          "0x067243231eddf4222f3911defbba7705aff06ed45960b27f6f91319196ef97e1",
+          "0x1849b85f3c693693e732dfc4577217acc18295193bede09ce8b97ad910310972",
+          "0x2a775ea761d20435b31fa2c33ff07663e24542ffb9e7b293dfce3042eb104686",
+          "0x0f320b0703439a8114f81593de99cd0b8f3b9bf854601abb5b2ea0e8a3dda4a7",
+          "0x0d07f6e7a8a0e9199d6d92801fff867002ff5b4808962f9da2ba5ce1bdd26a73",
+          "0x1c4954081e324939350febc2b918a293ebcdaead01be95ec02fcbe8d2c1635d1",
+          "0x0197f2171ef99c2d053ee1fb5ff5ab288d56b9b41b4716c9214a4d97facc4c4a",
+          "0x2b9cdd484c5ba1e4d6efcc3f18734b5ac4c4a0b9102e2aeb48521a661d3feee9",
+          "0x14f44d672eb357739e42463497f9fdac46623af863eea4d947ca00a497dcdeb3",
+          "0x071d7627ae3b2eabda8a810227bf04206370ac78dbf6c372380182dbd3711fe3",
+          "0x2fdc08d9fe075ac58cb8c00f98697861a13b3ab6f9d41a4e768f75e477475bf5",
+          "0x20165fe405652104dceaeeca92950aa5adc571b8cafe192878cba58ff1be49c5",
+          "0x1c8c3ca0b3a3d75850fcd4dc7bf1e3445cd0cfff3ca510630fd90b47e8a24755",
+          "0x1f0c1a8fb16b0d2ac9a146d7ae20d8d179695a92a79ed66fc45d9da4532459b3",
+          "0x038146ec5a2573e1c30d2fb32c66c8440f426fbd108082df41c7bebd1d521c30",
+          "0x17d3d12b17fe762de4b835b2180b012e808816a7f2ff69ecb9d65188235d8fd4",
+          "0x0e1a6b7d63a6e5a9e54e8f391dd4e9d49cdfedcbc87f02cd34d4641d2eb30491",
+          "0x09244eec34977ff795fc41036996ce974136377f521ac8eb9e04642d204783d2",
+          "0x1646d6f544ec36df9dc41f778a7ef1690a53c730b501471b6acd202194a7e8e9",
+          "0x064769603ba3f6c41f664d266ecb9a3a0f6567cd3e48b40f34d4894ee4c361b3",
+          "0x1595bb3cd19f84619dc2e368175a88d8627a7439eda9397202cdb1167531fd3f",
+          "0x2a529be462b81ca30265b558763b1498289c9d88277ab14f0838cb1fce4b472c",
+          "0x0c08da612363088ad0bbc78abd233e8ace4c05a56fdabdd5e5e9b05e428bdaee",
+          "0x14748d0241710ef47f54b931ac5a58082b1d56b0f0c30d55fb71a6e8c9a6be14"
+        ],
+        "accumulatorRoot": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7",
+        "accumulatorEpoch": 1
+      }
+    },
+    "valid_source": {
+      "credentialType": "zkc:cred:source:v2",
+      "proofType": "zkc:proof:source:v7",
+      "issuerId": "did:zkc:test-issuer",
+      "holderCommitment": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+      "credentialId": "0x000000000000000000000000000000000000000000000000000000000000002f",
+      "claims": {
+        "claim0": 7,
+        "claim1": 0,
+        "validFrom": 1000,
+        "validUntil": 2000000000
+      },
+      "expiresAt": 2000000000,
+      "signature": "0x690f2a84ffa0c7feda45a9783991421f306d37e3f43a1d34db32d6f148c5b2af05a1d99f587e476afa9d98307d67414b0c008f305c24cff9831f23476c53ad15",
+      "witness": {
+        "pathIndex": 4,
+        "siblings": [
+          "0x0000000000000000000000000000000000000000000000000000000000000030",
+          "0x167a431d964ec3cf97bb5d87bf07399dd71b6c34a32bc424d60ec1cd26a611e2",
+          "0x0b40d820ff0c492c65eba946978c95fff33769b5d6768ea86ce86dd77cb2f0ea",
+          "0x21f9172d72fdcdafc312eee05cf5092980dda821da5b760a9fb8dbdf607c8a20",
+          "0x2373ea368857ec7af97e7b470d705848e2bf93ed7bef142a490f2119bcf82d8e",
+          "0x120157cfaaa49ce3da30f8b47879114977c24b266d58b0ac18b325d878aafddf",
+          "0x01c28fe1059ae0237b72334700697bdf465e03df03986fe05200cadeda66bd76",
+          "0x2d78ed82f93b61ba718b17c2dfe5b52375b4d37cbbed6f1fc98b47614b0cf21b",
+          "0x067243231eddf4222f3911defbba7705aff06ed45960b27f6f91319196ef97e1",
+          "0x1849b85f3c693693e732dfc4577217acc18295193bede09ce8b97ad910310972",
+          "0x2a775ea761d20435b31fa2c33ff07663e24542ffb9e7b293dfce3042eb104686",
+          "0x0f320b0703439a8114f81593de99cd0b8f3b9bf854601abb5b2ea0e8a3dda4a7",
+          "0x0d07f6e7a8a0e9199d6d92801fff867002ff5b4808962f9da2ba5ce1bdd26a73",
+          "0x1c4954081e324939350febc2b918a293ebcdaead01be95ec02fcbe8d2c1635d1",
+          "0x0197f2171ef99c2d053ee1fb5ff5ab288d56b9b41b4716c9214a4d97facc4c4a",
+          "0x2b9cdd484c5ba1e4d6efcc3f18734b5ac4c4a0b9102e2aeb48521a661d3feee9",
+          "0x14f44d672eb357739e42463497f9fdac46623af863eea4d947ca00a497dcdeb3",
+          "0x071d7627ae3b2eabda8a810227bf04206370ac78dbf6c372380182dbd3711fe3",
+          "0x2fdc08d9fe075ac58cb8c00f98697861a13b3ab6f9d41a4e768f75e477475bf5",
+          "0x20165fe405652104dceaeeca92950aa5adc571b8cafe192878cba58ff1be49c5",
+          "0x1c8c3ca0b3a3d75850fcd4dc7bf1e3445cd0cfff3ca510630fd90b47e8a24755",
+          "0x1f0c1a8fb16b0d2ac9a146d7ae20d8d179695a92a79ed66fc45d9da4532459b3",
+          "0x038146ec5a2573e1c30d2fb32c66c8440f426fbd108082df41c7bebd1d521c30",
+          "0x17d3d12b17fe762de4b835b2180b012e808816a7f2ff69ecb9d65188235d8fd4",
+          "0x0e1a6b7d63a6e5a9e54e8f391dd4e9d49cdfedcbc87f02cd34d4641d2eb30491",
+          "0x09244eec34977ff795fc41036996ce974136377f521ac8eb9e04642d204783d2",
+          "0x1646d6f544ec36df9dc41f778a7ef1690a53c730b501471b6acd202194a7e8e9",
+          "0x064769603ba3f6c41f664d266ecb9a3a0f6567cd3e48b40f34d4894ee4c361b3",
+          "0x1595bb3cd19f84619dc2e368175a88d8627a7439eda9397202cdb1167531fd3f",
+          "0x2a529be462b81ca30265b558763b1498289c9d88277ab14f0838cb1fce4b472c",
+          "0x0c08da612363088ad0bbc78abd233e8ace4c05a56fdabdd5e5e9b05e428bdaee",
+          "0x14748d0241710ef47f54b931ac5a58082b1d56b0f0c30d55fb71a6e8c9a6be14"
+        ],
+        "accumulatorRoot": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7",
+        "accumulatorEpoch": 1
+      }
+    },
+    "valid_tax": {
+      "credentialType": "zkc:cred:tax:v2",
+      "proofType": "zkc:proof:tax:v7",
+      "issuerId": "did:zkc:test-issuer",
+      "holderCommitment": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+      "credentialId": "0x0000000000000000000000000000000000000000000000000000000000000030",
+      "claims": {
+        "claim0": 840,
+        "claim1": 2026,
+        "validFrom": 1000,
+        "validUntil": 2000000000
+      },
+      "expiresAt": 2000000000,
+      "signature": "0x0b9f4ea95daf7a402ee6e2762998cc9f7541e6ee3c08d6030c3e16e9647fc5ef1750209e523860c18e318385cbe0b8c56451ec5a82554d8f5ef3aa74649b100f",
+      "witness": {
+        "pathIndex": 5,
+        "siblings": [
+          "0x000000000000000000000000000000000000000000000000000000000000002f",
+          "0x167a431d964ec3cf97bb5d87bf07399dd71b6c34a32bc424d60ec1cd26a611e2",
+          "0x0b40d820ff0c492c65eba946978c95fff33769b5d6768ea86ce86dd77cb2f0ea",
+          "0x21f9172d72fdcdafc312eee05cf5092980dda821da5b760a9fb8dbdf607c8a20",
+          "0x2373ea368857ec7af97e7b470d705848e2bf93ed7bef142a490f2119bcf82d8e",
+          "0x120157cfaaa49ce3da30f8b47879114977c24b266d58b0ac18b325d878aafddf",
+          "0x01c28fe1059ae0237b72334700697bdf465e03df03986fe05200cadeda66bd76",
+          "0x2d78ed82f93b61ba718b17c2dfe5b52375b4d37cbbed6f1fc98b47614b0cf21b",
+          "0x067243231eddf4222f3911defbba7705aff06ed45960b27f6f91319196ef97e1",
+          "0x1849b85f3c693693e732dfc4577217acc18295193bede09ce8b97ad910310972",
+          "0x2a775ea761d20435b31fa2c33ff07663e24542ffb9e7b293dfce3042eb104686",
+          "0x0f320b0703439a8114f81593de99cd0b8f3b9bf854601abb5b2ea0e8a3dda4a7",
+          "0x0d07f6e7a8a0e9199d6d92801fff867002ff5b4808962f9da2ba5ce1bdd26a73",
+          "0x1c4954081e324939350febc2b918a293ebcdaead01be95ec02fcbe8d2c1635d1",
+          "0x0197f2171ef99c2d053ee1fb5ff5ab288d56b9b41b4716c9214a4d97facc4c4a",
+          "0x2b9cdd484c5ba1e4d6efcc3f18734b5ac4c4a0b9102e2aeb48521a661d3feee9",
+          "0x14f44d672eb357739e42463497f9fdac46623af863eea4d947ca00a497dcdeb3",
+          "0x071d7627ae3b2eabda8a810227bf04206370ac78dbf6c372380182dbd3711fe3",
+          "0x2fdc08d9fe075ac58cb8c00f98697861a13b3ab6f9d41a4e768f75e477475bf5",
+          "0x20165fe405652104dceaeeca92950aa5adc571b8cafe192878cba58ff1be49c5",
+          "0x1c8c3ca0b3a3d75850fcd4dc7bf1e3445cd0cfff3ca510630fd90b47e8a24755",
+          "0x1f0c1a8fb16b0d2ac9a146d7ae20d8d179695a92a79ed66fc45d9da4532459b3",
+          "0x038146ec5a2573e1c30d2fb32c66c8440f426fbd108082df41c7bebd1d521c30",
+          "0x17d3d12b17fe762de4b835b2180b012e808816a7f2ff69ecb9d65188235d8fd4",
+          "0x0e1a6b7d63a6e5a9e54e8f391dd4e9d49cdfedcbc87f02cd34d4641d2eb30491",
+          "0x09244eec34977ff795fc41036996ce974136377f521ac8eb9e04642d204783d2",
+          "0x1646d6f544ec36df9dc41f778a7ef1690a53c730b501471b6acd202194a7e8e9",
+          "0x064769603ba3f6c41f664d266ecb9a3a0f6567cd3e48b40f34d4894ee4c361b3",
+          "0x1595bb3cd19f84619dc2e368175a88d8627a7439eda9397202cdb1167531fd3f",
+          "0x2a529be462b81ca30265b558763b1498289c9d88277ab14f0838cb1fce4b472c",
+          "0x0c08da612363088ad0bbc78abd233e8ace4c05a56fdabdd5e5e9b05e428bdaee",
+          "0x14748d0241710ef47f54b931ac5a58082b1d56b0f0c30d55fb71a6e8c9a6be14"
+        ],
+        "accumulatorRoot": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7",
+        "accumulatorEpoch": 1
+      }
+    },
+    "valid_sanctions": {
+      "credentialType": "zkc:cred:sanctions:v2",
+      "proofType": "zkc:proof:sanctions:v7",
+      "issuerId": "did:zkc:test-issuer",
+      "holderCommitment": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+      "credentialId": "0x0000000000000000000000000000000000000000000000000000000000000031",
+      "claims": {
+        "claim0": 150,
+        "claim1": 0,
+        "validFrom": 1000,
+        "validUntil": 2000000000
+      },
+      "expiresAt": 2000000000,
+      "signature": "0x0528d27df9f3322330ee3aaf9dde022f8b3dec3039e32c851b9fc3eab01dfc18523ad9b6b5e4f5c2938a63b1e0b20965151a6ff8f36a33ba8fea0f67fea9bc69",
+      "witness": {
+        "pathIndex": 6,
+        "siblings": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x24b79912370c1d880f94f89a6e5cc0c2172e5de5a35c4348df40510fafd06771",
+          "0x0b40d820ff0c492c65eba946978c95fff33769b5d6768ea86ce86dd77cb2f0ea",
+          "0x21f9172d72fdcdafc312eee05cf5092980dda821da5b760a9fb8dbdf607c8a20",
+          "0x2373ea368857ec7af97e7b470d705848e2bf93ed7bef142a490f2119bcf82d8e",
+          "0x120157cfaaa49ce3da30f8b47879114977c24b266d58b0ac18b325d878aafddf",
+          "0x01c28fe1059ae0237b72334700697bdf465e03df03986fe05200cadeda66bd76",
+          "0x2d78ed82f93b61ba718b17c2dfe5b52375b4d37cbbed6f1fc98b47614b0cf21b",
+          "0x067243231eddf4222f3911defbba7705aff06ed45960b27f6f91319196ef97e1",
+          "0x1849b85f3c693693e732dfc4577217acc18295193bede09ce8b97ad910310972",
+          "0x2a775ea761d20435b31fa2c33ff07663e24542ffb9e7b293dfce3042eb104686",
+          "0x0f320b0703439a8114f81593de99cd0b8f3b9bf854601abb5b2ea0e8a3dda4a7",
+          "0x0d07f6e7a8a0e9199d6d92801fff867002ff5b4808962f9da2ba5ce1bdd26a73",
+          "0x1c4954081e324939350febc2b918a293ebcdaead01be95ec02fcbe8d2c1635d1",
+          "0x0197f2171ef99c2d053ee1fb5ff5ab288d56b9b41b4716c9214a4d97facc4c4a",
+          "0x2b9cdd484c5ba1e4d6efcc3f18734b5ac4c4a0b9102e2aeb48521a661d3feee9",
+          "0x14f44d672eb357739e42463497f9fdac46623af863eea4d947ca00a497dcdeb3",
+          "0x071d7627ae3b2eabda8a810227bf04206370ac78dbf6c372380182dbd3711fe3",
+          "0x2fdc08d9fe075ac58cb8c00f98697861a13b3ab6f9d41a4e768f75e477475bf5",
+          "0x20165fe405652104dceaeeca92950aa5adc571b8cafe192878cba58ff1be49c5",
+          "0x1c8c3ca0b3a3d75850fcd4dc7bf1e3445cd0cfff3ca510630fd90b47e8a24755",
+          "0x1f0c1a8fb16b0d2ac9a146d7ae20d8d179695a92a79ed66fc45d9da4532459b3",
+          "0x038146ec5a2573e1c30d2fb32c66c8440f426fbd108082df41c7bebd1d521c30",
+          "0x17d3d12b17fe762de4b835b2180b012e808816a7f2ff69ecb9d65188235d8fd4",
+          "0x0e1a6b7d63a6e5a9e54e8f391dd4e9d49cdfedcbc87f02cd34d4641d2eb30491",
+          "0x09244eec34977ff795fc41036996ce974136377f521ac8eb9e04642d204783d2",
+          "0x1646d6f544ec36df9dc41f778a7ef1690a53c730b501471b6acd202194a7e8e9",
+          "0x064769603ba3f6c41f664d266ecb9a3a0f6567cd3e48b40f34d4894ee4c361b3",
+          "0x1595bb3cd19f84619dc2e368175a88d8627a7439eda9397202cdb1167531fd3f",
+          "0x2a529be462b81ca30265b558763b1498289c9d88277ab14f0838cb1fce4b472c",
+          "0x0c08da612363088ad0bbc78abd233e8ace4c05a56fdabdd5e5e9b05e428bdaee",
+          "0x14748d0241710ef47f54b931ac5a58082b1d56b0f0c30d55fb71a6e8c9a6be14"
+        ],
+        "accumulatorRoot": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7",
+        "accumulatorEpoch": 1
+      }
+    }
+  },
+  "requests": {
+    "kyc_basic": {
+      "proofTypes": [
+        "zkc:proof:kyc:v1"
+      ],
+      "parameters": {
+        "zkc:proof:kyc:v1": {
+          "requiredLevel": 1,
+          "requiredAttributes": [
+            true,
+            false,
+            true,
+            false,
+            false
+          ]
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    },
+    "kyc_other_session": {
+      "proofTypes": [
+        "zkc:proof:kyc:v1"
+      ],
+      "parameters": {
+        "zkc:proof:kyc:v1": {
+          "requiredLevel": 1,
+          "requiredAttributes": [
+            true,
+            false,
+            true,
+            false,
+            false
+          ]
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022c",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    },
+    "kyc_level_3": {
+      "proofTypes": [
+        "zkc:proof:kyc:v1"
+      ],
+      "parameters": {
+        "zkc:proof:kyc:v1": {
+          "requiredLevel": 3,
+          "requiredAttributes": [
+            true,
+            false,
+            true,
+            false,
+            false
+          ]
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    },
+    "kyc_level_modulus_alias": {
+      "proofTypes": [
+        "zkc:proof:kyc:v1"
+      ],
+      "parameters": {
+        "zkc:proof:kyc:v1": {
+          "requiredLevel": 21888242871839275222246405745257275088548364400416034343698204186575808495618,
+          "requiredAttributes": [
+            true,
+            false,
+            true,
+            false,
+            false
+          ]
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    },
+    "kyc_empty_trust": {
+      "proofTypes": [
+        "zkc:proof:kyc:v1"
+      ],
+      "parameters": {
+        "zkc:proof:kyc:v1": {
+          "requiredLevel": 1,
+          "requiredAttributes": [
+            true,
+            false,
+            true,
+            false,
+            false
+          ]
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": []
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    },
+    "kyc_two_types": {
+      "proofTypes": [
+        "zkc:proof:kyc:v1",
+        "zkc:proof:jurisdiction:v3"
+      ],
+      "parameters": {
+        "zkc:proof:kyc:v1": {
+          "requiredLevel": 1,
+          "requiredAttributes": [
+            true,
+            false,
+            true,
+            false,
+            false
+          ]
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    },
+    "kyc_unrecorded_root": {
+      "proofTypes": [
+        "zkc:proof:kyc:v1"
+      ],
+      "parameters": {
+        "zkc:proof:kyc:v1": {
+          "requiredLevel": 1,
+          "requiredAttributes": [
+            true,
+            false,
+            true,
+            false,
+            false
+          ]
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1
+        }
+      }
+    },
+    "kyc_advanced_epoch": {
+      "proofTypes": [
+        "zkc:proof:kyc:v1"
+      ],
+      "parameters": {
+        "zkc:proof:kyc:v1": {
+          "requiredLevel": 1,
+          "requiredAttributes": [
+            true,
+            false,
+            true,
+            false,
+            false
+          ]
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 2,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7",
+            "2": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    },
+    "opaque_request": {
+      "proofTypes": [
+        "zkc:proof:unreviewed-scoring:v1"
+      ],
+      "parameters": {},
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    },
+    "jurisdiction_inclusion": {
+      "proofTypes": [
+        "zkc:proof:jurisdiction:v3"
+      ],
+      "parameters": {
+        "zkc:proof:jurisdiction:v3": {
+          "membershipType": 0,
+          "requiredClaimType": 1,
+          "jurisdictionSetRoot": 11422984444276858673572407910294093092334755478389876482607704849650865703652,
+          "membershipPathIndex": 0,
+          "membershipSiblings": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      },
+      "holderExactMemberConsents": {
+        "zkc:proof:jurisdiction:v3": true
+      }
+    },
+    "jurisdiction_exclusion": {
+      "proofTypes": [
+        "zkc:proof:jurisdiction:v3"
+      ],
+      "parameters": {
+        "zkc:proof:jurisdiction:v3": {
+          "membershipType": 1,
+          "requiredClaimType": 1,
+          "jurisdictionCanonicalSet": [
+            100,
+            200
+          ],
+          "jurisdictionSetRoot": 11797718882750022873697656418598669975601162197198778194542272992080558558513
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    },
+    "accreditation_level_2": {
+      "proofTypes": [
+        "zkc:proof:accreditation:v7"
+      ],
+      "parameters": {
+        "zkc:proof:accreditation:v7": {
+          "required0": 2,
+          "required1": 0
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    },
+    "accreditation_level_3": {
+      "proofTypes": [
+        "zkc:proof:accreditation:v7"
+      ],
+      "parameters": {
+        "zkc:proof:accreditation:v7": {
+          "required0": 3,
+          "required1": 0
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    },
+    "source_set_7": {
+      "proofTypes": [
+        "zkc:proof:source:v7"
+      ],
+      "parameters": {
+        "zkc:proof:source:v7": {
+          "required0": 0,
+          "required1": 0,
+          "setRoot": 19893374139209315967136203668063134267777777806822285628508259305167770039609,
+          "pathIndex": 0,
+          "siblings": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      },
+      "holderExactMemberConsents": {
+        "zkc:proof:source:v7": true
+      }
+    },
+    "source_set_7_8": {
+      "proofTypes": [
+        "zkc:proof:source:v7"
+      ],
+      "parameters": {
+        "zkc:proof:source:v7": {
+          "required0": 0,
+          "required1": 0,
+          "setRoot": 7639583286096958397079996923586498502468604735127591920702688142402402891427,
+          "pathIndex": 0,
+          "siblings": [
+            8,
+            5151499478991301833156025595048985053689893395646836724335623777508747990769,
+            6425444215191838285069835781607981895589384041954338275956759438530131468944,
+            15366428887851194658173001994030115403889500460316803633813719685335613213216,
+            16035753591704748209377180686147291356460509756602580601938195381349806255502,
+            8144004172175511637373287007127031310278744323254585308703615193240287509983,
+            796074195456137668475057404256202455048248910468542119987582633322559749494,
+            20567739078944838550556895816409602128127282297589578747131836752205066334747,
+            2915761020738377646169465098196184536995852317462848975418156916828302972897,
+            10985760690611977917867463287126968335324276333731556907069004868774077204850,
+            19208047717975195819992968481289292904158208618635067144381052124352153142918,
+            6873111190261103763395069460662520014470628472871405490586772273844549690535,
+            5894139036143562089612233756205231544611692010506775540918923829608719739507,
+            12794319561613039897672261721253788651586435024857268094532550402122135778769,
+            720777601321551456724742356376872832235514487302799006897322578639686749258,
+            19726607866286112953874979389205149577323021278529259017954198462517737418473,
+            9477901871732605408863140319391985875503693577321165842544029785283526188723,
+            3218243980816964110015535469652973420290887819006413761652914020854170460131,
+            21647471328696313483506044180817939310547082363167430262013183074005768690677,
+            14513543603428597604998785424833526732416414663942895493375066920249255152069,
+            12912536786691007423957206067517486813236154886763950786309034005218474477397,
+            14043083790220302639747777938344554939065181077244110063366429914379380349363,
+            1585351311391412912983327123858240918248160277807437690996718569990466444336,
+            10777443874874414095971316544407516389536700701770254896428522920996906045396,
+            6379059771196981783531842116523729103253487220527074934863013362203865842833,
+            4134966835882445041808556871336951519851774168539778125719567488662398010322,
+            10076045549529902860501553551276683947306207322373274327817594791372714928361,
+            2840050510901032730295917342517416830172237966947356225177945514569852215731,
+            9763122299140113778865332540237465612993478463904652910937740892142312750399,
+            19143097027756952285085354173215061221134962025215187577014441848927452612396,
+            5443396159062520964690002960163216626227972885246029607890253069325844601582,
+            9252184438226219647561583700014163671525787751930886881150609055515912093204
+          ]
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    },
+    "tax_year_2025": {
+      "proofTypes": [
+        "zkc:proof:tax:v7"
+      ],
+      "parameters": {
+        "zkc:proof:tax:v7": {
+          "required0": 0,
+          "required1": 2025,
+          "setRoot": 6989457401999925979499916284623998016117674131039127141662985658419759702447,
+          "pathIndex": 0,
+          "siblings": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      },
+      "holderExactMemberConsents": {
+        "zkc:proof:tax:v7": true
+      }
+    },
+    "tax_year_2026": {
+      "proofTypes": [
+        "zkc:proof:tax:v7"
+      ],
+      "parameters": {
+        "zkc:proof:tax:v7": {
+          "required0": 0,
+          "required1": 2026,
+          "setRoot": 6989457401999925979499916284623998016117674131039127141662985658419759702447,
+          "pathIndex": 0,
+          "siblings": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    },
+    "sanctions_set_100_200": {
+      "proofTypes": [
+        "zkc:proof:sanctions:v7"
+      ],
+      "parameters": {
+        "zkc:proof:sanctions:v7": {
+          "required0": 0,
+          "required1": 0,
+          "canonicalSet": [
+            100,
+            200
+          ],
+          "setRoot": 20726764939822024496809177291326422328165172067644619161115254174670461518828
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    },
+    "sanctions_set_120_180": {
+      "proofTypes": [
+        "zkc:proof:sanctions:v7"
+      ],
+      "parameters": {
+        "zkc:proof:sanctions:v7": {
+          "required0": 0,
+          "required1": 0,
+          "canonicalSet": [
+            120,
+            180
+          ],
+          "setRoot": 18731608872942622689685572573859078800598587873985363062063174771688240676456
+        }
+      },
+      "context": {
+        "profile": "zkc:context:verifier-session:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    },
+    "kyc_purpose_access": {
+      "proofTypes": [
+        "zkc:proof:kyc:v1"
+      ],
+      "parameters": {
+        "zkc:proof:kyc:v1": {
+          "requiredLevel": 1,
+          "requiredAttributes": [
+            true,
+            false,
+            true,
+            false,
+            false
+          ]
+        }
+      },
+      "context": {
+        "profile": "zkc:context:purpose-bound:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "purpose": "zkc:purpose:access-gate",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    },
+    "kyc_purpose_billing": {
+      "proofTypes": [
+        "zkc:proof:kyc:v1"
+      ],
+      "parameters": {
+        "zkc:proof:kyc:v1": {
+          "requiredLevel": 1,
+          "requiredAttributes": [
+            true,
+            false,
+            true,
+            false,
+            false
+          ]
+        }
+      },
+      "context": {
+        "profile": "zkc:context:purpose-bound:v1",
+        "verifierId": "verifier.example",
+        "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+        "purpose": "zkc:purpose:billing-kyc",
+        "timestamp": 1700000000
+      },
+      "maxProofAge": 3600,
+      "trustPolicy": {
+        "issuers": [
+          {
+            "issuerId": "did:zkc:test-issuer",
+            "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+            "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+            "proofTypes": [
+              "zkc:proof:kyc:v1",
+              "zkc:proof:jurisdiction:v3",
+              "zkc:proof:accreditation:v7",
+              "zkc:proof:source:v7",
+              "zkc:proof:tax:v7",
+              "zkc:proof:sanctions:v7"
+            ]
+          }
+        ]
+      },
+      "accumulatorStates": {
+        "did:zkc:test-issuer": {
+          "currentEpoch": 1,
+          "roots": {
+            "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+          }
+        }
+      }
+    }
+  },
+  "aprs": {
+    "apr_access_signed": {
+      "request": {
+        "proofTypes": [
+          "zkc:proof:kyc:v1"
+        ],
+        "parameters": {
+          "zkc:proof:kyc:v1": {
+            "requiredLevel": 1,
+            "requiredAttributes": [
+              true,
+              false,
+              true,
+              false,
+              false
+            ]
+          }
+        },
+        "context": {
+          "profile": "zkc:context:purpose-bound:v1",
+          "verifierId": "verifier.example",
+          "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+          "purpose": "zkc:purpose:access-gate",
+          "timestamp": 1700000000
+        },
+        "maxProofAge": 3600,
+        "trustPolicy": {
+          "issuers": [
+            {
+              "issuerId": "did:zkc:test-issuer",
+              "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+              "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+              "proofTypes": [
+                "zkc:proof:kyc:v1",
+                "zkc:proof:jurisdiction:v3",
+                "zkc:proof:accreditation:v7",
+                "zkc:proof:source:v7",
+                "zkc:proof:tax:v7",
+                "zkc:proof:sanctions:v7"
+              ]
+            }
+          ]
+        },
+        "accumulatorStates": {
+          "did:zkc:test-issuer": {
+            "currentEpoch": 1,
+            "roots": {
+              "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+            }
+          }
+        }
+      },
+      "verifierId": "verifier.example",
+      "nonce": "0x0000000000000000000000000000000000000000000000000000000000acce55",
+      "issuedAt": 1700000000,
+      "expiresAt": 1700003600,
+      "signature": {
+        "scheme": "ECDSA_SECP256K1",
+        "value": "0x7d0f844c19d3247d7c2f36d3349c5f6219709555aeba8c430b808605d903ac951aa8d5a6f420ad13e4a7c3b67b96e16cf14e4b670bd2549f9371ef873cd8d183",
+        "verifierKey": {
+          "x": "0x53a91be6284a158b137f9b0cc0da67618955f91e05b3d65afa086330dac8028b",
+          "y": "0x640a1b35eb8d61d2e12f04d10890348eff8dcac074a8920fda6820d906671e3b"
+        }
+      }
+    },
+    "apr_access_purpose_check": {
+      "request": {
+        "proofTypes": [
+          "zkc:proof:kyc:v1"
+        ],
+        "parameters": {
+          "zkc:proof:kyc:v1": {
+            "requiredLevel": 1,
+            "requiredAttributes": [
+              true,
+              false,
+              true,
+              false,
+              false
+            ]
+          }
+        },
+        "context": {
+          "profile": "zkc:context:purpose-bound:v1",
+          "verifierId": "verifier.example",
+          "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+          "purpose": "zkc:purpose:access-gate",
+          "timestamp": 1700000000
+        },
+        "maxProofAge": 3600,
+        "trustPolicy": {
+          "issuers": [
+            {
+              "issuerId": "did:zkc:test-issuer",
+              "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+              "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+              "proofTypes": [
+                "zkc:proof:kyc:v1",
+                "zkc:proof:jurisdiction:v3",
+                "zkc:proof:accreditation:v7",
+                "zkc:proof:source:v7",
+                "zkc:proof:tax:v7",
+                "zkc:proof:sanctions:v7"
+              ]
+            }
+          ]
+        },
+        "accumulatorStates": {
+          "did:zkc:test-issuer": {
+            "currentEpoch": 1,
+            "roots": {
+              "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+            }
+          }
+        }
+      },
+      "verifierId": "verifier.example",
+      "nonce": "0x0000000000000000000000000000000000000000000000000000000000acce56",
+      "issuedAt": 1700000000,
+      "expiresAt": 1700003600,
+      "signature": {
+        "scheme": "ECDSA_SECP256K1",
+        "value": "0xeb0917a81e6f0d5b306fa6ca17e8296e8c0e750a5a82fc97f03830fbc5a9ef8c42383d4f210660455af376c7bf34f2ec872a018a34bbaf776cf883a982050be9",
+        "verifierKey": {
+          "x": "0x53a91be6284a158b137f9b0cc0da67618955f91e05b3d65afa086330dac8028b",
+          "y": "0x640a1b35eb8d61d2e12f04d10890348eff8dcac074a8920fda6820d906671e3b"
+        }
+      }
+    },
+    "apr_access_unsigned": {
+      "request": {
+        "proofTypes": [
+          "zkc:proof:kyc:v1"
+        ],
+        "parameters": {
+          "zkc:proof:kyc:v1": {
+            "requiredLevel": 1,
+            "requiredAttributes": [
+              true,
+              false,
+              true,
+              false,
+              false
+            ]
+          }
+        },
+        "context": {
+          "profile": "zkc:context:purpose-bound:v1",
+          "verifierId": "verifier.example",
+          "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+          "purpose": "zkc:purpose:access-gate",
+          "timestamp": 1700000000
+        },
+        "maxProofAge": 3600,
+        "trustPolicy": {
+          "issuers": [
+            {
+              "issuerId": "did:zkc:test-issuer",
+              "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+              "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+              "proofTypes": [
+                "zkc:proof:kyc:v1",
+                "zkc:proof:jurisdiction:v3",
+                "zkc:proof:accreditation:v7",
+                "zkc:proof:source:v7",
+                "zkc:proof:tax:v7",
+                "zkc:proof:sanctions:v7"
+              ]
+            }
+          ]
+        },
+        "accumulatorStates": {
+          "did:zkc:test-issuer": {
+            "currentEpoch": 1,
+            "roots": {
+              "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+            }
+          }
+        }
+      },
+      "verifierId": "verifier.example",
+      "nonce": "0x0000000000000000000000000000000000000000000000000000000000badbad",
+      "issuedAt": 1700000000,
+      "expiresAt": 1700003600,
+      "signature": {
+        "scheme": "ECDSA_SECP256K1",
+        "value": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "verifierKey": {
+          "x": "0x53a91be6284a158b137f9b0cc0da67618955f91e05b3d65afa086330dac8028b",
+          "y": "0x640a1b35eb8d61d2e12f04d10890348eff8dcac074a8920fda6820d906671e3b"
+        }
+      }
+    },
+    "apr_billing_signed": {
+      "request": {
+        "proofTypes": [
+          "zkc:proof:kyc:v1"
+        ],
+        "parameters": {
+          "zkc:proof:kyc:v1": {
+            "requiredLevel": 1,
+            "requiredAttributes": [
+              true,
+              false,
+              true,
+              false,
+              false
+            ]
+          }
+        },
+        "context": {
+          "profile": "zkc:context:purpose-bound:v1",
+          "verifierId": "verifier.example",
+          "sessionId": "0x000000000000000000000000000000000000000000000000000000000000022b",
+          "purpose": "zkc:purpose:billing-kyc",
+          "timestamp": 1700000000
+        },
+        "maxProofAge": 3600,
+        "trustPolicy": {
+          "issuers": [
+            {
+              "issuerId": "did:zkc:test-issuer",
+              "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+              "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+              "proofTypes": [
+                "zkc:proof:kyc:v1",
+                "zkc:proof:jurisdiction:v3",
+                "zkc:proof:accreditation:v7",
+                "zkc:proof:source:v7",
+                "zkc:proof:tax:v7",
+                "zkc:proof:sanctions:v7"
+              ]
+            }
+          ]
+        },
+        "accumulatorStates": {
+          "did:zkc:test-issuer": {
+            "currentEpoch": 1,
+            "roots": {
+              "1": "0x092796d14768adb30f1e83c8a06d66f3c3990fc185e1b441cdc6984a710630e7"
+            }
+          }
+        }
+      },
+      "verifierId": "verifier.example",
+      "nonce": "0x000000000000000000000000000000000000000000000000000000000000b111",
+      "issuedAt": 1700000000,
+      "expiresAt": 1700003600,
+      "signature": {
+        "scheme": "ECDSA_SECP256K1",
+        "value": "0xb2d8a000fbcb47e52e4d5a425db9212425c7f09376cbe8f6642fb014474103d110421402b112e55bc4a72535add225148a9eb80e774e41000736c35e8669336c",
+        "verifierKey": {
+          "x": "0x53a91be6284a158b137f9b0cc0da67618955f91e05b3d65afa086330dac8028b",
+          "y": "0x640a1b35eb8d61d2e12f04d10890348eff8dcac074a8920fda6820d906671e3b"
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "core-roundtrip-valid",
+      "description": "holder generates a Core KYC proof; verifier accepts it",
+      "kind": "roundtrip",
+      "request": "kyc_basic",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "expect": {
+        "valid": true
+      }
+    },
+    {
+      "id": "core-roundtrip-jurisdiction-valid",
+      "description": "holder generates the requested jurisdiction inclusion proof",
+      "kind": "roundtrip",
+      "request": "jurisdiction_inclusion",
+      "credentials": [
+        "valid_jurisdiction"
+      ],
+      "expect": {
+        "valid": true
+      }
+    },
+    {
+      "id": "core-roundtrip-accreditation-valid",
+      "description": "holder generates the requested accreditation-level proof",
+      "kind": "roundtrip",
+      "request": "accreditation_level_2",
+      "credentials": [
+        "valid_accreditation"
+      ],
+      "expect": {
+        "valid": true
+      }
+    },
+    {
+      "id": "core-roundtrip-source-valid",
+      "description": "holder generates source-of-funds membership in the requested set",
+      "kind": "roundtrip",
+      "request": "source_set_7",
+      "credentials": [
+        "valid_source"
+      ],
+      "expect": {
+        "valid": true
+      }
+    },
+    {
+      "id": "core-roundtrip-tax-valid",
+      "description": "holder generates tax-residency membership for the requested year",
+      "kind": "roundtrip",
+      "request": "tax_year_2025",
+      "credentials": [
+        "valid_tax"
+      ],
+      "expect": {
+        "valid": true
+      }
+    },
+    {
+      "id": "core-roundtrip-sanctions-valid",
+      "description": "holder generates sanctions clearance against the requested blocked set",
+      "kind": "roundtrip",
+      "request": "sanctions_set_100_200",
+      "credentials": [
+        "valid_sanctions"
+      ],
+      "expect": {
+        "valid": true
+      }
+    },
+    {
+      "id": "safeguard-4-opaque-refusal",
+      "description": "Freedom Safeguard 4: holder refuses an unreviewed predicate by default",
+      "kind": "holder_refusal",
+      "request": "opaque_request",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "expect": {
+        "anyCode": [
+          "OPAQUE_PREDICATE_REFUSED"
+        ]
+      }
+    },
+    {
+      "id": "core-holder-unknown-issuer",
+      "description": "holder refuses when no credential issuer is in the verifier trust policy",
+      "kind": "holder_refusal",
+      "request": "kyc_basic",
+      "credentials": [
+        "other_issuer_kyc"
+      ],
+      "expect": {
+        "anyCode": [
+          "UNKNOWN_ISSUER"
+        ]
+      }
+    },
+    {
+      "id": "core-holder-stale-credential",
+      "description": "holder refuses an expired credential",
+      "kind": "holder_refusal",
+      "request": "kyc_basic",
+      "credentials": [
+        "expired_kyc"
+      ],
+      "expect": {
+        "anyCode": [
+          "STALE_CREDENTIAL"
+        ]
+      }
+    },
+    {
+      "id": "core-holder-no-credential",
+      "description": "holder refuses when it has no matching credential",
+      "kind": "holder_refusal",
+      "request": "kyc_basic",
+      "credentials": [],
+      "expect": {
+        "anyCode": [
+          "NO_MATCHING_CREDENTIAL"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-stale-proof",
+      "kind": "verifier_mutation",
+      "request": "kyc_basic",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "mutations": [
+        {
+          "op": "set",
+          "path": "metadata/generatedAt",
+          "value": "2020-01-01T00:00:00Z"
+        }
+      ],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "STALE_PROOF"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-expired-proof",
+      "kind": "verifier_mutation",
+      "request": "kyc_basic",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "mutations": [
+        {
+          "op": "set",
+          "path": "metadata/expiresAt",
+          "value": "2020-01-01T00:00:00Z"
+        }
+      ],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "EXPIRED_PROOF"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-wrong-context",
+      "description": "envelope generated for one session must not verify for another",
+      "kind": "verifier_mutation",
+      "request": "kyc_basic",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "verifyRequest": "kyc_other_session",
+      "mutations": [],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "CONTEXT_MISMATCH"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-tampered-binding",
+      "kind": "verifier_mutation",
+      "request": "kyc_basic",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "mutations": [
+        {
+          "op": "set",
+          "path": "holderBinding/commitment",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000003039"
+        }
+      ],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "INVALID_BINDING",
+          "INVALID_PROOF"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-tampered-proof-inputs",
+      "kind": "verifier_mutation",
+      "request": "kyc_basic",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "mutations": [
+        {
+          "op": "set",
+          "path": "proofs/0/publicInputs/claim_binding",
+          "value": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        }
+      ],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "INVALID_PROOF"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-missing-proof",
+      "description": "an envelope missing a required proof type is rejected",
+      "kind": "verifier_mutation",
+      "request": "kyc_basic",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "verifyRequest": "kyc_two_types",
+      "mutations": [],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "MISSING_PROOF"
+        ]
+      }
+    },
+    {
+      "id": "safeguard-1-no-canonical-issuer",
+      "description": "Freedom Safeguard 1: an empty verifier trust policy trusts nobody \u2014 not even the well-known test issuer",
+      "kind": "verifier_mutation",
+      "request": "kyc_basic",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "verifyRequest": "kyc_empty_trust",
+      "mutations": [],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "UNTRUSTED_ISSUER"
+        ]
+      }
+    },
+    {
+      "id": "safeguard-1-registry-membership-not-trust",
+      "description": "Registry governance safeguard: the credential's issuer key is published in the repo's discovery registry (registry/issuers/), but this verifier's policy does not list it \u2014 discovery-registry membership must never substitute for the verifier's key-exact allowlist (the registry is an advisory cache, not a trust anchor)",
+      "kind": "verifier_mutation",
+      "request": "kyc_basic",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "verifyRequest": "kyc_empty_trust",
+      "mutations": [],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "UNTRUSTED_ISSUER"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-stale-accumulator",
+      "description": "issuer accumulator advanced (e.g. revocation) after generation",
+      "kind": "verifier_mutation",
+      "request": "kyc_basic",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "verifyRequest": "kyc_advanced_epoch",
+      "mutations": [],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "STALE_ACCUMULATOR"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-revoked-self-made-root",
+      "description": "a revoked credential proves membership only in its holder's self-made one-leaf tree at the issuer's current epoch; the verifier records the issuer's published root for that epoch and rejects the proof",
+      "kind": "verifier_mutation",
+      "request": "kyc_basic",
+      "credentials": [
+        "revoked_kyc_self_made_root"
+      ],
+      "verifyRequest": "kyc_basic",
+      "mutations": [],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "STALE_ACCUMULATOR"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-unrecorded-accumulator-root",
+      "description": "an honest proof is rejected when the verifier records no issuer root for the proof's accumulator epoch: an unchecked root enforces no revocation, so the verifier fails closed",
+      "kind": "verifier_mutation",
+      "request": "kyc_basic",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "verifyRequest": "kyc_unrecorded_root",
+      "mutations": [],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "STALE_ACCUMULATOR"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-requirements-not-met",
+      "description": "proof attesting level 1 requirements rejected for a level-3 request",
+      "kind": "verifier_mutation",
+      "request": "kyc_basic",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "verifyRequest": "kyc_level_3",
+      "mutations": [],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "REQUIREMENTS_NOT_MET"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-noncanonical-requirement",
+      "description": "an untouched level-1 proof is rejected when the request shifts requiredLevel by the BN254 modulus instead of naming a canonical u8",
+      "kind": "verifier_mutation",
+      "request": "kyc_basic",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "verifyRequest": "kyc_level_modulus_alias",
+      "mutations": [],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "REQUIREMENTS_NOT_MET"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-jurisdiction-requirements-not-met",
+      "description": "an untouched jurisdiction inclusion proof is rejected for an internally valid exclusion request over the same credential",
+      "kind": "verifier_mutation",
+      "request": "jurisdiction_inclusion",
+      "credentials": [
+        "valid_jurisdiction"
+      ],
+      "verifyRequest": "jurisdiction_exclusion",
+      "mutations": [],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "REQUIREMENTS_NOT_MET"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-accreditation-requirements-not-met",
+      "description": "an untouched level-2 accreditation proof is rejected for a level-3 request that the credential could otherwise satisfy",
+      "kind": "verifier_mutation",
+      "request": "accreditation_level_2",
+      "credentials": [
+        "valid_accreditation"
+      ],
+      "verifyRequest": "accreditation_level_3",
+      "mutations": [],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "REQUIREMENTS_NOT_MET"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-source-requirements-not-met",
+      "description": "an untouched source proof for the singleton set is rejected for a different valid set that still contains the credential code",
+      "kind": "verifier_mutation",
+      "request": "source_set_7",
+      "credentials": [
+        "valid_source"
+      ],
+      "verifyRequest": "source_set_7_8",
+      "mutations": [],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "REQUIREMENTS_NOT_MET"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-tax-requirements-not-met",
+      "description": "an untouched tax-year-2025 proof is rejected for a tax-year-2026 request that the credential could otherwise satisfy",
+      "kind": "verifier_mutation",
+      "request": "tax_year_2025",
+      "credentials": [
+        "valid_tax"
+      ],
+      "verifyRequest": "tax_year_2026",
+      "mutations": [],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "REQUIREMENTS_NOT_MET"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-sanctions-requirements-not-met",
+      "description": "an untouched sanctions proof is rejected for a different, self-consistent blocked set under which the subject is also clear",
+      "kind": "verifier_mutation",
+      "request": "sanctions_set_100_200",
+      "credentials": [
+        "valid_sanctions"
+      ],
+      "verifyRequest": "sanctions_set_120_180",
+      "mutations": [],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "REQUIREMENTS_NOT_MET"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-malformed-mutation",
+      "kind": "verifier_mutation",
+      "request": "kyc_basic",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "mutations": [
+        {
+          "op": "delete",
+          "path": "holderBinding"
+        }
+      ],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "MALFORMED_PROOF"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-static-garbage",
+      "kind": "verifier_static",
+      "request": "kyc_basic",
+      "envelope": {
+        "version": "zkc:proof:v1"
+      },
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "MALFORMED_PROOF"
+        ]
+      }
+    },
+    {
+      "id": "core-verifier-static-wrong-version",
+      "kind": "verifier_static",
+      "request": "kyc_basic",
+      "envelope": {
+        "version": "zkc:proof:v0",
+        "metadata": {},
+        "proofs": [],
+        "holderBinding": {}
+      },
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "MALFORMED_PROOF"
+        ]
+      }
+    },
+    {
+      "id": "safeguard-6-apr-roundtrip-valid",
+      "description": "Safeguard 6: holder answers a valid purpose-bound Authenticated Proof Request; verifier accepts under the authenticated path",
+      "kind": "apr_roundtrip",
+      "request": "kyc_purpose_access",
+      "apr": "apr_access_signed",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "expect": {
+        "valid": true
+      }
+    },
+    {
+      "id": "safeguard-6-unsigned-request-refusal",
+      "description": "Safeguard 6: a conforming SDK refuses by default to generate a proof for a request that is not a validly signed APR",
+      "kind": "apr_generation_refusal",
+      "request": "kyc_purpose_access",
+      "apr": "apr_access_unsigned",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "expect": {
+        "anyCode": [
+          "UNSIGNED_REQUEST"
+        ]
+      }
+    },
+    {
+      "id": "safeguard-6-purpose-mismatch",
+      "description": "Safeguard 6: a billing-purpose proof presented to an access-purpose request is rejected with PURPOSE_MISMATCH",
+      "kind": "apr_purpose_mismatch",
+      "genRequest": "kyc_purpose_billing",
+      "genApr": "apr_billing_signed",
+      "verifyRequest": "kyc_purpose_access",
+      "verifyApr": "apr_access_purpose_check",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "expect": {
+        "valid": false,
+        "anyCode": [
+          "PURPOSE_MISMATCH"
+        ]
+      }
+    },
+    {
+      "id": "safeguard-6-receipt-roundtrip",
+      "description": "Safeguard 6: a Disclosure Receipt round-trips \u2014 a third party verifies the verifier and holder signatures with no operator, issuer, or registry in the loop",
+      "kind": "apr_receipt_roundtrip",
+      "request": "kyc_purpose_access",
+      "apr": "apr_access_signed",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "expect": {
+        "receiptValid": true
+      }
+    },
+    {
+      "id": "safeguard-6-receipt-tampered",
+      "description": "Safeguard 6: a receipt whose bound contextValue is altered fails third-party verification",
+      "kind": "apr_receipt_roundtrip",
+      "request": "kyc_purpose_access",
+      "apr": "apr_access_signed",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "mutations": [
+        {
+          "op": "set",
+          "path": "response/contextValue",
+          "value": "0x00000000000000000000000000000000000000000000000000000000000003e7"
+        }
+      ],
+      "expect": {
+        "receiptValid": false
+      }
+    },
+    {
+      "id": "safeguard-6-hosted-retention-refusal",
+      "description": "Safeguard 6: a hosted SDK answering on the holder's behalf hands the receipt back and retains nothing",
+      "kind": "hosted_retention_refusal",
+      "request": "kyc_purpose_access",
+      "apr": "apr_access_signed",
+      "credentials": [
+        "valid_kyc"
+      ],
+      "expect": {
+        "retained": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://zkc.dev/schemas/public-input-encoder-v1.schema.json",
+  "version": "zkc:public-inputs:v1",
+  "circuit": "zkc_selective_disclosure_v1",
+  "proofTypes": ["zkc:proof:selective_disclosure:v1"],
+  "proofSystem": "ultra_honk",
+  "curve": "BN254",
+  "encoding": {
+    "fieldElement": "BN254 scalar field element, serialized as a 32-byte big-endian value",
+    "order": "Declaration order of pub parameters in noir/zkc_selective_disclosure_v1/src/main.nr main(); arrays flatten element-wise",
+    "booleans": "false = 0, true = 1",
+    "integers": "Unsigned integers are zero-extended into a single field element",
+    "byteArrays": "[u8; N] occupies N field elements, one byte per element, in array order"
+  },
+  "totalFieldElements": 90,
+  "publicInputs": [
+    {"index": 0, "offset": 0, "name": "presentation_pseudonym", "abiType": "Field", "fieldElements": 1, "description": "Scoped holder pseudonym, or zero for anonymous presentation"},
+    {"index": 1, "offset": 1, "name": "scope_id", "abiType": "Field", "fieldElements": 1, "description": "Presentation scope, or zero for anonymous presentation"},
+    {"index": 2, "offset": 2, "name": "claim_binding", "abiType": "Field", "fieldElements": 1, "description": "Typed selective-disclosure transcript over count, flags, positions, values, context, and timestamp"},
+    {"index": 3, "offset": 3, "name": "proof_context", "abiType": "Field", "fieldElements": 1, "description": "Non-zero replay-protection context"},
+    {"index": 4, "offset": 4, "name": "accumulator_root", "abiType": "Field", "fieldElements": 1, "description": "Issuer non-revocation accumulator root"},
+    {"index": 5, "offset": 5, "name": "accumulator_epoch", "abiType": "u64", "fieldElements": 1, "description": "Epoch of the issuer accumulator witness"},
+    {"index": 6, "offset": 6, "name": "timestamp", "abiType": "u64", "fieldElements": 1, "description": "Non-zero proof freshness timestamp"},
+    {"index": 7, "offset": 7, "name": "current_epoch", "abiType": "u64", "fieldElements": 1, "description": "Verifier-supplied current accumulator epoch"},
+    {"index": 8, "offset": 8, "name": "issuer_public_key_x", "abiType": "[u8; 32]", "fieldElements": 32, "description": "Issuer secp256k1 public key x-coordinate"},
+    {"index": 9, "offset": 40, "name": "issuer_public_key_y", "abiType": "[u8; 32]", "fieldElements": 32, "description": "Issuer secp256k1 public key y-coordinate"},
+    {"index": 10, "offset": 72, "name": "credential_attribute_count", "abiType": "u8", "fieldElements": 1, "description": "Issuer-signed number of active attribute positions (1 through 8)"},
+    {"index": 11, "offset": 73, "name": "disclosure_count", "abiType": "u8", "fieldElements": 1, "description": "Number of true disclosure flags"},
+    {"index": 12, "offset": 74, "name": "disclosed_flags", "abiType": "[bool; 8]", "fieldElements": 8, "description": "Explicit disclosure mask; array index is the attribute position"},
+    {"index": 13, "offset": 82, "name": "disclosed_attributes", "abiType": "[Field; 8]", "fieldElements": 8, "description": "Disclosed values by position; hidden slots are canonical zero"}
+  ]
+}

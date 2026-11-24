@@ -1,0 +1,42 @@
+{
+  "version": "zkc:registry:predicate-entry:v1",
+  "predicateId": "zkc-remaining-predicates",
+  "entryVersion": "5.0.0",
+  "title": "Hardened linkable remaining predicates (v5; successor of v3 profile)",
+  "author": {
+    "name": "ZKC reference implementation",
+    "url": "https://github.com/pyramidal-io/ZKC"
+  },
+  "proofTypes": [
+    "zkc:proof:accreditation:v5",
+    "zkc:proof:source:v5",
+    "zkc:proof:tax:v5",
+    "zkc:proof:sanctions:v5"
+  ],
+  "circuit": {
+    "name": "zkc_remaining_predicates_v5",
+    "scheme": "ultra_honk",
+    "sourcePath": "noir/zkc_remaining_predicates_v5/src/main.nr",
+    "sourceSha256": "372e2703eee2111dfa55cbe5e976f00679dbefa4cd495a17801391bf4c940a7a",
+    "acirHash": "sha256:68ab4a273f70a979ce7b75c8409510af0c097941a7c7f3efdbbf7ed3f9347529",
+    "vkHash": "0x097748ce5525c469e535ee068b43cb7cadda9899ff28d2491d91e98ed59769de",
+    "vkSha256": "sha256:02ac78e185c5630fdb89693a6a8264b9504c13daa5a3757eb6ec060318f3ca32"
+  },
+  "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v5.json",
+  "review": {
+    "status": "deprecated",
+    "evidence": [
+      "registry/reviews/zkc-remaining-predicates-5.0.0.md",
+      "registry/reviews/zkc-remaining-predicates-v5-v6-deprecation.md"
+    ],
+    "reviewedAt": null
+  },
+  "activation": {
+    "activatedAt": null,
+    "supersedes": "zkc-remaining-predicates@4.0.0"
+  },
+  "deprecation": {
+    "reason": "The issuer credential digest these circuits verify omits validFrom, so a holder can present a not-yet-valid credential by supplying a forged validFrom. Use the validity-bound v7 linkable or v8 anonymous/scoped successor for new proofs.",
+    "deprecatedAt": null
+  }
+}

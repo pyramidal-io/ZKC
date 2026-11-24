@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zkc.dev/registry/schema/predicate-entry.schema.json",
+  "title": "ZKC Predicate Registry Entry v1",
+  "description": "A versioned, reviewable predicate registry entry (Freedom Safeguard 4). Merger to the public default branch publishes the entry for reviewability regardless of review status or activation. The committed immutable identity is predicateId, entryVersion, proofTypes, the complete circuit block, and publicInputEncoder; bytes of the direct circuit package, its recursively referenced repository-local dependency packages, the encoder, its canonically associated public-input binding sidecar, and the exact supported v1 or v2 sidecar schema selected by that sidecar are immutable. Entries are descriptive and NON-EXCLUSIVE: an entry never designates a canonical, default, or mandatory predicate, and registry presence never confers trust (Freedom Safeguard 1). Independent lineages MAY serve overlapping proof types and local trust decisions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "predicateId",
+    "entryVersion",
+    "author",
+    "proofTypes",
+    "circuit",
+    "publicInputEncoder",
+    "review",
+    "activation"
+  ],
+  "properties": {
+    "version": { "const": "zkc:registry:predicate-entry:v1" },
+    "predicateId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*$",
+      "description": "Author-chosen identifier for this entry lineage. Immutable once committed to the public default branch. Uniqueness is per (predicateId, entryVersion); independent lineages may serve the same proof type."
+    },
+    "entryVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "Semantic version of this entry. Immutable once committed to the public default branch. A circuit evolution requires a new version directory but a version bump alone is insufficient; it must be strictly additive."
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "author": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "minLength": 1 }
+      }
+    },
+    "proofTypes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": "^zkc:proof:[a-z0-9._-]+:v[0-9]+$" },
+      "description": "Immutable once committed to the public default branch. NON-EXCLUSIVE: independent entries may implement the same types. Until explicit entry-version selection exists, a same-lineage circuit replacement uses a distinct proof type."
+    },
+    "circuit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "scheme", "sourcePath", "sourceSha256", "acirHash", "vkHash", "vkSha256"],
+      "properties": {
+        "name": { "type": "string", "pattern": "^zkc_[a-z0-9_]+$" },
+        "scheme": { "const": "ultra_honk" },
+        "sourcePath": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Normalized repo-relative path to the inspectable circuit source (open-source predicate verification, Safeguard 4). For circuit name <name>, the reference registry requires noir/<name>/src/main.nr in the matching regular workspace bin package and validates its complete non-symlinked repository-local dependency closure. The complete circuit block and every file in that closure are immutable once committed."
+        },
+        "sourceSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "acirHash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "vkHash": { "type": "string", "pattern": "^0x[0-9a-f]{64}$" },
+        "vkSha256": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+      }
+    },
+    "publicInputEncoder": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Normalized repo-relative path to the committed public-input encoder definition. Its structure and artifact-manifest path binding are validated before admission. The path and referenced bytes are immutable once committed to the public default branch; the same filename under schemas/public-input-bindings identifies the transitively immutable verifier contract without rewriting entry v1. Circuit evolution adds a new encoder and matching binding sidecar rather than changing either."
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "evidence"],
+      "properties": {
+        "status": {
+          "enum": ["draft", "in_review", "self_attested", "reviewed", "deprecated"],
+          "description": "Assurance level this entry claims. 'draft'/'in_review' are work in progress. 'self_attested' means the author published the entry with a public evidence record of the author's OWN verification and NO independent review has occurred — it asserts inspectability and provenance, never third-party scrutiny. 'reviewed' additionally asserts that a review by someone other than the entry's author is publicly recorded. 'deprecated' flags a superseded entry. Status is an author's claim about assurance, never a grant of trust (Freedom Safeguard 1)."
+        },
+        "evidence": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Public review evidence (pull requests, committed review records, audit reports). Required non-empty for status 'self_attested', 'reviewed', and 'deprecated'."
+        },
+        "reviewedAt": {
+          "type": ["string", "null"],
+          "format": "date-time",
+          "description": "When INDEPENDENT review completed. Null when no independent review has occurred — and therefore always null for status 'self_attested', whose own verification dates live in its evidence record."
+        }
+      }
+    },
+    "activation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["activatedAt", "supersedes"],
+      "properties": {
+        "activatedAt": {
+          "type": ["string", "null"],
+          "format": "date-time",
+          "description": "When this already publicly committed entry version became active (published for use), not when it was first published for reviewability. Null until activated. Activation requires a status whose assurance level is publicly documented ('self_attested', 'reviewed', or 'deprecated'); it is NOT itself an assurance claim, and in particular does not imply independent review. Activation metadata may transition without changing immutable identity."
+        },
+        "supersedes": {
+          "type": ["string", "null"],
+          "pattern": "^[a-z0-9][a-z0-9._-]*@[0-9]+\\.[0-9]+\\.[0-9]+$",
+          "description": "predicateId@entryVersion of the immediate prior version in this predicate lineage, required for every same-lineage successor and null for the first version. Superseded versions are deprecated by flag only — never deleted."
+        }
+      }
+    },
+    "deprecation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reason"],
+      "properties": {
+        "reason": { "type": "string", "minLength": 1 },
+        "deprecatedAt": { "type": ["string", "null"], "format": "date-time" }
+      },
+      "description": "Present only when review.status is 'deprecated'. Deprecation metadata may transition without changing immutable identity; it only flags an entry and never removes it."
+    }
+  }
+}

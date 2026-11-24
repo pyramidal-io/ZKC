@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zkc.dev/schemas/artifact-manifest-v2.schema.json",
+  "title": "ZKC Circuit Artifact Manifest v2",
+  "description": "Reproducible manifest of frozen v1 circuit artifacts plus exact predicate-entry v2 artifact bindings. The circuits array preserves the v1 lookup contract; bindings are keyed by the full source/binding identity.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "toolchain", "source", "circuits"],
+  "allOf": [
+    {
+      "if": {"properties": {"version": {"const": "zkc:artifacts:v2"}}},
+      "then": {"required": ["bindings"]}
+    }
+  ],
+  "properties": {
+    "version": { "enum": ["zkc:artifacts:v1", "zkc:artifacts:v2"] },
+    "toolchain": {
+      "type": "object",
+      "required": ["nargo", "noirc", "bb"],
+      "properties": {
+        "nargo": { "type": "string" },
+        "noirc": { "type": "string" },
+        "bb": { "type": "string" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["gitCommit", "specVersion"],
+      "properties": {
+        "gitCommit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "specVersion": { "type": "string" }
+      }
+    },
+    "circuits": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "packageVersion",
+          "scheme",
+          "acirHash",
+          "vkHash",
+          "vkSha256",
+          "publicInputEncoder",
+          "publicInputs",
+          "artifacts"
+        ],
+        "properties": {
+          "name": { "type": "string", "pattern": "^zkc_[a-z0-9_]+$" },
+          "packageVersion": { "type": ["string", "null"] },
+          "description": { "type": "string" },
+          "scheme": { "const": "ultra_honk" },
+          "toolchain": {
+            "type": "object",
+            "required": ["nargo", "noirc", "bb"],
+            "properties": {
+              "nargo": { "type": "string" },
+              "noirc": { "type": "string" },
+              "bb": { "type": "string" }
+            },
+            "additionalProperties": false,
+            "description": "Exact toolchain that produced this circuit's ACIR and verification key"
+          },
+          "acirHash": {
+            "type": "string",
+            "pattern": "^sha256:[0-9a-f]{64}$",
+            "description": "SHA-256 over the base64-decoded ACIR bytecode emitted by nargo compile"
+          },
+          "vkHash": {
+            "type": "string",
+            "pattern": "^0x[0-9a-f]{64}$",
+            "description": "Barretenberg verification key hash (contents of the vk_hash output)"
+          },
+          "vkSha256": {
+            "type": "string",
+            "pattern": "^sha256:[0-9a-f]{64}$",
+            "description": "SHA-256 over the binary verification key file"
+          },
+          "publicInputEncoder": {
+            "type": ["string", "null"],
+            "description": "Repo-relative path to the committed public input encoder definition, or null if not yet defined"
+          },
+          "publicInputs": {
+            "type": "array",
+            "minItems": 1,
+            "description": "Flattened public input order extracted from the compiled ABI",
+            "items": {
+              "type": "object",
+              "required": ["index", "offset", "name", "abiType", "fieldElements"],
+              "properties": {
+                "index": { "type": "integer", "minimum": 0 },
+                "offset": { "type": "integer", "minimum": 0 },
+                "name": { "type": "string" },
+                "abiType": { "type": "string" },
+                "fieldElements": { "type": "integer", "minimum": 1 }
+              }
+            }
+          },
+          "artifacts": {
+            "type": "object",
+            "required": ["acir", "vk"],
+            "properties": {
+              "acir": { "type": "string" },
+              "vk": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "predicateId", "entryVersion", "sourceId", "bindingId", "circuit",
+          "scheme", "toolchain", "buildProfile", "artifactManifestKey",
+          "artifacts", "acirHash", "vkHash", "vkSha256"
+        ],
+        "properties": {
+          "predicateId": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+          "entryVersion": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+          "sourceId": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+          "bindingId": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+          "circuit": {"type": "string", "pattern": "^zkc_[a-z0-9_]+$"},
+          "scheme": {"const": "ultra_honk"},
+          "toolchain": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "nargo", "noirc", "bb", "provenance"],
+            "properties": {
+              "id": {"type": "string"},
+              "nargo": {"type": "string"},
+              "noirc": {"type": "string"},
+              "bb": {"type": "string"},
+              "provenance": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["path", "sha256"],
+                "properties": {
+                  "path": {"type": "string"},
+                  "sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+                }
+              }
+            }
+          },
+          "buildProfile": {"type": "string"},
+          "artifactManifestKey": {"type": "string"},
+          "artifacts": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["acir", "vk"],
+            "properties": {"acir": {"type": "string"}, "vk": {"type": "string"}}
+          },
+          "acirHash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+          "vkHash": {"type": "string", "pattern": "^0x[0-9a-f]{64}$"},
+          "vkSha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+        }
+      }
+    }
+  }
+}

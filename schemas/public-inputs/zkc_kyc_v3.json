@@ -1,0 +1,98 @@
+{
+  "$schema": "https://zkc.dev/schemas/public-input-encoder-v1.schema.json",
+  "version": "zkc:public-inputs:v1",
+  "circuit": "zkc_kyc_v3",
+  "proofTypes": ["zkc:proof:kyc:v3"],
+  "proofSystem": "ultra_honk",
+  "curve": "BN254",
+  "encoding": {
+    "fieldElement": "BN254 scalar field element, serialized as a 32-byte big-endian value",
+    "order": "Declaration order of `pub` parameters in noir/zkc_kyc_v3/src/main.nr main(); arrays are flattened element-wise",
+    "booleans": "false = 0, true = 1",
+    "integers": "Unsigned integers are zero-extended into a single field element",
+    "byteArrays": "[u8; N] occupies N field elements, one byte per element, in array order"
+  },
+  "totalFieldElements": 72,
+  "publicInputs": [
+    {
+      "index": 0,
+      "offset": 0,
+      "name": "presentation_pseudonym",
+      "abiType": "Field",
+      "fieldElements": 1,
+      "description": "H(\"zkc/presentation-scope:v1\", cbk, scopeId), or 0 under the anonymous profile"
+    },
+    {
+      "index": 1,
+      "offset": 1,
+      "name": "scope_id",
+      "abiType": "Field",
+      "fieldElements": 1,
+      "description": "Verifier/protocol scope, 0 = anonymous sentinel"
+    },
+    {
+      "index": 2,
+      "offset": 2,
+      "name": "claim_binding",
+      "abiType": "Field",
+      "fieldElements": 1,
+      "description": "Claim binding over (requiredLevel, requiredAttributeHash, proofContext, timestamp)"
+    },
+    {
+      "index": 3,
+      "offset": 3,
+      "name": "proof_context",
+      "abiType": "Field",
+      "fieldElements": 1,
+      "description": "Deployment/profile-defined replay context hash; MUST be non-zero"
+    },
+    {
+      "index": 4,
+      "offset": 4,
+      "name": "accumulator_root",
+      "abiType": "Field",
+      "fieldElements": 1,
+      "description": "Issuer-published Poseidon2 Merkle non-revocation accumulator root"
+    },
+    {
+      "index": 5,
+      "offset": 5,
+      "name": "accumulator_epoch",
+      "abiType": "u64",
+      "fieldElements": 1,
+      "description": "Epoch of the accumulator root used by the witness"
+    },
+    {
+      "index": 6,
+      "offset": 6,
+      "name": "timestamp",
+      "abiType": "u64",
+      "fieldElements": 1,
+      "description": "Proof freshness timestamp bound into the claim binding; MUST be non-zero"
+    },
+    {
+      "index": 7,
+      "offset": 7,
+      "name": "current_epoch",
+      "abiType": "u64",
+      "fieldElements": 1,
+      "description": "Verifier-supplied current accumulator epoch; lag above MAX_EPOCH_LAG (10) rejects"
+    },
+    {
+      "index": 8,
+      "offset": 8,
+      "name": "issuer_public_key_x",
+      "abiType": "[u8; 32]",
+      "fieldElements": 32,
+      "description": "Trusted issuer secp256k1 public key x-coordinate, big-endian bytes"
+    },
+    {
+      "index": 9,
+      "offset": 40,
+      "name": "issuer_public_key_y",
+      "abiType": "[u8; 32]",
+      "fieldElements": 32,
+      "description": "Trusted issuer secp256k1 public key y-coordinate, big-endian bytes"
+    }
+  ]
+}

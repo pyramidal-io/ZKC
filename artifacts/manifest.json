@@ -1,0 +1,4487 @@
+{
+  "version": "zkc:artifacts:v2",
+  "toolchain": {
+    "nargo": "1.0.0-beta.21",
+    "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+    "bb": "5.0.0-nightly.20260324"
+  },
+  "source": {
+    "gitCommit": "5cf4015ec1e00563bed3e9b56470925ae42e36d0",
+    "specVersion": "0.2.5"
+  },
+  "circuits": [
+    {
+      "name": "zkc_kyc",
+      "packageVersion": null,
+      "description": "ZKC-Core KYC predicate circuit",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:fde8f80ce7ed395604d2e5f06e826e1a63dd385d32193bdfad8d9f98b21e9b70",
+      "vkHash": "0x01acb7647dbd8a70110bdd35648e383ffc79bcc8a16bd5c24e4d9853fe7a2c2c",
+      "vkSha256": "sha256:9d05e4324d0ea5e08439a64afcf7b5b5b100f4130dff4bc69d12e2fa5f7a275c",
+      "publicInputEncoder": "schemas/public-inputs/zkc_kyc.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 8,
+          "offset": 39,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_kyc/zkc_kyc.json",
+        "vk": "artifacts/zkc_kyc/vk"
+      }
+    },
+    {
+      "name": "zkc_kyc_v2",
+      "packageVersion": null,
+      "description": "ZKC-Core KYC predicate circuit (v2 presentation profiles)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:a098cc2d1734bfba57bd25246544756dd9d6e447bf68263b9485ba33561cb74e",
+      "vkHash": "0x04e8324ea9929304be72301eff8aa6eeccde52b3693f6a1e13a95f5f42fc9de7",
+      "vkSha256": "sha256:6bb00d605dfed440b45a3de9d8cef434dc79af02843c6aa2f3bde713b1508eae",
+      "publicInputEncoder": "schemas/public-inputs/zkc_kyc_v2.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 9,
+          "offset": 40,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_kyc_v2/zkc_kyc_v2.json",
+        "vk": "artifacts/zkc_kyc_v2/vk"
+      }
+    },
+    {
+      "name": "zkc_jurisdiction",
+      "packageVersion": null,
+      "description": "ZKC jurisdiction predicate circuit",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:3ddd32cd50b6f70bb9908d8df1d5e1d8d9fdac71f582e5e865d7d9ecf70e5d37",
+      "vkHash": "0x0a125002180c547b175d3c17eb9e66d673f84ae5c3749fed406afdc2c1412331",
+      "vkSha256": "sha256:59fecc8cc2d27326328eeb0ce1963033e8f6763288d43c79bbdfb0017d35f825",
+      "publicInputEncoder": "schemas/public-inputs/zkc_jurisdiction.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "jurisdiction_set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "membership_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 10,
+          "offset": 41,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_jurisdiction/zkc_jurisdiction.json",
+        "vk": "artifacts/zkc_jurisdiction/vk"
+      }
+    },
+    {
+      "name": "zkc_jurisdiction_v2",
+      "packageVersion": null,
+      "description": "ZKC jurisdiction predicate circuit (v2 presentation profiles)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:25c31c05ad1744cb96a492238970f595443bf9f7ec096ee4b3832bac7879bbd1",
+      "vkHash": "0x207355f91e754b89c02d3664728ca8dd442e3edc39d89be3a8835d56a34909db",
+      "vkSha256": "sha256:2ee638062e554e981e3481d0ffd8281d2edec1b23f8b38585635d83477960174",
+      "publicInputEncoder": "schemas/public-inputs/zkc_jurisdiction_v2.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "jurisdiction_set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "membership_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 11,
+          "offset": 42,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_jurisdiction_v2/zkc_jurisdiction_v2.json",
+        "vk": "artifacts/zkc_jurisdiction_v2/vk"
+      }
+    },
+    {
+      "name": "zkc_credential_rebind",
+      "packageVersion": null,
+      "description": "ZKC credential holder commitment rebind circuit",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:1350bd355d5a80a450a5b8dbf392a16965e64159ccc92ff0dd9766106dfd44c0",
+      "vkHash": "0x0d654a844d1830aa8c994ef1f4931c4bd2d6877d2f630115724e899019f937b7",
+      "vkSha256": "sha256:ec83a95b5aa8f470c4f8b9e159119c4cd56c9f8bf577d82cd1c644a1c08b15b8",
+      "publicInputEncoder": "schemas/public-inputs/zkc_credential_rebind.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "old_holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "new_holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "credential_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "issuer_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "schema_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_credential_rebind/zkc_credential_rebind.json",
+        "vk": "artifacts/zkc_credential_rebind/vk"
+      }
+    },
+    {
+      "name": "zkc_credential_rebind_v2",
+      "packageVersion": null,
+      "description": "ZKC credential holder commitment rebind circuit (v2 presentation profiles)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:4a772638dd15ff74b6d9209778cda0faadc3493e603625a466a2b4f396e44ba1",
+      "vkHash": "0x21dbffd072d92311e85fbac093c106f53044b9e0875cd9f0801710db7d16f016",
+      "vkSha256": "sha256:1b9399148ee1920e044a8b7c431af79913549c552643a05ca93feedd2e070198",
+      "publicInputEncoder": "schemas/public-inputs/zkc_credential_rebind_v2.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "old_presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "new_presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "credential_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "issuer_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "schema_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_credential_rebind_v2/zkc_credential_rebind_v2.json",
+        "vk": "artifacts/zkc_credential_rebind_v2/vk"
+      }
+    },
+    {
+      "name": "zkc_remaining_predicates",
+      "packageVersion": null,
+      "description": "ZKC accreditation, source-of-funds, tax-residency, and sanctions predicate circuit profiles",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:9a8a8bf3fbae02c3c7c7852b8e708576aae20bb2d1b043d5f92a3d21ccd0c3c1",
+      "vkHash": "0x172138b1262c49eb93f4df77939fe4a8c243381b02a1486040ac6ef74b8d124a",
+      "vkSha256": "sha256:757eb91c8542de28e79e8d51bb8b88a220b6e7b207d06ce06ea9c02f8c2d2fae",
+      "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "predicate_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 10,
+          "offset": 41,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_remaining_predicates/zkc_remaining_predicates.json",
+        "vk": "artifacts/zkc_remaining_predicates/vk"
+      }
+    },
+    {
+      "name": "zkc_remaining_predicates_v2",
+      "packageVersion": null,
+      "description": "ZKC accreditation, source-of-funds, tax-residency, and sanctions predicate circuit profiles (v2 presentation profiles)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:5fcd750f9e41bb3da1efe9f69a3f2e70f5764055745aa84beb674cb5cb15f56c",
+      "vkHash": "0x22eb9e3302c8598d1159076a412fb1dc6beb22a5d9ea9a619e8f6b3a96ca9f01",
+      "vkSha256": "sha256:b3d2c64fd8f161955cd8de98ab555913cc25533476fa42344d2f0f71b833450e",
+      "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v2.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "predicate_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 11,
+          "offset": 42,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_remaining_predicates_v2/zkc_remaining_predicates_v2.json",
+        "vk": "artifacts/zkc_remaining_predicates_v2/vk"
+      }
+    },
+    {
+      "name": "zkc_remaining_predicates_v3",
+      "packageVersion": null,
+      "description": "ZKC accreditation, source-of-funds, tax-residency, and sanctions predicate circuit profiles (v3 flagRequired-bound linkable profile)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:aa73af99527ea7c2baa33899f8ff28caadbaefa841ed980a960bcc1d8276f288",
+      "vkHash": "0x0cde3221210e495be1d7cc1ceb5c8ef827f2f32a3109607075e7b38673a7f29c",
+      "vkSha256": "sha256:e3afe37b2e76ba2a28a29b7b5ca71af436f568d306c3ccc27013de7bbaac88ec",
+      "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v3.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "predicate_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 10,
+          "offset": 41,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_remaining_predicates_v3/zkc_remaining_predicates_v3.json",
+        "vk": "artifacts/zkc_remaining_predicates_v3/vk"
+      }
+    },
+    {
+      "name": "zkc_remaining_predicates_v4",
+      "packageVersion": null,
+      "description": "ZKC accreditation, source-of-funds, tax-residency, and sanctions predicate circuit profiles (v4 flagRequired-bound presentation profiles)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:b6fc64c8b9651b25c9cf6c9dba908b31cdf23a61c866de172cc5991e73736203",
+      "vkHash": "0x07285776960a7b4a1c7bfeb8f34e579cf27da8d6584af226813e485b324fd356",
+      "vkSha256": "sha256:09faf67c6970c9ae51ac2d5aa909f5c3ec4898fedb3eb960d10fd094716337c5",
+      "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v4.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "predicate_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 11,
+          "offset": 42,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_remaining_predicates_v4/zkc_remaining_predicates_v4.json",
+        "vk": "artifacts/zkc_remaining_predicates_v4/vk"
+      }
+    },
+    {
+      "name": "zkc_remaining_predicates_v5",
+      "packageVersion": null,
+      "description": "ZKC accreditation, source-of-funds, tax-residency, and sanctions predicate circuit profiles (v5 flagRequired-bound linkable profile)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:68ab4a273f70a979ce7b75c8409510af0c097941a7c7f3efdbbf7ed3f9347529",
+      "vkHash": "0x097748ce5525c469e535ee068b43cb7cadda9899ff28d2491d91e98ed59769de",
+      "vkSha256": "sha256:02ac78e185c5630fdb89693a6a8264b9504c13daa5a3757eb6ec060318f3ca32",
+      "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v5.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "predicate_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 10,
+          "offset": 41,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_remaining_predicates_v5/zkc_remaining_predicates_v5.json",
+        "vk": "artifacts/zkc_remaining_predicates_v5/vk"
+      }
+    },
+    {
+      "name": "zkc_remaining_predicates_v6",
+      "packageVersion": null,
+      "description": "ZKC accreditation, source-of-funds, tax-residency, and sanctions predicate circuit profiles (v6 flagRequired-bound presentation profiles)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:f986e385da035d824a21f99ec9119012eeb5252b3a90ffce62829962ab0a0e1c",
+      "vkHash": "0x271de8c78fb80587d648befb76935bc9c147892d536f71189827fac3bc8fc436",
+      "vkSha256": "sha256:f5b1cea93fb0e988c8f566ba8ff29c3bb74d6a04e2384a303a678db7d5ef05c6",
+      "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v6.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "predicate_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 11,
+          "offset": 42,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_remaining_predicates_v6/zkc_remaining_predicates_v6.json",
+        "vk": "artifacts/zkc_remaining_predicates_v6/vk"
+      }
+    },
+    {
+      "name": "zkc_remaining_predicates_v7",
+      "packageVersion": null,
+      "description": "ZKC accreditation, source-of-funds, tax-residency, and sanctions predicate circuit profiles (v7 validity-bound hardened linkable profile)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:088f281392ba2c46c2e04ec53196db33d7081416cf3d450e6c18102d63926495",
+      "vkHash": "0x237dfbfb4f48eff691412cbf3dcfe48bafc92d62ab9e399d9d53cfb9e1552ccd",
+      "vkSha256": "sha256:ce85e4d62b8bf3e9b9b0b568b5b31223e47a1a446d147a3babbfb8cb30d87834",
+      "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v7.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "predicate_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 10,
+          "offset": 41,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_remaining_predicates_v7/zkc_remaining_predicates_v7.json",
+        "vk": "artifacts/zkc_remaining_predicates_v7/vk"
+      }
+    },
+    {
+      "name": "zkc_remaining_predicates_v8",
+      "packageVersion": null,
+      "description": "ZKC accreditation, source-of-funds, tax-residency, and sanctions predicate circuit profiles (v8 validity-bound hardened presentation profiles)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:3dbc254c972fb0eee9b747794dfb0cf89be9e9e2d239344c4c7517784669ae48",
+      "vkHash": "0x058702fdbeb13fd95fedf7615e197e022fef9562ac4a894ba4792b8791c89db2",
+      "vkSha256": "sha256:c282d444ffcfa4a94ff61e486cb6a72aa52382d1bf999f0bf42410a3fa3a17ec",
+      "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v8.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "predicate_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 11,
+          "offset": 42,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_remaining_predicates_v8/zkc_remaining_predicates_v8.json",
+        "vk": "artifacts/zkc_remaining_predicates_v8/vk"
+      }
+    },
+    {
+      "name": "zkc_aggregation",
+      "packageVersion": null,
+      "description": "ZKC proof aggregation circuit profile",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:cbbd6dce6c0b7599b6eae6f2012812b47f354924b61d68275a8238719c89456e",
+      "vkHash": "0x14e8744ca3957bfa816e8e1e493efda89fbd4c59bb903b21b75e4cb12b87c79a",
+      "vkSha256": "sha256:c9e6e7bc8a71d39ea42c636fe75181373bb40b3505332ae6112ce6a31466efcf",
+      "publicInputEncoder": "schemas/public-inputs/zkc_aggregation.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "aggregation_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "aggregated_claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "num_proofs",
+          "abiType": "u32",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "input_proof_commitments",
+          "abiType": "[Field; 8]",
+          "fieldElements": 8
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_aggregation/zkc_aggregation.json",
+        "vk": "artifacts/zkc_aggregation/vk"
+      }
+    },
+    {
+      "name": "zkc_aggregation_v2",
+      "packageVersion": null,
+      "description": "ZKC proof aggregation circuit profile (v2 presentation profiles)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:761e8e3a7da559fdd6e0cdfc2f54dc9b0fc2962538b95f453e2ad627d4d9b619",
+      "vkHash": "0x2910a6ae1f91c6297a9e742c9903073d90287371575f077e50e011c6732be8d8",
+      "vkSha256": "sha256:6f8be5b083aacdaab006287c7e673fde5a045a19b474ec5ad79857a538489a2b",
+      "publicInputEncoder": "schemas/public-inputs/zkc_aggregation_v2.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "aggregation_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "aggregated_claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "num_proofs",
+          "abiType": "u32",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "input_proof_commitments",
+          "abiType": "[Field; 8]",
+          "fieldElements": 8
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_aggregation_v2/zkc_aggregation_v2.json",
+        "vk": "artifacts/zkc_aggregation_v2/vk"
+      }
+    },
+    {
+      "name": "zkc_selective_disclosure_v1",
+      "packageVersion": null,
+      "description": "Issuer-authoritative selective disclosure with anonymous/scoped presentations",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:12a4a0b39d7623064ad758a780267b56f37fedb23e562ad332c89aa77340f024",
+      "vkHash": "0x0ede5e5d985150e922242b9933d5a14e62f93a571c96ab8e213b64ca394331de",
+      "vkSha256": "sha256:7ac08c24a96e4edadac472ecceff12d7b410f595eec6db23ef577aabfa1c239e",
+      "publicInputEncoder": "schemas/public-inputs/zkc_selective_disclosure_v1.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 9,
+          "offset": 40,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 10,
+          "offset": 72,
+          "name": "credential_attribute_count",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 11,
+          "offset": 73,
+          "name": "disclosure_count",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 12,
+          "offset": 74,
+          "name": "disclosed_flags",
+          "abiType": "[bool; 8]",
+          "fieldElements": 8
+        },
+        {
+          "index": 13,
+          "offset": 82,
+          "name": "disclosed_attributes",
+          "abiType": "[Field; 8]",
+          "fieldElements": 8
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_selective_disclosure_v1/zkc_selective_disclosure_v1.json",
+        "vk": "artifacts/zkc_selective_disclosure_v1/vk"
+      }
+    },
+    {
+      "name": "zkc_jurisdiction_v3",
+      "packageVersion": null,
+      "description": "ZKC jurisdiction predicate circuit (v3 legacy ABI; sorted-neighbour exclusion)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:da430ad909d5eb00b72068a98abed9491f42d527cb2f89696b5162d416610351",
+      "vkHash": "0x0939ec9f81ec599a8ef45d66954d420ed7aaccf8641c1bed6de5a48c4611a749",
+      "vkSha256": "sha256:2e69689b02dbb992a93ea68ba476ab6de929e94e55bb462a805d537721f1da47",
+      "publicInputEncoder": "schemas/public-inputs/zkc_jurisdiction_v3.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "jurisdiction_set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "membership_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 10,
+          "offset": 41,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_jurisdiction_v3/zkc_jurisdiction_v3.json",
+        "vk": "artifacts/zkc_jurisdiction_v3/vk"
+      }
+    },
+    {
+      "name": "zkc_jurisdiction_v4",
+      "packageVersion": null,
+      "description": "ZKC jurisdiction predicate circuit (v4 presentation ABI; sorted-neighbour exclusion)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:964410e602b866ac4427a65918f87566b0dfb84bceb119d4a0f46c1e28d6ee79",
+      "vkHash": "0x1f67f1a881d6fab46c9a0e545f8a4811b0f677c75786ae31db12ac443f4bcf05",
+      "vkSha256": "sha256:2fa6c97113fe0386e1429941a0924ed442c1349c45ac342afa74e6e03b8ca9bc",
+      "publicInputEncoder": "schemas/public-inputs/zkc_jurisdiction_v4.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "jurisdiction_set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "membership_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 11,
+          "offset": 42,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_jurisdiction_v4/zkc_jurisdiction_v4.json",
+        "vk": "artifacts/zkc_jurisdiction_v4/vk"
+      }
+    },
+    {
+      "name": "zkc_credential_rebind_binding_v2",
+      "packageVersion": null,
+      "description": "ZKC credential holder commitment rebind circuit (binding contract v2 identity)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:af2062c4d1f80dcf9a9701666195bc6cbcc44e2f32e6462843b5d924a31be3f6",
+      "vkHash": "0x11d2174d21d8ac7f445c3963e940999a5665bfc2fd1d85c2466b1dfa2c2339ab",
+      "vkSha256": "sha256:7f3fa0217ecfb6137764be609b749da83b452873a4e5a66a7bdda82da5d698ba",
+      "publicInputEncoder": "schemas/public-inputs/zkc_credential_rebind_binding_v2.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "old_holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "new_holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "credential_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "issuer_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "schema_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_credential_rebind_binding_v2/zkc_credential_rebind_binding_v2.json",
+        "vk": "artifacts/zkc_credential_rebind_binding_v2/vk"
+      }
+    },
+    {
+      "name": "zkc_credential_rebind_v2_binding_v2",
+      "packageVersion": null,
+      "description": "ZKC credential holder commitment rebind circuit (v2 presentation profiles, binding contract v2 identity)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:c6fe37cd6144a0208ebcd6d47a9c54ed26843bdb70481a66a236a84b4fb92a51",
+      "vkHash": "0x1e5345fae4813217d0796662b25b922b28407e26c8afe5b03688c1dc8182f5e8",
+      "vkSha256": "sha256:61994b645a4e15db3a9ed3f57468026aae006645e98723a6e8247231c2b1cd05",
+      "publicInputEncoder": "schemas/public-inputs/zkc_credential_rebind_v2_binding_v2.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "old_presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "new_presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "credential_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "issuer_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "schema_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_credential_rebind_v2_binding_v2/zkc_credential_rebind_v2_binding_v2.json",
+        "vk": "artifacts/zkc_credential_rebind_v2_binding_v2/vk"
+      }
+    },
+    {
+      "name": "zkc_credential_rebind_auth",
+      "packageVersion": null,
+      "description": "ZKC issuer-authenticated credential rebind circuit (linkable profile, zkc:proof:credential_rebind:v3)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:1768e23170e6b396a7f3ad8d22ac88f4315867a023b3d5f348d63c8d8bbdfc7b",
+      "vkHash": "0x1a93c0b28ef1bfbb03b8ffb289ce7d7b53378136aeac74bc6caeaaa92ef5c628",
+      "vkSha256": "sha256:1d4a6695ff37edc040dc27b344266dd637510b486e732d324ab9138668e1c02a",
+      "publicInputEncoder": "schemas/public-inputs/zkc_credential_rebind_auth.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "old_holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "new_holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "credential_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "issuer_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "schema_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 11,
+          "offset": 11,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 12,
+          "offset": 43,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_credential_rebind_auth/zkc_credential_rebind_auth.json",
+        "vk": "artifacts/zkc_credential_rebind_auth/vk"
+      }
+    },
+    {
+      "name": "zkc_credential_rebind_auth_v2",
+      "packageVersion": null,
+      "description": "ZKC issuer-authenticated credential rebind circuit (scoped profile, zkc:proof:rebind:v4)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324"
+      },
+      "acirHash": "sha256:6e718083d54875c09dd323161d9775eca36c2411dc2ee51e3fff8104180057dd",
+      "vkHash": "0x2450094bbb405b7c504befe2e5abb17c03120dc3c2f719d981dd98e7b550a4d3",
+      "vkSha256": "sha256:151c9914cb996e07664b02d364ee48e874008eeb75e77e4bd420f83fe79393a9",
+      "publicInputEncoder": "schemas/public-inputs/zkc_credential_rebind_auth_v2.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "old_presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "new_presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "credential_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "issuer_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "schema_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 11,
+          "offset": 11,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 12,
+          "offset": 12,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 13,
+          "offset": 44,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_credential_rebind_auth_v2/zkc_credential_rebind_auth_v2.json",
+        "vk": "artifacts/zkc_credential_rebind_auth_v2/vk"
+      }
+    },
+    {
+      "name": "zkc_community_kyc_v2",
+      "packageVersion": null,
+      "description": "Community KYC predicate circuit (beta.25 artifact successor)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:99b4b8a3b935660da64c45ab751a10d95682d1e3b727ddee688054313cd9f37d",
+      "vkHash": "0x1dbc70270d2b23202e5f6138dfa7792a8fccc7f5820e430e1a794af188780894",
+      "vkSha256": "sha256:b4f9c4ab6bd53a3b66eb08b6c92d19e811853204924e825a6a60a6d91eed3ad2",
+      "publicInputEncoder": "schemas/public-inputs/zkc_community_kyc_v2.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 8,
+          "offset": 39,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_community_kyc_v2/zkc_community_kyc_v2.json",
+        "vk": "artifacts/zkc_community_kyc_v2/vk"
+      }
+    },
+    {
+      "name": "zkc_kyc_v3",
+      "packageVersion": null,
+      "description": "ZKC-Core KYC predicate circuit (v2 presentation profile, beta.25 artifact successor)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:153932ccbcfb1531dcfa4b54647a9530db457144980437ad0e6cff112a9c94a9",
+      "vkHash": "0x2c573f22f850d18ca2971ff6477dfc9e39a1eba6e3a7baad330e11f8e2a9229d",
+      "vkSha256": "sha256:59f8f568497ee4c7848894331724edbb7e47b85f28ff479655ab5fcd42d37bba",
+      "publicInputEncoder": "schemas/public-inputs/zkc_kyc_v3.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 9,
+          "offset": 40,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_kyc_v3/zkc_kyc_v3.json",
+        "vk": "artifacts/zkc_kyc_v3/vk"
+      }
+    },
+    {
+      "name": "zkc_aggregation_v3",
+      "packageVersion": null,
+      "description": "ZKC proof aggregation circuit profile (v2 presentation profile, beta.25 artifact successor)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:463855437b94898eba8c37a3a4a41acd71f31d50aca7ac5402a48dc2f76f29c7",
+      "vkHash": "0x19b61d950fe04ab7d0ad4342da2af7c8546309c61028da4883d143cecae06904",
+      "vkSha256": "sha256:aee95d709a00c41ba3d77d4b09b31d1f48202d3e6a7986335457b815397e8b1d",
+      "publicInputEncoder": "schemas/public-inputs/zkc_aggregation_v3.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "aggregation_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "aggregated_claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "num_proofs",
+          "abiType": "u32",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "input_proof_commitments",
+          "abiType": "[Field; 8]",
+          "fieldElements": 8
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_aggregation_v3/zkc_aggregation_v3.json",
+        "vk": "artifacts/zkc_aggregation_v3/vk"
+      }
+    },
+    {
+      "name": "zkc_credential_rebind_auth_v3",
+      "packageVersion": null,
+      "description": "ZKC issuer-authenticated credential rebind circuit (scoped profile, beta.25 artifact successor)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:48552f736aec318434bdb7f38ce243904cbd827e7ba802202abc56dc1d7d5642",
+      "vkHash": "0x1a2f15e7e7906183df1fcc07f28bb12d0a90c4f274cdf6701f4d65fc27d29d3a",
+      "vkSha256": "sha256:5972542d45a409cac34de11f0d4eb3db25d9a0fea675995a09cd1e564b977a41",
+      "publicInputEncoder": "schemas/public-inputs/zkc_credential_rebind_auth_v3.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "old_presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "new_presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "credential_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "issuer_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "schema_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 11,
+          "offset": 11,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 12,
+          "offset": 12,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 13,
+          "offset": 44,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_credential_rebind_auth_v3/zkc_credential_rebind_auth_v3.json",
+        "vk": "artifacts/zkc_credential_rebind_auth_v3/vk"
+      }
+    },
+    {
+      "name": "zkc_jurisdiction_v5",
+      "packageVersion": null,
+      "description": "ZKC jurisdiction predicate circuit (v4 presentation ABI, beta.25 artifact successor)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:413711d8d25ad1b6e15c84a7a5cf78664b8cecdad0082430e359783cb4b09ac0",
+      "vkHash": "0x126d221fd004050c651287e47b88cd37f6cdf591e87a89836d33f3d2956f2508",
+      "vkSha256": "sha256:ba98ab004bb8941a00c4e67b532453dd28e18a3a29d74f7ee49c5819250aab73",
+      "publicInputEncoder": "schemas/public-inputs/zkc_jurisdiction_v5.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "jurisdiction_set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "membership_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 11,
+          "offset": 42,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_jurisdiction_v5/zkc_jurisdiction_v5.json",
+        "vk": "artifacts/zkc_jurisdiction_v5/vk"
+      }
+    },
+    {
+      "name": "zkc_remaining_predicates_v9",
+      "packageVersion": null,
+      "description": "ZKC remaining predicate profiles (v8 presentation ABI, beta.25 artifact successor)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:b03ddb0d05aca16e864a176ca7eafdb028084c24de6f3c79ca6b6002b406d591",
+      "vkHash": "0x17e5217defb86ea6bc36d17972e43d56211d3aea9fe7a17f8c69c03384554377",
+      "vkSha256": "sha256:85ff6ba61ec1275124706f24c5cb2d1aa21cc956f10af3743807e2241adb0d91",
+      "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v9.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "predicate_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 11,
+          "offset": 42,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_remaining_predicates_v9/zkc_remaining_predicates_v9.json",
+        "vk": "artifacts/zkc_remaining_predicates_v9/vk"
+      }
+    },
+    {
+      "name": "zkc_remaining_predicates_v10",
+      "packageVersion": null,
+      "description": "ZKC remaining predicate profiles (range-checked v9 presentation successor)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:cb7a09d6caeee62f2e2fc9a68d921587e2ae17880d65c4d31884d59715025718",
+      "vkHash": "0x0e42320b69652265b1a22f3f9cd2f4ec162722c1a63d747478894b16bf3e6582",
+      "vkSha256": "sha256:f58e869579367345b6c7f875f5b523cae4df739379234f115782ae2692e73f28",
+      "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v10.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "predicate_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 11,
+          "offset": 42,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_remaining_predicates_v10/zkc_remaining_predicates_v10.json",
+        "vk": "artifacts/zkc_remaining_predicates_v10/vk"
+      }
+    },
+    {
+      "name": "zkc_selective_disclosure_v2",
+      "packageVersion": null,
+      "description": "Issuer-authoritative selective disclosure (beta.25 artifact successor)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:1622445893ead2c873dabfb5de2ed1173ba452a68d6f5d5a3453ed40580f1855",
+      "vkHash": "0x2eab7fcea9ae9154ca7914b4c4ecb1081c4b0776b652858de708f6ba46ab144a",
+      "vkSha256": "sha256:d0c5635a85a0deb5736ed0bdb5785867977a335c3ba1ac24ae27bea5feee0719",
+      "publicInputEncoder": "schemas/public-inputs/zkc_selective_disclosure_v2.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 9,
+          "offset": 40,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 10,
+          "offset": 72,
+          "name": "credential_attribute_count",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 11,
+          "offset": 73,
+          "name": "disclosure_count",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 12,
+          "offset": 74,
+          "name": "disclosed_flags",
+          "abiType": "[bool; 8]",
+          "fieldElements": 8
+        },
+        {
+          "index": 13,
+          "offset": 82,
+          "name": "disclosed_attributes",
+          "abiType": "[Field; 8]",
+          "fieldElements": 8
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_selective_disclosure_v2/zkc_selective_disclosure_v2.json",
+        "vk": "artifacts/zkc_selective_disclosure_v2/vk"
+      }
+    },
+    {
+      "name": "zkc_selective_disclosure_v3",
+      "packageVersion": null,
+      "description": "Issuer-authoritative selective disclosure with a signed attribute layout",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:6f8a04480ea953163611da17684709911288259db147c2f14c30cd266723e17e",
+      "vkHash": "0x2103b3404c3691f99b5dbdc600cf692c68b7a0de7c6756fa3676c329da15e7a7",
+      "vkSha256": "sha256:268ef20644b875d9462c1af13e8a2000dbc6fdf2709bffe15dfc929fbc0c8fd0",
+      "publicInputEncoder": "schemas/public-inputs/zkc_selective_disclosure_v3.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 9,
+          "offset": 40,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 10,
+          "offset": 72,
+          "name": "layout_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 11,
+          "offset": 73,
+          "name": "credential_attribute_count",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 12,
+          "offset": 74,
+          "name": "disclosure_count",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 13,
+          "offset": 75,
+          "name": "disclosed_flags",
+          "abiType": "[bool; 8]",
+          "fieldElements": 8
+        },
+        {
+          "index": 14,
+          "offset": 83,
+          "name": "disclosed_attributes",
+          "abiType": "[Field; 8]",
+          "fieldElements": 8
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_selective_disclosure_v3/zkc_selective_disclosure_v3.json",
+        "vk": "artifacts/zkc_selective_disclosure_v3/vk"
+      }
+    },
+    {
+      "name": "zkc_jurisdiction_v6",
+      "packageVersion": null,
+      "description": "ZKC jurisdiction predicate circuit (code-space-bound presentation)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:4c864d9b3a62a6277a5a6fc3bb3d941d7873f53f23d421af60954135173b9054",
+      "vkHash": "0x10b1245ff35565ab54e8cd629bb34532bf046092d7a3e6dfc89edc8e1f4c287b",
+      "vkSha256": "sha256:4624cc853dfbd824da65f2ff538b893fc38653e000161bac0599186a504d32a5",
+      "publicInputEncoder": "schemas/public-inputs/zkc_jurisdiction_v6.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "jurisdiction_set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "membership_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 11,
+          "offset": 42,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 12,
+          "offset": 74,
+          "name": "code_space_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 13,
+          "offset": 75,
+          "name": "required_verification_method",
+          "abiType": "u8",
+          "fieldElements": 1
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_jurisdiction_v6/zkc_jurisdiction_v6.json",
+        "vk": "artifacts/zkc_jurisdiction_v6/vk"
+      }
+    },
+    {
+      "name": "zkc_remaining_predicates_v11",
+      "packageVersion": null,
+      "description": "ZKC set predicate profiles (code-space-bound source, tax and sanctions)",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:2f6e2be7c89a4bdf29a9680be9d4040a849b33250d6b7183bfb356a01a3f840b",
+      "vkHash": "0x01456d6da0e9fb5850ae62ef9ddcae96cc5636e0d1f81dfa4c890065ddd9d880",
+      "vkSha256": "sha256:3d6e907ac6f2a99ea71f2a4c62d610b6a875d6a9656678943c0385f7b9d23b30",
+      "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v11.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "predicate_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 11,
+          "offset": 42,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 12,
+          "offset": 74,
+          "name": "code_space_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_remaining_predicates_v11/zkc_remaining_predicates_v11.json",
+        "vk": "artifacts/zkc_remaining_predicates_v11/vk"
+      }
+    },
+    {
+      "name": "zkc_community_kyc_v3",
+      "packageVersion": null,
+      "description": "Community KYC predicate circuit (beta.25 artifact successor) with nonzero credential IDs",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:e1eb7201abce6e0461da23a824678d66b424787277b5a3bf273e5da589f7d319",
+      "vkHash": "0x1548ee38701a659ecd572e6244e420213db07aef210f135383d55f0cae371b4c",
+      "vkSha256": "sha256:a9892f67318b59cf48c92d8403b3ea8254aacc074b02c8229c82b753f8147bf2",
+      "publicInputEncoder": "schemas/public-inputs/zkc_community_kyc_v3.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 8,
+          "offset": 39,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_community_kyc_v3/zkc_community_kyc_v3.json",
+        "vk": "artifacts/zkc_community_kyc_v3/vk"
+      }
+    },
+    {
+      "name": "zkc_kyc_v4",
+      "packageVersion": null,
+      "description": "ZKC-Core KYC predicate circuit (v2 presentation profile, beta.25 artifact successor) with nonzero credential IDs",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:839b4dbc61daf0d4fd63a4f6d84da36905b277103c5c430c4bdf41acef8d13d6",
+      "vkHash": "0x104237d4c4fa361cf39878c380c13a06e2ae90fb3a38877b9e9a667a98218e4c",
+      "vkSha256": "sha256:a0efb527593338d35bc4ec735657ec365ecdcabeaa94099b7dce8887108e785b",
+      "publicInputEncoder": "schemas/public-inputs/zkc_kyc_v4.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 9,
+          "offset": 40,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_kyc_v4/zkc_kyc_v4.json",
+        "vk": "artifacts/zkc_kyc_v4/vk"
+      }
+    },
+    {
+      "name": "zkc_jurisdiction_v7",
+      "packageVersion": null,
+      "description": "ZKC jurisdiction predicate circuit (v3 legacy ABI; sorted-neighbour exclusion) with nonzero credential IDs",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:22d5f2686bbf93fbf9e337b282878f05ba9722b0f5cd8145a672bf80ee0ca712",
+      "vkHash": "0x0a2746233ed7b8bbf25c8aa3c60862c98e4ba0c56a4cef04e25c8ae6815868a0",
+      "vkSha256": "sha256:9f6fe0ffa3ad4108f6168b01bb837d2a56b0e559429f4508683eb7de682b5f70",
+      "publicInputEncoder": "schemas/public-inputs/zkc_jurisdiction_v7.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "jurisdiction_set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "membership_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 10,
+          "offset": 41,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_jurisdiction_v7/zkc_jurisdiction_v7.json",
+        "vk": "artifacts/zkc_jurisdiction_v7/vk"
+      }
+    },
+    {
+      "name": "zkc_jurisdiction_v8",
+      "packageVersion": null,
+      "description": "ZKC jurisdiction predicate circuit (code-space-bound presentation) with nonzero credential IDs",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:d1ffacde89f4985186836c4bf7a9dae3b9940ab3a0cdf8370605d8cba9ef2e18",
+      "vkHash": "0x1f18f56ea445478b22a306275ae82f1657c95c452900b34683bc4ba8f59521e3",
+      "vkSha256": "sha256:3f5ed38c64724312cd52a22745d38fe21e84add3fa23bbff27194b811548877e",
+      "publicInputEncoder": "schemas/public-inputs/zkc_jurisdiction_v8.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "jurisdiction_set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "membership_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 11,
+          "offset": 42,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 12,
+          "offset": 74,
+          "name": "code_space_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 13,
+          "offset": 75,
+          "name": "required_verification_method",
+          "abiType": "u8",
+          "fieldElements": 1
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_jurisdiction_v8/zkc_jurisdiction_v8.json",
+        "vk": "artifacts/zkc_jurisdiction_v8/vk"
+      }
+    },
+    {
+      "name": "zkc_remaining_predicates_v12",
+      "packageVersion": null,
+      "description": "ZKC accreditation, source-of-funds, tax-residency, and sanctions predicate circuit profiles (v7 validity-bound hardened linkable profile) with nonzero credential IDs",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:d47e7eb40faf88f039477c49b8269ca26a3c627b5a32d407ae5700e5f89b4f04",
+      "vkHash": "0x0c9e711b91504943250f1fd9056f74de7933cef6f643b2e30797b1308144a3ac",
+      "vkSha256": "sha256:bd7acf2316a633dc6c5e3b857c0fef1816301fbab161d64f1b39ac6fa1978fd9",
+      "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v12.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "predicate_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 10,
+          "offset": 41,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_remaining_predicates_v12/zkc_remaining_predicates_v12.json",
+        "vk": "artifacts/zkc_remaining_predicates_v12/vk"
+      }
+    },
+    {
+      "name": "zkc_remaining_predicates_v13",
+      "packageVersion": null,
+      "description": "ZKC remaining predicate profiles (range-checked v9 presentation successor) with nonzero credential IDs",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:b97b201f374a82b18463f99769a394000d204dc8e7b11aad92ad34ac562ab9b9",
+      "vkHash": "0x09ea74d99d29968a1ee4be02c6820d8cdb9fa776728b6e7d21ff6f1656dc941f",
+      "vkSha256": "sha256:e15cd845e6766524ca5a4db4b788516c897bf041929c684c67a57f39a3bb1a8e",
+      "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v13.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "predicate_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 11,
+          "offset": 42,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_remaining_predicates_v13/zkc_remaining_predicates_v13.json",
+        "vk": "artifacts/zkc_remaining_predicates_v13/vk"
+      }
+    },
+    {
+      "name": "zkc_remaining_predicates_v14",
+      "packageVersion": null,
+      "description": "ZKC set predicate profiles (code-space-bound source, tax and sanctions) with nonzero credential IDs",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:1275e42d0479bf44b7fb5032e195a4496bb96add8fd1e2c360eaf0879e976252",
+      "vkHash": "0x0b25e7ef7589cf24ae91e13d5f7253ceed4b8cf728ea9b204556011b8304b64f",
+      "vkSha256": "sha256:9afb932b4851824605f1495da265561da545a9937e02c0973d13207da14a8efc",
+      "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v14.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "set_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "predicate_type",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 11,
+          "offset": 42,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 12,
+          "offset": 74,
+          "name": "code_space_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_remaining_predicates_v14/zkc_remaining_predicates_v14.json",
+        "vk": "artifacts/zkc_remaining_predicates_v14/vk"
+      }
+    },
+    {
+      "name": "zkc_credential_rebind_auth_linkable_v2",
+      "packageVersion": null,
+      "description": "ZKC issuer-authenticated credential rebind circuit (linkable profile, zkc:proof:credential_rebind:v3) with nonzero credential IDs",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:f8a838df58403ad4ddb17a9802f054ec7ffe24e7773fdf81db5634af813f6974",
+      "vkHash": "0x19d23ad1ac12d25dd968c4e287eadfa0addeb089ebca85b936e4794c515b0272",
+      "vkSha256": "sha256:665bd54f329396ec949c0df8e6769bdafd4814d429f81d1794d4374cd68d0025",
+      "publicInputEncoder": "schemas/public-inputs/zkc_credential_rebind_auth_linkable_v2.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "old_holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "new_holder_commitment",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "credential_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "issuer_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "schema_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 11,
+          "offset": 11,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 12,
+          "offset": 43,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_credential_rebind_auth_linkable_v2/zkc_credential_rebind_auth_linkable_v2.json",
+        "vk": "artifacts/zkc_credential_rebind_auth_linkable_v2/vk"
+      }
+    },
+    {
+      "name": "zkc_credential_rebind_auth_v4",
+      "packageVersion": null,
+      "description": "ZKC issuer-authenticated credential rebind circuit (scoped profile, beta.25 artifact successor) with nonzero credential IDs",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:f42bee9a5a854a7bb370b3bf4d6abdd32492effcf4cabf46bfebbedde3785962",
+      "vkHash": "0x03560d4be57e3ec77dfe6e25677422fba0969d836c93ea6d3e942c03c6f2b332",
+      "vkSha256": "sha256:14fee471232255aaa512a6a866983e1fc4b8c1a77bfcf5ddd8888fb3191440b7",
+      "publicInputEncoder": "schemas/public-inputs/zkc_credential_rebind_auth_v4.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "old_presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "new_presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "credential_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "issuer_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "schema_id_hash",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 9,
+          "offset": 9,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 10,
+          "offset": 10,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 11,
+          "offset": 11,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 12,
+          "offset": 12,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 13,
+          "offset": 44,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_credential_rebind_auth_v4/zkc_credential_rebind_auth_v4.json",
+        "vk": "artifacts/zkc_credential_rebind_auth_v4/vk"
+      }
+    },
+    {
+      "name": "zkc_selective_disclosure_v4",
+      "packageVersion": null,
+      "description": "Issuer-authoritative selective disclosure with a signed attribute layout with nonzero credential IDs",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0"
+      },
+      "acirHash": "sha256:c3ea33b77db3fdd4e1445fdc3ceaa186b9b5b0dc697832bfd87699524b3c6a45",
+      "vkHash": "0x299caaca56e2696a0331dc9010deb50311f2ced688b4f1dcf3a7c112d3172cb3",
+      "vkSha256": "sha256:0ffb91206a1de46bb924d9d228cf11fe438ee0f1d708477011b5100d882f12d5",
+      "publicInputEncoder": "schemas/public-inputs/zkc_selective_disclosure_v4.json",
+      "publicInputs": [
+        {
+          "index": 0,
+          "offset": 0,
+          "name": "presentation_pseudonym",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 1,
+          "offset": 1,
+          "name": "scope_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 2,
+          "offset": 2,
+          "name": "claim_binding",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 3,
+          "offset": 3,
+          "name": "proof_context",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 4,
+          "offset": 4,
+          "name": "accumulator_root",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 5,
+          "offset": 5,
+          "name": "accumulator_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 6,
+          "offset": 6,
+          "name": "timestamp",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 7,
+          "offset": 7,
+          "name": "current_epoch",
+          "abiType": "u64",
+          "fieldElements": 1
+        },
+        {
+          "index": 8,
+          "offset": 8,
+          "name": "issuer_public_key_x",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 9,
+          "offset": 40,
+          "name": "issuer_public_key_y",
+          "abiType": "[u8; 32]",
+          "fieldElements": 32
+        },
+        {
+          "index": 10,
+          "offset": 72,
+          "name": "layout_id",
+          "abiType": "Field",
+          "fieldElements": 1
+        },
+        {
+          "index": 11,
+          "offset": 73,
+          "name": "credential_attribute_count",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 12,
+          "offset": 74,
+          "name": "disclosure_count",
+          "abiType": "u8",
+          "fieldElements": 1
+        },
+        {
+          "index": 13,
+          "offset": 75,
+          "name": "disclosed_flags",
+          "abiType": "[bool; 8]",
+          "fieldElements": 8
+        },
+        {
+          "index": 14,
+          "offset": 83,
+          "name": "disclosed_attributes",
+          "abiType": "[Field; 8]",
+          "fieldElements": 8
+        }
+      ],
+      "artifacts": {
+        "acir": "artifacts/zkc_selective_disclosure_v4/zkc_selective_disclosure_v4.json",
+        "vk": "artifacts/zkc_selective_disclosure_v4/vk"
+      }
+    }
+  ],
+  "bindings": [
+    {
+      "predicateId": "zkc-kyc",
+      "entryVersion": "4.0.0",
+      "sourceId": "sha256:599455bede9dac4b1ffbc99395888b5e93b8b70a5fce88484a64ee3e147b69a8",
+      "bindingId": "sha256:c70f1a6b29935f65b9ec21cdf654c170deaa4ac26f615f7bb8195625d9b0be49",
+      "circuit": "zkc_kyc_v2",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "id": "historical",
+        "nargo": "1.0.0-beta.21",
+        "noirc": "1.0.0-beta.21+89a0f0faf3a5f1273c8ac4843b7877882437e277",
+        "bb": "5.0.0-nightly.20260324",
+        "provenance": {
+          "path": "registry/toolchains/noir-beta21-bb5-nightly.json",
+          "sha256": "sha256:7b232a013dccc9dd3e3b551aaf43d7eb14eccffaf9286c1aa103be5fcafbae15"
+        }
+      },
+      "buildProfile": "release",
+      "artifactManifestKey": "zkc-kyc@4.0.0/historical",
+      "acirHash": "sha256:a098cc2d1734bfba57bd25246544756dd9d6e447bf68263b9485ba33561cb74e",
+      "vkHash": "0x04e8324ea9929304be72301eff8aa6eeccde52b3693f6a1e13a95f5f42fc9de7",
+      "vkSha256": "sha256:6bb00d605dfed440b45a3de9d8cef434dc79af02843c6aa2f3bde713b1508eae",
+      "artifacts": {
+        "acir": "artifacts/bindings/zkc-kyc/4.0.0/historical/zkc_kyc_v2.json",
+        "vk": "artifacts/bindings/zkc-kyc/4.0.0/historical/vk"
+      }
+    },
+    {
+      "predicateId": "zkc-kyc",
+      "entryVersion": "4.0.0",
+      "sourceId": "sha256:599455bede9dac4b1ffbc99395888b5e93b8b70a5fce88484a64ee3e147b69a8",
+      "bindingId": "sha256:c8d7c5bd5ea479bd81e3875170469060845b38e373dce363a9b83f6db598ccf0",
+      "circuit": "zkc_kyc_v2",
+      "scheme": "ultra_honk",
+      "toolchain": {
+        "id": "successor",
+        "nargo": "1.0.0-beta.25",
+        "noirc": "1.0.0-beta.25+75061fab15986eedee4e7d9104ff87dd9fa4ca10",
+        "bb": "5.0.0",
+        "provenance": {
+          "path": "registry/toolchains/noir-beta25-bb5.json",
+          "sha256": "sha256:702c8036964f34805953b6fb3530d1bc6a974bd78e8e47ab3a80202fe16c633f"
+        }
+      },
+      "buildProfile": "release",
+      "artifactManifestKey": "zkc-kyc@4.0.0/successor",
+      "acirHash": "sha256:153932ccbcfb1531dcfa4b54647a9530db457144980437ad0e6cff112a9c94a9",
+      "vkHash": "0x2c573f22f850d18ca2971ff6477dfc9e39a1eba6e3a7baad330e11f8e2a9229d",
+      "vkSha256": "sha256:59f8f568497ee4c7848894331724edbb7e47b85f28ff479655ab5fcd42d37bba",
+      "artifacts": {
+        "acir": "artifacts/bindings/zkc-kyc/4.0.0/successor/zkc_kyc_v2.json",
+        "vk": "artifacts/bindings/zkc-kyc/4.0.0/successor/vk"
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "version": "zkc:registry:predicate-entry:v1",
+  "predicateId": "zkc-jurisdiction",
+  "entryVersion": "1.0.0",
+  "title": "Jurisdiction membership predicate",
+  "author": {
+    "name": "ZKC reference implementation",
+    "url": "https://github.com/pyramidal-io/ZKC"
+  },
+  "proofTypes": [
+    "zkc:proof:jurisdiction:v1"
+  ],
+  "circuit": {
+    "name": "zkc_jurisdiction",
+    "scheme": "ultra_honk",
+    "sourcePath": "noir/zkc_jurisdiction/src/main.nr",
+    "sourceSha256": "79bb4fbc5972defc80c78b681949ffe462bb378f75eaa7a2a950e9339ff66202",
+    "acirHash": "sha256:3ddd32cd50b6f70bb9908d8df1d5e1d8d9fdac71f582e5e865d7d9ecf70e5d37",
+    "vkHash": "0x0a125002180c547b175d3c17eb9e66d673f84ae5c3749fed406afdc2c1412331",
+    "vkSha256": "sha256:59fecc8cc2d27326328eeb0ce1963033e8f6763288d43c79bbdfb0017d35f825"
+  },
+  "publicInputEncoder": "schemas/public-inputs/zkc_jurisdiction.json",
+  "review": {
+    "status": "deprecated",
+    "evidence": [
+      "registry/reviews/zkc-jurisdiction-1.0.0.md"
+    ],
+    "reviewedAt": null
+  },
+  "activation": {
+    "activatedAt": "2026-06-11T00:00:00Z",
+    "supersedes": null
+  },
+  "deprecation": {
+    "reason": "The exclusion branch accepts non-adjacent outer-member witnesses, allowing a blocked jurisdiction to prove exclusion. Use zkc:proof:jurisdiction:v3 or v4.",
+    "deprecatedAt": "2026-08-27T23:36:28Z"
+  }
+}

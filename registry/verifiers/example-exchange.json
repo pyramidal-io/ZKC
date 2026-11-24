@@ -1,0 +1,47 @@
+{
+  "version": "zkc:registry:verifier-policy:v1",
+  "verifierId": "did:zkc:verifier:example-exchange",
+  "displayName": "Example Exchange Verifier (reference)",
+  "description": "Reference published trust policy. Discovery only: this document informs holders what the verifier accepts; the verifier enforces it locally. It deliberately trusts one issuer that is NOT in registry/issuers/ to demonstrate that registry membership is neither necessary nor sufficient for trust. NOTE ON requiredReviewStatuses: this example accepts 'self_attested' as well as 'reviewed' ONLY because no predicate entry in this registry has been independently reviewed yet. A production verifier SHOULD require [\"reviewed\"] alone; that policy rejects every entry in this registry today, which is the accurate outcome, not a bug. See docs/zkc_predicate_registry_governance.md §2.",
+  "acceptedProofTypes": [
+    "zkc:proof:kyc:v1",
+    "zkc:proof:jurisdiction:v3",
+    "zkc:proof:jurisdiction:v4"
+  ],
+  "requiredReviewStatuses": [
+    "reviewed",
+    "self_attested"
+  ],
+  "trustedIssuers": [
+    {
+      "issuerId": "zkc:issuer:zkc-test-issuer",
+      "publicKeyX": "0x1310fe42b7df28bae91d18e87f7a2f0c505fd5e20056d95a4b6a85b8d949e459",
+      "publicKeyY": "0x502c40fd1bc33d2dbe3367b5cf3f48cd9b6aca0353cb9d34b31637146bdd1a86",
+      "proofTypes": [
+        "zkc:proof:kyc:v1",
+        "zkc:proof:jurisdiction:v3",
+        "zkc:proof:jurisdiction:v4"
+      ]
+    },
+    {
+      "issuerId": "did:zkc:out-of-registry-issuer",
+      "publicKeyX": "0xdb877c15e44069907583936af97f6ff34e520a8d103045b5beb92a21486ea7ca",
+      "publicKeyY": "0x4d3c75122c20ef57f183e62ff117ef6d42180cd6cbaef648d81ff0cf9110b08a",
+      "proofTypes": [
+        "zkc:proof:kyc:v1",
+        "zkc:proof:jurisdiction:v3",
+        "zkc:proof:jurisdiction:v4"
+      ]
+    }
+  ],
+  "acceptsOutOfRegistryIssuers": true,
+  "requiredContextProfile": "",
+  "maxEpochLag": 10,
+  "proofRequirements": {
+    "zkc:proof:kyc:v1": {
+      "requiredLevel": 1,
+      "requiredAttributes": [true, false, false, false, false]
+    }
+  },
+  "updatedAt": "2026-08-27T23:36:28Z"
+}

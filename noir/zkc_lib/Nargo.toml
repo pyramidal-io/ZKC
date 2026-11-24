@@ -1,0 +1,14 @@
+[package]
+name = "zkc_lib"
+type = "lib"
+authors = ["ZKC Protocol"]
+compiler_version = ">=1.0.0"
+description = "Shared cryptographic primitives for ZKC Noir circuits"
+
+[dependencies]
+# Pinned to noir-lang/poseidon v0.3.0 == commit
+# 0880c371e88e583d39515fd3f877538657ac41eb.
+# nargo 1.0.0-beta.21 only honors a mutable `tag` for git deps here, so CI
+# verifies the tag still points at the commit above and the KATs below fail
+# loudly if the resolved Poseidon2 parameterization changes.
+poseidon = { tag = "v0.3.0", git = "https://github.com/noir-lang/poseidon" }

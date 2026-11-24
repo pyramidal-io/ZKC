@@ -1,0 +1,42 @@
+{
+  "version": "zkc:registry:predicate-entry:v1",
+  "predicateId": "zkc-remaining-predicates",
+  "entryVersion": "4.0.0",
+  "title": "Accreditation, source-of-funds, tax-residency, and sanctions predicates (v4 flagRequired-bound presentation profiles)",
+  "author": {
+    "name": "ZKC reference implementation",
+    "url": "https://github.com/pyramidal-io/ZKC"
+  },
+  "proofTypes": [
+    "zkc:proof:accreditation:v4",
+    "zkc:proof:source:v4",
+    "zkc:proof:tax:v4",
+    "zkc:proof:sanctions:v4"
+  ],
+  "circuit": {
+    "name": "zkc_remaining_predicates_v4",
+    "scheme": "ultra_honk",
+    "sourcePath": "noir/zkc_remaining_predicates_v4/src/main.nr",
+    "sourceSha256": "702bdbc98de8559503ebb91112bb8573d135eea3bfacf16b890f7d716e8bb948",
+    "acirHash": "sha256:b6fc64c8b9651b25c9cf6c9dba908b31cdf23a61c866de172cc5991e73736203",
+    "vkHash": "0x07285776960a7b4a1c7bfeb8f34e579cf27da8d6584af226813e485b324fd356",
+    "vkSha256": "sha256:09faf67c6970c9ae51ac2d5aa909f5c3ec4898fedb3eb960d10fd094716337c5"
+  },
+  "publicInputEncoder": "schemas/public-inputs/zkc_remaining_predicates_v4.json",
+  "review": {
+    "status": "deprecated",
+    "evidence": [
+      "registry/reviews/zkc-remaining-predicates-4.0.0.md",
+      "registry/reviews/zkc-remaining-predicates-v1-v4-deprecation.md"
+    ],
+    "reviewedAt": null
+  },
+  "activation": {
+    "activatedAt": null,
+    "supersedes": "zkc-remaining-predicates@3.0.0"
+  },
+  "deprecation": {
+    "reason": "Source-of-funds and tax-residency accept raw code 0 as a sparse-Merkle padding leaf, and sanctions clearance does not require adjacent canonical neighbours. Use the hardened, validity-bound v8 anonymous/scoped successor for new proofs (v5/v6 are deprecated too: their digest omits validFrom).",
+    "deprecatedAt": null
+  }
+}

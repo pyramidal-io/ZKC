@@ -1,0 +1,60 @@
+{
+  "$schema": "https://zkc.dev/schemas/public-input-binding-v1.schema.json",
+  "version": "zkc:public-input-bindings:v1",
+  "circuit": "zkc_aggregation",
+  "encoder": "schemas/public-inputs/zkc_aggregation.json",
+  "bindings": [
+    {
+      "name": "aggregation_commitment",
+      "camelName": "aggregationCommitment",
+      "class": "derived",
+      "from": [
+        "context:value",
+        "public:holder_commitment",
+        "public:input_proof_commitments",
+        "public:num_proofs",
+        "envelope:proofs",
+        "policy:registryCircuitForProofType"
+      ],
+      "note": "aggregate_commitments over the context, the shared holder commitment, and each active (index < num_proofs) slot's poseidon2(proof_commitment, proof_type) gated by principalConsent; the verifier MUST recompute it from the envelope's component proofs and the registry-pinned circuit identities."
+    },
+    {
+      "name": "aggregated_claim_binding",
+      "camelName": "aggregatedClaimBinding",
+      "class": "derived",
+      "from": [
+        "public:aggregation_commitment",
+        "context:value"
+      ],
+      "note": "poseidon2(aggregation_commitment, context); the verifier MUST recompute it and reject on mismatch."
+    },
+    {
+      "name": "holder_commitment",
+      "camelName": "holderCommitment",
+      "class": "bound",
+      "source": "envelope:holderBinding.commitment \u2014 MUST equal the envelope holder binding shared by every proof in the presentation."
+    },
+    {
+      "name": "context",
+      "camelName": "context",
+      "class": "bound",
+      "source": "context:value \u2014 MUST equal the authenticated request context hash for this presentation."
+    },
+    {
+      "name": "num_proofs",
+      "camelName": "numProofs",
+      "class": "bound",
+      "source": "envelope:proofs \u2014 MUST equal the number of component proofs the envelope aggregates (1..8); slots at or beyond it MUST carry zero commitments."
+    },
+    {
+      "name": "input_proof_commitments",
+      "camelName": "inputProofCommitments",
+      "class": "derived",
+      "from": [
+        "envelope:proofs",
+        "policy:registryCircuitForProofType"
+      ],
+      "note": "Each active slot MUST equal the commitment recomputed over that component proof's verification-key stand-in (derived from the registry-pinned circuit for the slot's proof type, not from the envelope), proof, public inputs, and proof type, under the deployment-defined packing (reference: python/zkc_holder/aggregation.py); inactive slots MUST be 0."
+    }
+  ]
+}

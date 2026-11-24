@@ -1,0 +1,18 @@
+{
+  "version": "zkc:revocation-announcement-vectors:v1",
+  "description": "Public deterministic launch vector for the v3 authenticated revocation announcement transcript and complete signed predecessor hash.",
+  "announcement": {
+    "version": "zkc:epoch-announcement:v3",
+    "accumulatorId": "sandbox-active-credentials",
+    "root": "0x24dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf",
+    "epoch": 100,
+    "announcedAt": 1770000000,
+    "maxEpochLag": 10,
+    "signingKeyId": "sandbox-2026-01",
+    "previousAnnouncementHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "signature": "0xf5293d06116c1534ea45ab49696a120a7b2c79149f3dfbcb320ce89b831e38a01f0ece663e5631bf6e930e5195699ff27bc195dea7732819448c8df34821b602"
+  },
+  "transcriptHex": "0x5a4b432d45504f43482d414e4e4f554e43454d454e54000300197a6b633a65706f63682d616e6e6f756e63656d656e743a7633001a73616e64626f782d6163746976652d63726564656e7469616c7324dd41c93a298e537c6ac62487057a09229c1ab00b2baec40b45a325712840bf00000000000000640000000069800e80000000000000000a000f73616e64626f782d323032362d30310000000000000000000000000000000000000000000000000000000000000000",
+  "signingDigest": "0x14ce5d61a8ac152209e4bcfc4caf16a1ab26ee85052828b0ccf78ab1e0717d2c",
+  "announcementHash": "0xda6ee820872d58aa97d21ae7ff983db3ae5f63f1a652ed67cc237e43d206ae80"
+}
